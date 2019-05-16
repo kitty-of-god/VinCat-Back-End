@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   has_many :ratings, as::rate
   has_many :reports, as::repo
   has_one :image, as::imag
+  has_many :tags
   
   validates :name,:description,:price,:class,:quantity, presence: true
 end
