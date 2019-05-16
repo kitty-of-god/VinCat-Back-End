@@ -1,7 +1,8 @@
 class Report < ApplicationRecord
-  belongs_to :repo, polymorphic: true
+  belongs_to :reportable, polymorphic: true
 
-  
+
+
   validates :body,
   length: { maximum: 200},
   presence: true
