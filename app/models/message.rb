@@ -1,6 +1,6 @@
 class Message < ApplicationRecord
 
-  has_one :chat
+  belongs_to :chat
   
   validates :text, 
   length: { maximum: 200},
