@@ -1,8 +1,8 @@
 class Report < ApplicationRecord
-  belongs_to :user
-  belongs_to :product
-  belongs_to :rating
-  
+  belongs_to :reportable, polymorphic: true
+
+
+
   validates :body,
   length: { maximum: 200},
   presence: true

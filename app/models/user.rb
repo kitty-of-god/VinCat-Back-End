@@ -1,12 +1,13 @@
 class User < ApplicationRecord
-  has_many :products, dependent: :destroy
-  has_many :sales, dependent: :destroy
-  has_many :reports
-  has_many :ratings, dependent: :destroy
-  has_many :chat, dependent: :destroy
-  has_many :messages, through: chat
-  has_one :cart, dependent: :destroy
-  has_one :image, dependent: :destroy
+  has_many :products
+  has_and_belongs_to_many :sales
+  has_many :reports , as: :reportable
+  has_many :ratings, as: :rateable
+  has_and_belongs_to_many :chat
+  has_and_belongs_to_many :messages, through: chat
+  has_one :cart
+  has_one :image, as: :imageable
+
   
   validates :username, 
   format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters and spaces" },

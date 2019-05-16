@@ -1,4 +1,4 @@
 class Image < ApplicationRecord
-  belongs_to :user
-  belongs_to :product
+  belongs_to :imageable , polymorphic: true
+
 end

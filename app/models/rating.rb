@@ -1,6 +1,6 @@
 class Rating < ApplicationRecord
-  belongs_to :user
-  belongs_to :product
+  belongs_to :rateable, polymorphic: true
+
   
   validates :comment,
   length: { maximum: 200},
