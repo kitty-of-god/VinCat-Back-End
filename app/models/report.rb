@@ -1,7 +1,6 @@
 class Report < ApplicationRecord
-  belongs_to :user
-  belongs_to :product
-  belongs_to :rating
+  belongs_to :repo, polymorphic: true
+
   
   validates :body, :type, presence: true
 end

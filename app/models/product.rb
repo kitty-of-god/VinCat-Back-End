@@ -2,8 +2,9 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :sale
   belongs_to :cart
-  has_many :reports
-  has_one :image
+  has_many :ratings, as::rate
+  has_many :reports, as::repo
+  has_one :image, as::imag
   
   validates :name,:description,:price,:class,:quantity, presence: true
 end
