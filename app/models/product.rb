@@ -1,11 +1,10 @@
 class Product < ApplicationRecord
-  belongs_to :user
-  belongs_to :sale
-  belongs_to :cart
+  belongs_to :user, optional: true
+  belongs_to :sale, optional: true
+  belongs_to :cart, optional: true
   has_many :ratings, as: :rateable
   has_many :reports, as: :reportable
   has_many :image, as: :imageable
-  has_many :tags
   validates :name,
   format: { with: /\A[\w\s]+\z/, message: "only allows numbers, letters and spaces" },
   length: { in: 2..25},

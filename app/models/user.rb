@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :products
-  has_and_belongs_to_many :sales
+  has_many :sales
   has_many :reports, as: :reportable
   has_many :ratings, as: :rateable
   has_many :chat
