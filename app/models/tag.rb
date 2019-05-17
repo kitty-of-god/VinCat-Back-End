@@ -1,5 +1,5 @@
 class Tag < ApplicationRecord
-    belongs_to :product
+
     
     validates :name,
     format: { with: /\A[\w]+\z/, message: "only allows numbers, letters" },

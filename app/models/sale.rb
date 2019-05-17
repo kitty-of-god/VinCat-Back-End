@@ -1,6 +1,6 @@
 class Sale < ApplicationRecord
- has_one :seller
- has_one :buyer
+ belongs_to :seller
+ belongs_to :buyer
   
   validates :date,
   presence: true

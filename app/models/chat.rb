@@ -1,5 +1,5 @@
 class Chat < ApplicationRecord
-  has_one :sender
-  has_one :receiver
+  belongs_to :sender
+  belongs_to :receiver
   has_many :messages
 end
