@@ -1,4 +1,4 @@
-class ChatController < ApplicationController
+class ChatsController < ApplicationController
   def list
     @chats = Chat.all
   end

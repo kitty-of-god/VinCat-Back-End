@@ -1,4 +1,4 @@
-class SaleController < ApplicationController
+class SalesController < ApplicationController
   def list
     @sales = Sale.all
   end

@@ -1,8 +1,8 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
   def list
     @products = Product.all
   end
-
+  #GET /product
   def show
     @product = Product.find(params[:id])
   end
@@ -14,7 +14,7 @@ class ProductController < ApplicationController
   def product_params
     params.require(:products)
   end
-
+  #POST
   def create
     @product = Product.new(product_params)
     if @product.save
@@ -31,7 +31,7 @@ class ProductController < ApplicationController
   def product_param
     params.require(:product)
   end
-
+  #PATCH/PUT /product/1
   def update
     @product = Product.find(params[:id])
 
@@ -39,7 +39,7 @@ class ProductController < ApplicationController
       redirect_to :action => 'show', :id => @product
     end
   end
-
+  #DELETE /product/1
   def delete
     Product.find(params[:id]).destroy
     redirect_to :action => 'list'

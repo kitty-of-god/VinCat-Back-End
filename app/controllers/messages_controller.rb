@@ -1,4 +1,4 @@
-class MessageController < ApplicationController
+class MessagesController < ApplicationController
   def list
     @messages = Message.all
   end

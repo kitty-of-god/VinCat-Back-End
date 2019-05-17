@@ -1,4 +1,4 @@
-class TagController < ApplicationController
+class TagsController < ApplicationController
   def list
     @tags = Tag.all
   end

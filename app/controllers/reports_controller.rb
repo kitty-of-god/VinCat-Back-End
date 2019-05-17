@@ -1,4 +1,4 @@
-class ReportController < ApplicationController
+class ReportsController < ApplicationController
   def list
     @reports = Report.all
   end
