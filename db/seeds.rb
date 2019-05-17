@@ -7,25 +7,24 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 5.times do
   User.create!([{
-      username: Faker::Internet.username,
-      name: Faker::Name.name,
-      description: Faker::Hacker.say_something_smart,
-      password: Faker::Internet.password,
-      residence: Faker::Address.city,
-      type: "User"
+                    username: Faker::Internet.username(6),
+                    name: Faker::Name.first_name,
+                    description: Faker::Hacker.say_something_smart,
+                    password: Faker::Internet.password(3),
+                    residence: Faker::Address.city,
+                    role: "natural"
                 }])
-end
-5.times do
+
   Product.create!([{
-      name: Faker::Commerce.product_name,
-      description: Faker::Commerce.department,
-      price: Faker::Commerce.price,
-      quantity: 1,
-      class: "Pant",
-      gender: "Men",
-      state: true,
-      new: false,
-      user: User.first
+                       name: Faker::Commerce.product_name,
+                       description: Faker::Commerce.department,
+                       price: Faker::Commerce.price,
+                       quantity: 1,
+                       kind: "Pant",
+                       gender: "Men",
+                       state: 1,
+                       new: 0,
+                       user_id: User.first.id
 
                    }])
 end

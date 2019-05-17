@@ -3,14 +3,14 @@ class User < ApplicationRecord
   has_many :sales
   has_many :reports, as: :reportable
   has_many :ratings, as: :rateable
-  has_many :chat
-  has_many :messages, through: chat
+  has_many :chats
+  has_many :messages, through: :chats
   has_one :cart
   has_one :image, as: :imageable
 
 
   validates :username,
-  format: { with: /\A[a-zA-Z\s]+\z/, message: "only allows letters and spaces" },
+  format: { with: /\A[\S]+\z/, message: "only allows letters and spaces" },
   length: { in: 6..20},
   uniqueness: true,
   presence: true
@@ -25,7 +25,7 @@ class User < ApplicationRecord
   presence: true
 
   validates :password,
-  format: { with: /\A[.]+\z/, message: "Incorrect format"},
+  format: { with: /\A[\S]+\z/, message: "Incorrect format"},
   length: { minimum: 3},
   presence: true
 
@@ -34,14 +34,11 @@ class User < ApplicationRecord
   length: {minimum: 1},
   presence: true
 
-  validates :type,
+  validates :role,
   inclusion: { in: %w(admin tienda natural), message: "%{value} no es un valor permitido" },
   presence: true
 
-  validates :gender,
-  format: { with: /\A[a-zA-Z]+\z/, message: "Incorrect format"},
-  length: { in: 2..25},
-  presence: true
+
 
 end
 
