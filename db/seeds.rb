@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 5.times do
+
   User.create!([{
                     username: Faker::Internet.username(6),
                     name: Faker::Name.first_name,
@@ -25,6 +26,28 @@
                        state: 1,
                        new: 0,
                        user_id: User.first.id
-
                    }])
+                   
+  Tag.create!([{
+                name: Faker::Games::Pokemon.name
+              }])
+
+  Rating.create!([{
+                  comment: Faker::Hacker.say_something_smart,
+                  rating: Faker::Number.between(0, 5)
+                }])            
+
+  Image.create!([{
+                  name: "#{Faker::Games::Pokemon.name}.#{Faker::File.extension}"
+                }])
+
+
+  Message.create!([{
+                  text: Faker::Games::WorldOfWarcraft.quote
+                  }])
+
+  Report.create!([{
+                  body: Faker::Movies::VForVendetta.quote
+                }])
+
 end
