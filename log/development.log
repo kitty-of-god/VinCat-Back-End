@@ -1522,3 +1522,40 @@ Migrating to RemoveCartIdFromProducts (20190518021054)
   ↳ bin/rails:4
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to RenameColumnTypeInRatingstoKind (20190518033135)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aratings" ("id" integer NOT NULL PRIMARY KEY, "comment" varchar DEFAULT NULL, "kind" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "rateable_id" integer DEFAULT NULL, "rateable_type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aratings_on_rateable_id_and_rateable_type" ON "aratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aratings" ("id","comment","kind","rating","rateable_id","rateable_type","created_at","updated_at")
+                     SELECT "id","comment","type","rating","rateable_id","rateable_type","created_at","updated_at" FROM "ratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "ratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer NOT NULL PRIMARY KEY, "comment" varchar DEFAULT NULL, "kind" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "rateable_id" integer DEFAULT NULL, "rateable_type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ratings" ("id","comment","kind","rating","rateable_id","rateable_type","created_at","updated_at")
+                     SELECT "id","comment","kind","rating","rateable_id","rateable_type","created_at","updated_at" FROM "aratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190518033135"]]
+  ↳ bin/rails:4
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4

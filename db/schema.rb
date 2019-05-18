@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_18_021054) do
+ActiveRecord::Schema.define(version: 2019_05_18_033135) do
 
   create_table "cart_products", force: :cascade do |t|
     t.integer "cart_id"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_021054) do
 
   create_table "ratings", force: :cascade do |t|
     t.string "comment"
-    t.string "type"
+    t.string "kind"
     t.integer "rating"
     t.integer "rateable_id"
     t.string "rateable_type"
