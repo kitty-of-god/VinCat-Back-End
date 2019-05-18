@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   has_many :ratings, as: :rateable, dependent: :destroy
   has_many :reports, as: :reportable
   has_many :images, as: :imageable, dependent: :destroy
+  has_and_belongs_to_many :tags
+  has_and_belongs_to_many :carts
   validates :name,
   format: { with: /\A[\w\s]+\z/, message: "only allows numbers, letters and spaces" },
   length: { in: 2..25},
