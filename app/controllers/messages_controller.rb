@@ -1,10 +1,13 @@
 class MessagesController < ApplicationController
-  def list
+  #GET all
+  def index
     @messages = Message.all
+    render json: @messages
   end
-
+  #GET /message/:id
   def show
     @message = Message.find(params[:id])
+    render json: @message
   end
 
   def new
@@ -12,15 +15,15 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:messages)
+    params.require(:messages).permit(:text, :chat_id)
   end
-
+  #POST
   def create
     @message = Message.new(message_params)
     if @message.save
-      redirect_to :action => 'list'
+      render json: @message, status: :created, location: @message
     else
-      render :action => 'new'
+      render json: @message.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class MessagesController < ApplicationController
   end
 
   def message_param
-    params.require(:message)
+    params.require(:message).permit(:text, :chat_id)
   end
-
+  #PATCH/PUT /message/1
   def update
     @message = Message.find(params[:id])
 
-    if @message.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @message
+    if @message.update_attributes(message_param)
+      render json: @message
+    else
+      render json: @message.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /message/1
+  def destroy
     Message.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

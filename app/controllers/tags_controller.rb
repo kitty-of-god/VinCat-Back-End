@@ -1,10 +1,13 @@
 class TagsController < ApplicationController
-  def list
+  #GET all
+  def index
     @tags = Tag.all
+    render json: @tags
   end
-
+  #GET /tag/:id
   def show
     @tag = Tag.find(params[:id])
+    render json: @tag
   end
 
   def new
@@ -12,15 +15,15 @@ class TagsController < ApplicationController
   end
 
   def tag_params
-    params.require(:tags)
+    params.require(:tags).permit(:name)
   end
-
+  #POST
   def create
     @tag = Tag.new(tag_params)
     if @tag.save
-      redirect_to :action => 'list'
+      render json: @tag, status: :created, location: @tag
     else
-      render :action => 'new'
+      render json: @tag.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class TagsController < ApplicationController
   end
 
   def tag_param
-    params.require(:tag)
+    params.require(:tag).permit(:name)
   end
-
+  #PATCH/PUT /tag/1
   def update
     @tag = Tag.find(params[:id])
 
-    if @tag.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @tag
+    if @tag.update_attributes(tag_param)
+      render json: @tag
+    else
+      render json: @tag.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /tag/1
+  def destroy
     Tag.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

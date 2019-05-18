@@ -1,10 +1,13 @@
 class RatingsController < ApplicationController
-  def list
+  #GET all
+  def index
     @ratings = Rating.all
+    render json: @ratings
   end
-
+  #GET /rating/:id
   def show
     @rating = Rating.find(params[:id])
+    render json: @rating
   end
 
   def new
@@ -12,15 +15,15 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:ratings)
+    params.require(:ratings).permit(:comment, :type, :rating, :rateable_id, :rateable_type)
   end
-
+  #POST
   def create
     @rating = Rating.new(rating_params)
     if @rating.save
-      redirect_to :action => 'list'
+      render json: @rating, status: :created, location: @rating
     else
-      render :action => 'new'
+      render json: @rating.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class RatingsController < ApplicationController
   end
 
   def rating_param
-    params.require(:rating)
+    params.require(:rating).permit(:comment, :type, :rating, :rateable_id, :rateable_type)
   end
-
+  #PATCH/PUT /rating/1
   def update
     @rating = Rating.find(params[:id])
 
-    if @rating.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @rating
+    if @rating.update_attributes(rating_param)
+      render json: @rating
+    else
+      render json: @rating.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /rating/1
+  def destroy
     Rating.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

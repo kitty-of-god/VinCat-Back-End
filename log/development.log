@@ -1115,3 +1115,972 @@ ActionController::ParameterMissing (param is missing or the value is empty: prod
   
 app/controllers/product_controller.rb:15:in `product_params'
 app/controllers/product_controller.rb:19:in `create'
+Started POST "/products" for ::1 at 2019-05-17 17:16:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#create as */*
+  Parameters: {"product"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Test kind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: products):
+  
+app/controllers/products_controller.rb:15:in `product_params'
+app/controllers/products_controller.rb:19:in `create'
+Started POST "/products" for ::1 at 2019-05-17 17:16:41 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Test kind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/products_controller.rb:19:in `create'
+Started POST "/products" for ::1 at 2019-05-17 17:26:14 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Test kind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+Completed 200 OK in 1401ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/products" for ::1 at 2019-05-17 17:34:19 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Test kind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+Completed 500 Internal Server Error in 10ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/products_controller.rb:25:in `create'
+Started POST "/products" for ::1 at 2019-05-17 17:34:31 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Test kind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+Completed 422 Unprocessable Entity in 15ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/products" for ::1 at 2019-05-17 17:35:01 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["quantity", 1], ["kind", "Testkind"], ["gender", "Testgender"], ["state", 1], ["new", 1], ["created_at", "2019-05-17 22:35:01.437358"], ["updated_at", "2019-05-17 22:35:01.437358"]]
+  ↳ app/controllers/products_controller.rb:20
+  [1m[35m (129.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+Redirected to 
+Completed 500 Internal Server Error in 137ms (ActiveRecord: 130.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"list", :controller=>"products"}):
+  
+app/controllers/products_controller.rb:21:in `create'
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/products" for ::1 at 2019-05-17 17:39:13 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["quantity", 1], ["kind", "Testkind"], ["gender", "Testgender"], ["state", 1], ["new", 1], ["created_at", "2019-05-17 22:39:13.752952"], ["updated_at", "2019-05-17 22:39:13.752952"]]
+  ↳ app/controllers/products_controller.rb:20
+  [1m[35m (144.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+Redirected to 
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 146.6ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"list", :controller=>"products"}):
+  
+app/controllers/products_controller.rb:21:in `create'
+Started POST "/products" for ::1 at 2019-05-17 17:39:19 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["quantity", 1], ["kind", "Testkind"], ["gender", "Testgender"], ["state", 1], ["new", 1], ["created_at", "2019-05-17 22:39:19.961084"], ["updated_at", "2019-05-17 22:39:19.961084"]]
+  ↳ app/controllers/products_controller.rb:20
+  [1m[35m (154.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:20
+Completed 200 OK in 170ms (Views: 0.8ms | ActiveRecord: 156.4ms)
+
+
+Started POST "/products" for ::1 at 2019-05-17 17:47:01 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:22
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["quantity", 1], ["kind", "Testkind"], ["gender", "Testgender"], ["state", 1], ["new", 1], ["created_at", "2019-05-17 22:47:01.326397"], ["updated_at", "2019-05-17 22:47:01.326397"]]
+  ↳ app/controllers/products_controller.rb:22
+  [1m[35m (143.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:22
+Completed 201 Created in 160ms (Views: 1.4ms | ActiveRecord: 145.8ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 17:47:36 -0500
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ProductsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for ::1 at 2019-05-17 17:47:58 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:4
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 17:58:02 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:4
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products" for ::1 at 2019-05-17 17:58:14 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:22
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["quantity", 1], ["kind", "Testkind"], ["gender", "Testgender"], ["state", 1], ["new", 1], ["created_at", "2019-05-17 22:58:14.611527"], ["updated_at", "2019-05-17 22:58:14.611527"]]
+  ↳ app/controllers/products_controller.rb:22
+  [1m[35m (120.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:22
+Completed 201 Created in 129ms (Views: 1.1ms | ActiveRecord: 121.3ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:08:41 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:4
+Completed 200 OK in 5ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:12:03 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:4
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/products" for ::1 at 2019-05-17 18:13:21 -0500
+  
+ActionController::RoutingError (No route matches [PUT] "/products"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/products" for ::1 at 2019-05-17 18:13:28 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/products"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for ::1 at 2019-05-17 18:16:44 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>"1", "product"=>{"id"=>"1"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:17:45 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>"1", "product"=>{"id"=>"1"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:19:03 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{"1"}
+  
+ActionDispatch::Http::Parameters::ParseError (751: unexpected token at '{"1"}'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for ::1 at 2019-05-17 18:19:15 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>"1", "product"=>{"id"=>"1"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:21:19 -0500
+Processing by ProductsController#index as */*
+  Parameters: {":id"=>"1", "product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:21:36 -0500
+Error occurred while parsing request parameters.
+Contents:
+
+{ :id : "1" }
+  
+ActionDispatch::Http::Parameters::ParseError (751: unexpected token at '{ :id : "1" }'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for ::1 at 2019-05-17 18:21:45 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>"1", "product"=>{"id"=>"1"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/" for ::1 at 2019-05-17 18:24:19 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"id"=>"1", "product"=>{"id"=>"1"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/1" for ::1 at 2019-05-17 18:24:24 -0500
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"1", "product"=>{"id"=>"1"}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products/id" for ::1 at 2019-05-17 18:24:38 -0500
+Processing by ProductsController#show as */*
+  Parameters: {"id"=>"id", "product"=>{"id"=>"id"}}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:9
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=id):
+  
+app/controllers/products_controller.rb:9:in `show'
+Started PUT "/products/1" for ::1 at 2019-05-17 18:31:19 -0500
+Processing by ProductsController#update as */*
+  Parameters: {"product"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:41
+  [1m[36mProduct Update (2.1ms)[0m  [1m[33mUPDATE "products" SET "name" = ?, "description" = ?, "price" = ?, "kind" = ?, "new" = ?, "gender" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["kind", "Testkind"], ["new", 1], ["gender", "Testgender"], ["updated_at", "2019-05-17 23:31:19.756904"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:41
+  [1m[35m (175.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:41
+Completed 200 OK in 188ms (Views: 0.5ms | ActiveRecord: 178.3ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:31:31 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/products/1" for ::1 at 2019-05-17 18:31:58 -0500
+  
+AbstractController::ActionNotFound (The action 'destroy' could not be found for ProductsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started DELETE "/products/1" for ::1 at 2019-05-17 18:32:12 -0500
+Processing by ProductsController#destroy as */*
+  Parameters: {"id"=>"1", "product"=>{}}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:49
+  [1m[36mProduct Destroy (1.1ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/products_controller.rb:49
+  [1m[35m (177.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:49
+Completed 204 No Content in 192ms (ActiveRecord: 179.0ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:32:18 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/products" for ::1 at 2019-05-17 18:32:25 -0500
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"Abc", "description"=>"Test description", "price"=>"3", "kind"=>"Testkind", "state"=>"true", "quantity"=>"1", "new"=>"true", "gender"=>"Testgender"}, "product"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:23
+  [1m[36mProduct Create (1.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Abc"], ["description", "Test description"], ["price", 3], ["quantity", 1], ["kind", "Testkind"], ["gender", "Testgender"], ["state", 1], ["new", 1], ["created_at", "2019-05-17 23:32:25.342617"], ["updated_at", "2019-05-17 23:32:25.342617"]]
+  ↳ app/controllers/products_controller.rb:23
+  [1m[35m (166.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:23
+Completed 201 Created in 175ms (Views: 0.9ms | ActiveRecord: 167.9ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:32:28 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:50:43 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/products/1" for ::1 at 2019-05-17 18:50:52 -0500
+Processing by ProductsController#destroy as */*
+  Parameters: {"id"=>"1", "product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:49
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=1):
+  
+app/controllers/products_controller.rb:49:in `destroy'
+Started DELETE "/products/2" for ::1 at 2019-05-17 18:51:04 -0500
+Processing by ProductsController#destroy as */*
+  Parameters: {"id"=>"2", "product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:49
+  [1m[36mProduct Destroy (1.3ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/products_controller.rb:49
+  [1m[35m (180.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:49
+Completed 204 No Content in 187ms (ActiveRecord: 181.6ms)
+
+
+Started GET "/products" for ::1 at 2019-05-17 18:51:07 -0500
+Processing by ProductsController#index as */*
+  Parameters: {"product"=>{}}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mCart Load (13.5ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/carts" for ::1 at 2019-05-17 20:21:15 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by CartsController#create as */*
+  Parameters: {"carts"=>{"user_id"=>"3"}, "cart"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:23
+  [1m[36mCart Create (2.8ms)[0m  [1m[32mINSERT INTO "carts" ("created_at", "updated_at", "user_id") VALUES (?, ?, ?)[0m  [["created_at", "2019-05-18 01:21:15.907413"], ["updated_at", "2019-05-18 01:21:15.907413"], ["user_id", 3]]
+  ↳ app/controllers/carts_controller.rb:23
+  [1m[35m (231.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:23
+Completed 201 Created in 242ms (Views: 0.8ms | ActiveRecord: 234.3ms)
+
+
+Started GET "/carts" for ::1 at 2019-05-17 20:22:05 -0500
+Processing by CartsController#index as */*
+  Parameters: {"cart"=>{}}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  ↳ app/controllers/carts_controller.rb:5
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/carts/1" for ::1 at 2019-05-17 20:22:33 -0500
+Processing by CartsController#show as */*
+  Parameters: {"id"=>"1", "cart"=>{}}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:9
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/carts/1" for ::1 at 2019-05-17 20:23:20 -0500
+Processing by CartsController#update as */*
+  Parameters: {"cart"=>{"user_id"=>"5"}, "id"=>"1"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:41
+  [1m[36mCart Update (1.2ms)[0m  [1m[33mUPDATE "carts" SET "user_id" = ?, "updated_at" = ? WHERE "carts"."id" = ?[0m  [["user_id", 5], ["updated_at", "2019-05-18 01:23:20.341290"], ["id", 1]]
+  ↳ app/controllers/carts_controller.rb:41
+  [1m[35m (169.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:41
+Completed 200 OK in 179ms (Views: 0.5ms | ActiveRecord: 171.3ms)
+
+
+Started GET "/carts" for ::1 at 2019-05-17 20:23:27 -0500
+Processing by CartsController#index as */*
+  Parameters: {"cart"=>{}}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  ↳ app/controllers/carts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/carts/1" for ::1 at 2019-05-17 20:23:55 -0500
+Processing by CartsController#destroy as */*
+  Parameters: {"id"=>"1", "cart"=>{}}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[36mCart Destroy (0.9ms)[0m  [1m[31mDELETE FROM "carts" WHERE "carts"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/carts_controller.rb:49
+  [1m[35m (163.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/carts_controller.rb:49
+Completed 204 No Content in 170ms (ActiveRecord: 164.5ms)
+
+
+Started GET "/carts" for ::1 at 2019-05-17 20:24:01 -0500
+Processing by CartsController#index as */*
+  Parameters: {"cart"=>{}}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT "carts".* FROM "carts"[0m
+  ↳ app/controllers/carts_controller.rb:5
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/users" for ::1 at 2019-05-17 20:34:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"testusername", "name"=>"Test name", "description"=>"Test description this is a test description testing", "password"=>"[FILTERED]", "residence"=>"Test Residence 12345", "role"=>"admin"}, "user"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testusername"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:23
+Completed 422 Unprocessable Entity in 3402ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2019-05-17 20:35:27 -0500
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"testusername", "name"=>"Test name", "description"=>"Test description this is a test description testing", "password"=>"[FILTERED]", "residence"=>"Test Residence", "role"=>"admin"}, "user"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testusername"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "password", "residence", "role", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "testusername"], ["name", "Test name"], ["description", "Test description this is a test description testing"], ["password", "passwordpassword"], ["residence", "Test Residence"], ["role", "admin"], ["created_at", "2019-05-18 01:35:27.166404"], ["updated_at", "2019-05-18 01:35:27.166404"]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[35m (188.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:23
+Completed 201 Created in 198ms (Views: 0.6ms | ActiveRecord: 189.4ms)
+
+
+Started POST "/users" for ::1 at 2019-05-17 20:55:20 -0500
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"testusername", "name"=>"Test name", "description"=>"Test description this is a test description testing", "password"=>"[FILTERED]", "residence"=>"Test Residence", "role"=>"admin"}, "user"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:23
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "testusername"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:23
+Completed 422 Unprocessable Entity in 10ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2019-05-17 20:55:44 -0500
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+Completed 200 OK in 62ms (Views: 61.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/10" for ::1 at 2019-05-17 20:56:01 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"10", "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=10):
+  
+app/controllers/users_controller.rb:9:in `show'
+Started GET "/users/9" for ::1 at 2019-05-17 20:56:05 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=9):
+  
+app/controllers/users_controller.rb:9:in `show'
+Started GET "/users/8" for ::1 at 2019-05-17 20:56:09 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"8", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/1" for ::1 at 2019-05-17 20:56:19 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started PUT "/users/1" for ::1 at 2019-05-17 20:56:59 -0500
+Processing by UsersController#update as */*
+  Parameters: {"users"=>{"username"=>"anotherusername", "name"=>"Test name", "description"=>"Test description this is a test description testing", "password"=>"[FILTERED]", "residence"=>"Test Residence", "role"=>"admin"}, "id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:35:in `user_param'
+app/controllers/users_controller.rb:41:in `update'
+Started PUT "/users/1" for ::1 at 2019-05-17 20:57:09 -0500
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"username"=>"anotherusername", "name"=>"Test name", "description"=>"Test description this is a test description testing", "password"=>"[FILTERED]", "residence"=>"Test Residence", "role"=>"admin"}, "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:41
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "anotherusername"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "username" = ?, "name" = ?, "description" = ?, "password" = ?, "residence" = ?, "role" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["username", "anotherusername"], ["name", "Test name"], ["description", "Test description this is a test description testing"], ["password", "passwordpassword"], ["residence", "Test Residence"], ["role", "admin"], ["updated_at", "2019-05-18 01:57:09.725669"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:41
+  [1m[35m (241.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:41
+Completed 200 OK in 252ms (Views: 0.4ms | ActiveRecord: 244.1ms)
+
+
+Started DELETE "/users/1" for ::1 at 2019-05-17 20:57:30 -0500
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"1", "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:49
+  [1m[36mUser Destroy (0.9ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:49
+  [1m[35m (165.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:49
+Completed 204 No Content in 173ms (ActiveRecord: 166.6ms)
+
+
+Started POST "/message" for ::1 at 2019-05-17 21:01:53 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/message"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/messages" for ::1 at 2019-05-17 21:02:04 -0500
+Processing by MessagesController#create as */*
+  Parameters: {"messages"=>{"text"=>"messagetextmessagetextmessagetext", "chat_id"=>"5"}, "message"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:23
+  [1m[36mMessage Create (23.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at", "chat_id") VALUES (?, ?, ?, ?)[0m  [["text", "messagetextmessagetextmessagetext"], ["created_at", "2019-05-18 02:02:04.182780"], ["updated_at", "2019-05-18 02:02:04.182780"], ["chat_id", 5]]
+  ↳ app/controllers/messages_controller.rb:23
+  [1m[35m (174.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:23
+Completed 201 Created in 212ms (Views: 0.8ms | ActiveRecord: 199.3ms)
+
+
+Started GET "/messages" for ::1 at 2019-05-17 21:03:19 -0500
+Processing by MessagesController#index as */*
+  Parameters: {"message"=>{}}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/messages/1" for ::1 at 2019-05-17 21:03:31 -0500
+Processing by MessagesController#show as */*
+  Parameters: {"id"=>"1", "message"=>{}}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:9
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/messages/1" for ::1 at 2019-05-17 21:04:01 -0500
+Processing by MessagesController#update as */*
+  Parameters: {"message"=>{"text"=>"adifferentmessage Text", "chat_id"=>"7"}, "id"=>"1"}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:41
+  [1m[36mMessage Update (2.2ms)[0m  [1m[33mUPDATE "messages" SET "text" = ?, "chat_id" = ?, "updated_at" = ? WHERE "messages"."id" = ?[0m  [["text", "adifferentmessage Text"], ["chat_id", 7], ["updated_at", "2019-05-18 02:04:01.584651"], ["id", 1]]
+  ↳ app/controllers/messages_controller.rb:41
+  [1m[35m (169.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:41
+Completed 200 OK in 178ms (Views: 0.6ms | ActiveRecord: 171.7ms)
+
+
+Started DELETE "/messages/1" for ::1 at 2019-05-17 21:04:26 -0500
+Processing by MessagesController#destroy as */*
+  Parameters: {"id"=>"1", "message"=>{}}
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:49
+  [1m[36mMessage Destroy (1.2ms)[0m  [1m[31mDELETE FROM "messages" WHERE "messages"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/messages_controller.rb:49
+  [1m[35m (178.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:49
+Completed 204 No Content in 187ms (ActiveRecord: 179.8ms)
+
+
+Started POST "/users" for ::1 at 2019-05-17 21:32:07 -0500
+Processing by UsersController#create as */*
+  Parameters: {"ratings"=>{"comment"=>"commentcommentcomment", "type"=>"Test type", "rating"=>"3", "rateable_id"=>"2", "rateable_type"=>"type"}, "user"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:18:in `user_params'
+app/controllers/users_controller.rb:22:in `create'
+Started POST "/ratings" for ::1 at 2019-05-17 21:32:27 -0500
+Processing by RatingsController#create as */*
+  Parameters: {"ratings"=>{"comment"=>"commentcommentcomment", "type"=>"Test type", "rating"=>"3", "rateable_id"=>"2", "rateable_type"=>"type"}, "rating"=>{}}
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.3ms)
+
+
+  
+NameError (undefined local variable or method `t' for #<RatingsController:0x00000000067fab38>):
+  
+app/controllers/ratings_controller.rb:19:in `rating_params'
+app/controllers/ratings_controller.rb:27:in `create'
+Started POST "/ratings" for ::1 at 2019-05-17 21:32:43 -0500
+Processing by RatingsController#create as */*
+  Parameters: {"ratings"=>{"comment"=>"commentcommentcomment", "type"=>"Test type", "rating"=>"3", "rateable_id"=>"2", "rateable_type"=>"type"}, "rating"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'Test type'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Rating.inheritance_column to use another column for that information.):
+  
+app/controllers/ratings_controller.rb:22:in `create'
+Started POST "/ratings" for ::1 at 2019-05-17 21:33:02 -0500
+Processing by RatingsController#create as */*
+  Parameters: {"ratings"=>{"comment"=>"commentcommentcomment", "type"=>"Test", "rating"=>"3", "rateable_id"=>"2", "rateable_type"=>"type"}, "rating"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'Test'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Rating.inheritance_column to use another column for that information.):
+  
+app/controllers/ratings_controller.rb:22:in `create'
+Started POST "/tags" for ::1 at 2019-05-17 21:36:44 -0500
+Processing by TagsController#create as */*
+  Parameters: {"tags"=>{"name"=>"testtagname"}, "tag"=>{}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tags_controller.rb:23
+  [1m[36mTag Create (1.0ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "testtagname"], ["created_at", "2019-05-18 02:36:44.640447"], ["updated_at", "2019-05-18 02:36:44.640447"]]
+  ↳ app/controllers/tags_controller.rb:23
+  [1m[35m (153.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tags_controller.rb:23
+Completed 201 Created in 165ms (Views: 1.2ms | ActiveRecord: 155.5ms)
+
+
+Started GET "/tags" for ::1 at 2019-05-17 21:36:56 -0500
+Processing by TagsController#index as */*
+  Parameters: {"tag"=>{}}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/controllers/tags_controller.rb:5
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tags/1" for ::1 at 2019-05-17 21:37:03 -0500
+Processing by TagsController#show as */*
+  Parameters: {"id"=>"1", "tag"=>{}}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:9
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/tags/1" for ::1 at 2019-05-17 21:37:32 -0500
+Processing by TagsController#update as */*
+  Parameters: {"tag"=>{"name"=>"anothertesttagname"}, "id"=>"1"}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tags_controller.rb:41
+  [1m[36mTag Update (1.1ms)[0m  [1m[33mUPDATE "tags" SET "name" = ?, "updated_at" = ? WHERE "tags"."id" = ?[0m  [["name", "anothertesttagname"], ["updated_at", "2019-05-18 02:37:32.825300"], ["id", 1]]
+  ↳ app/controllers/tags_controller.rb:41
+  [1m[35m (124.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tags_controller.rb:41
+Completed 200 OK in 133ms (Views: 0.4ms | ActiveRecord: 126.2ms)
+
+
+Started DELETE "/tags/1" for ::1 at 2019-05-17 21:37:47 -0500
+Processing by TagsController#destroy as */*
+  Parameters: {"id"=>"1", "tag"=>{}}
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:49
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tags_controller.rb:49
+  [1m[36mTag Destroy (0.9ms)[0m  [1m[31mDELETE FROM "tags" WHERE "tags"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/tags_controller.rb:49
+  [1m[35m (123.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tags_controller.rb:49
+Completed 204 No Content in 130ms (ActiveRecord: 124.3ms)
+
+

@@ -1,10 +1,13 @@
 class CartsController < ApplicationController
-  def list
+  #GET all
+  def index
     @carts = Cart.all
+    render json: @carts
   end
-
+  #GET /cart/:id
   def show
     @cart = Cart.find(params[:id])
+    render json: @cart
   end
 
   def new
@@ -12,15 +15,15 @@ class CartsController < ApplicationController
   end
 
   def cart_params
-    params.require(:carts)
+    params.require(:carts).permit(:user_id)
   end
-
+  #POST
   def create
     @cart = Cart.new(cart_params)
     if @cart.save
-      redirect_to :action => 'list'
+      render json: @cart, status: :created, location: @cart
     else
-      render :action => 'new'
+      render json: @cart.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class CartsController < ApplicationController
   end
 
   def cart_param
-    params.require(:cart)
+    params.require(:cart).permit(:user_id)
   end
-
+  #PATCH/PUT /cart/1
   def update
     @cart = Cart.find(params[:id])
 
-    if @cart.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @cart
+    if @cart.update_attributes(cart_param)
+      render json: @cart
+    else
+      render json: @cart.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /cart/1
+  def destroy
     Cart.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

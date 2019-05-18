@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
-  def list
+  #GET all
+  def index
     @users = User.all
+    render json: @users
   end
-
+  #GET /user/:id
   def show
     @user = User.find(params[:id])
+    render json: @user
   end
 
   def new
@@ -12,15 +15,15 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:users)
+    params.require(:users).permit(:username, :name, :description, :password, :residence, :role)
   end
-
+  #POST
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to :action => 'list'
+      render json: @user, status: :created, location: @user
     else
-      render :action => 'new'
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class UsersController < ApplicationController
   end
 
   def user_param
-    params.require(:user)
+    params.require(:user).permit(:username, :name, :description, :password, :residence, :role)
   end
-
+  #PATCH/PUT /user/1
   def update
     @user = User.find(params[:id])
 
-    if @user.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @user
+    if @user.update_attributes(user_param)
+      render json: @user
+    else
+      render json: @user.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /user/1
+  def destroy
     User.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

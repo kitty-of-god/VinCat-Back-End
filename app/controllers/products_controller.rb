@@ -1,10 +1,13 @@
 class ProductsController < ApplicationController
-  def list
+  #GET all
+  def index
     @products = Product.all
+    render json: @products
   end
-  #GET /product
+  #GET /product/:id
   def show
     @product = Product.find(params[:id])
+    render json: @product
   end
 
   def new
@@ -12,15 +15,15 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:products)
+    params.require(:products).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender)
   end
   #POST
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to :action => 'list'
+      render json: @product, status: :created, location: @product
     else
-      render :action => 'new'
+      render json: @product.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class ProductsController < ApplicationController
   end
 
   def product_param
-    params.require(:product)
+    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender)
   end
   #PATCH/PUT /product/1
   def update
     @product = Product.find(params[:id])
 
-    if @product.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @product
+    if @product.update_attributes(product_param)
+      render json: @product
+    else
+      render json: @product.errors, status: :unprocessable_entity
     end
   end
   #DELETE /product/1
-  def delete
+  def destroy
     Product.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end
