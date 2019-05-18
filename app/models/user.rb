@@ -1,12 +1,12 @@
 class User < ApplicationRecord
-  has_many :products
-  has_many :sales
+  has_many :products, dependent: :destroy
+  has_many :sales, dependent: :destroy
   has_many :reports, as: :reportable
-  has_many :ratings, as: :rateable
-  has_many :chats
+  has_many :ratings, as: :rateable, dependent: :destroy
+  has_many :chats, dependent: :destroy
   has_many :messages, through: :chats
-  has_one :cart
-  has_one :image, as: :imageable
+  has_one :cart, dependent: :destroy
+  has_one :image, as: :imageable, dependent: :destroy
 
 
   validates :username,

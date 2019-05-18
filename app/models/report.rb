@@ -7,6 +7,4 @@ class Report < ApplicationRecord
   length: { maximum: 200},
   presence: true
   
-  validates :type, #no definido
-  presence: true
 end
