@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id          :integer          not null, primary key
+#  username    :string
+#  name        :string
+#  description :string
+#  password    :string
+#  residence   :string
+#  role        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :sales, dependent: :destroy
