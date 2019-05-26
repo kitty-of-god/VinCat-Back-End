@@ -10,8 +10,10 @@
   User.create!([{
                     username: Faker::Internet.username(6),
                     name: Faker::Name.first_name,
+                    email: Faker::Internet.email,
                     description: Faker::Hacker.say_something_smart,
                     password: Faker::Internet.password(3),
+                    password_confirmation: :password,
                     residence: Faker::Address.city,
                     role: "natural"
                 }])
