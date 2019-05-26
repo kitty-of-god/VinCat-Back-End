@@ -12,8 +12,8 @@
                     name: Faker::Name.first_name,
                     email: Faker::Internet.email,
                     description: Faker::Hacker.say_something_smart,
-                    password: Faker::Internet.password(3),
-                    password_confirmation: :password,
+                    password: "1234",
+                    password_confirmation: "1234",
                     residence: Faker::Address.city,
                     role: "natural"
                 }])
