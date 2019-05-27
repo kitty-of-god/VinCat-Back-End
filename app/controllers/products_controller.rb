@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:products).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender)
+    params.require(:products).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
   end
   #POST
   def create
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   end
 
   def product_param
-    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender)
+    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
   end
   #PATCH/PUT /product/1
   def update
