@@ -1,10 +1,13 @@
 class SalesController < ApplicationController
-  def list
+  #GET all
+  def index
     @sales = Sale.all
+    render json: @sales
   end
-
+  #GET /sale/:id
   def show
     @sale = Sale.find(params[:id])
+    render json: @sale
   end
 
   def new
@@ -12,15 +15,15 @@ class SalesController < ApplicationController
   end
 
   def sale_params
-    params.require(:sales)
+    params.require(:sales).permit(:date, :confirm_seller, :confirm_buyer, :seller_id, :buyer_id)
   end
-
+  #POST
   def create
     @sale = Sale.new(sale_params)
     if @sale.save
-      redirect_to :action => 'list'
+      render json: @sale, status: :created, location: @sale
     else
-      render :action => 'new'
+      render json: @sale.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class SalesController < ApplicationController
   end
 
   def sale_param
-    params.require(:sale)
+    params.require(:sale).permit(:date, :confirm_seller, :confirm_buyer, :seller_id, :buyer_id)
   end
-
+  #PATCH/PUT /sale/1
   def update
     @sale = Sale.find(params[:id])
 
-    if @sale.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @sale
+    if @sale.update_attributes(sale_param)
+      render json: @sale
+    else
+      render json: @sale.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /sale/1
+  def destroy
     Sale.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

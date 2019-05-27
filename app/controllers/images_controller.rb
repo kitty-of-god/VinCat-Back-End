@@ -1,10 +1,13 @@
 class ImagesController < ApplicationController
-  def list
+  #GET all
+  def index
     @images = Image.all
+    render json: @images
   end
-
+  #GET /image/:id
   def show
     @image = Image.find(params[:id])
+    render json: @image
   end
 
   def new
@@ -12,15 +15,15 @@ class ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:images)
+    params.require(:images).permit(:name, :imageable_id, :imageable_type)
   end
-
+  #POST
   def create
     @image = Image.new(image_params)
     if @image.save
-      redirect_to :action => 'list'
+      render json: @image, status: :created, location: @image
     else
-      render :action => 'new'
+      render json: @image.errors, status: :unprocessable_entity
     end
   end
 
@@ -29,19 +32,20 @@ class ImagesController < ApplicationController
   end
 
   def image_param
-    params.require(:image)
+    params.require(:image).permit(:name, :imageable_id, :imageable_type)
   end
-
+  #PATCH/PUT /image/1
   def update
     @image = Image.find(params[:id])
 
-    if @image.update_attributes(book_param)
-      redirect_to :action => 'show', :id => @image
+    if @image.update_attributes(image_param)
+      render json: @image
+    else
+      render json: @image.errors, status: :unprocessable_entity
     end
   end
-
-  def delete
+  #DELETE /image/1
+  def destroy
     Image.find(params[:id]).destroy
-    redirect_to :action => 'list'
   end
 end

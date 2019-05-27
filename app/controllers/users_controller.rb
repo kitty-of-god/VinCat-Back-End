@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:users).permit(:username, :name, :description, :password, :residence, :role)
+    params.require(:users).permit(:username, :name, :email, :description, :password, :password_confirmation, :residence, :role)
   end
   #POST
   def create
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   def user_param
-    params.require(:user).permit(:username, :name, :description, :password, :residence, :role)
+    params.require(:user).permit(:username, :name, :email, :description, :password, :password_confirmation, :residence, :role)
   end
   #PATCH/PUT /user/1
   def update
