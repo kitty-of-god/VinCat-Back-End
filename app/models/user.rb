@@ -53,9 +53,6 @@ class User < ApplicationRecord
   validates :role,
   inclusion: { in: %w(admin tienda natural), message: "%{value} no es un valor permitido" },
   presence: true
-
-
-
 end
 
 =begin
