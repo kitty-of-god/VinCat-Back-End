@@ -1,8 +1,13 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:show, :current]
+  before_action :set_user, only: [:show, :update, :destroy]
   #GET all
   def index
     @users = User.all
     render json: @users
+  end
+  def current
+    render json: current_user
   end
   #GET /user/:id
   def show
@@ -15,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:users).permit(:username, :name, :description, :password, :residence, :role)
+    params.require(:users).permit(:username, :name, :email, :description, :password, :password_confirmation,:residence, :role)
   end
   #POST
   def create

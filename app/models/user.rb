@@ -14,6 +14,7 @@
 #
 
 class User < ApplicationRecord
+  has_secure_password
   has_many :products, dependent: :destroy
   has_many :sales, dependent: :destroy
   has_many :reports, as: :reportable
