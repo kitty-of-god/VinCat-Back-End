@@ -28,7 +28,7 @@ class Product < ApplicationRecord
   has_and_belongs_to_many :carts
   validates :name,
   format: { with: /\A[\w\s]+\z/, message: "only allows numbers, letters and spaces" },
-  length: { in: 2..25},
+  length: { in: 2..50},
   presence: true
 
   validates :description,

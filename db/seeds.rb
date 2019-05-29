@@ -17,7 +17,11 @@
                     residence: Faker::Address.city,
                     role: "natural"
                 }])
-
+                
+end
+  
+for i in 1..5 do
+  5.times do
   Product.create!([{
                        name: Faker::Commerce.product_name,
                        description: Faker::Commerce.department,
@@ -27,9 +31,13 @@
                        gender: "Men",
                        state: 1,
                        new: 0,
-                       user_id: User.first.id
+                       user_id: i
                    }])
-                   
+  end
+end
+      
+      
+5.times do
   Tag.create!([{
                 name: Faker::Games::Pokemon.name
               }])

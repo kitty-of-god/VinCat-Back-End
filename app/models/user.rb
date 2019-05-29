@@ -2,15 +2,16 @@
 #
 # Table name: users
 #
-#  id          :integer          not null, primary key
-#  username    :string
-#  name        :string
-#  description :string
-#  password    :string
-#  residence   :string
-#  role        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id              :integer          not null, primary key
+#  username        :string
+#  name            :string
+#  description     :string
+#  password_digest :string
+#  residence       :string
+#  role            :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  email           :string
 #
 
 class User < ApplicationRecord
@@ -23,6 +24,8 @@ class User < ApplicationRecord
   has_many :messages, through: :chats
   has_one :cart, dependent: :destroy
   has_one :image, as: :imageable, dependent: :destroy
+
+  
 
 
   validates :username,
