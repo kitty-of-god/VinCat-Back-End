@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  acts_as_token_authentication_handler_for User #kinda works
+  acts_as_token_authentication_handler_for User, except: [ :create]  #kinda works
   #before_action :authenticate_user, only: [:show, :current]
   #before_action :set_user, only: [:show, :update, :destroy]
   #GET all
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:users).permit(:username, :name, :email, :description, :password, :password_confirmation, :residence, :role)
+    params.require(:users).permit(:username, :name, :email, :password, :password_confirmation, :residence, :role)
   end
   #POST
   def create
