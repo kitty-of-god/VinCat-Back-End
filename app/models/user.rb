@@ -15,6 +15,7 @@
 #
 
 class User < ApplicationRecord
+  acts_as_token_authenticatable
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -27,9 +28,16 @@ class User < ApplicationRecord
   has_many :messages, through: :chats
   has_one :cart, dependent: :destroy
   has_one :image, as: :imageable, dependent: :destroy
-
   
+=begin
 
+  alias_method :authenticate, :valid_password?
+
+  def self.from_token_payload(payload)
+    self.find payload["sub"]
+  end
+  
+=end
 
   validates :username,
   format: { with: /\A[\S]+\z/, message: "only allows letters and spaces" },

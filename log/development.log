@@ -15260,3 +15260,1913 @@ Migrating to RemovePwdDigest (20190601044001)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/users" for 186.28.66.240 at 2019-06-01 05:12:11 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Small Cotton Shoes", description: "Outdoors & Shoes", price: 18, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 1, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Lightweight Iron Shirt", description: "Computers & Tools", price: 97, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 2, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Mediocre Plastic Watch", description: "Kids", price: 43, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 3, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Small Aluminum Car", description: "Baby, Kids & Books", price: 94, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 4, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Ergonomic Plastic Car", description: "Outdoors", price: 39, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 5, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Small Cotton Shoes", description: "Outdoors & Shoes", price: 18, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 1, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Lightweight Iron Shirt", description: "Computers & Tools", price: 97, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 2, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Mediocre Plastic Watch", description: "Kids", price: 43, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 3, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Small Aluminum Car", description: "Baby, Kids & Books", price: 94, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 4, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Ergonomic Plastic Car", description: "Outdoors", price: 39, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 5, sale_id: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (78.7ms)
+Completed 200 OK in 203ms (Views: 169.5ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:12:54 +0000
+  
+ActionController::RoutingError (uninitialized constant AplicationController):
+  
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/sessions?email=tyra@beahandooley.info&password=[FILTERED]" for 186.28.66.240 at 2019-06-01 05:13:50 +0000
+  
+ActionController::RoutingError (uninitialized constant AplicationController):
+  
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:15:54 +0000
+  
+ActionController::RoutingError (uninitialized constant AplicationController):
+  
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started GET "/users" for 186.28.66.240 at 2019-06-01 05:18:17 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Small Cotton Shoes", description: "Outdoors & Shoes", price: 18, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 1, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Lightweight Iron Shirt", description: "Computers & Tools", price: 97, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 2, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Mediocre Plastic Watch", description: "Kids", price: 43, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 3, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Small Aluminum Car", description: "Baby, Kids & Books", price: 94, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 4, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Ergonomic Plastic Car", description: "Outdoors", price: 39, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 5, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Small Cotton Shoes", description: "Outdoors & Shoes", price: 18, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 1, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Lightweight Iron Shirt", description: "Computers & Tools", price: 97, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 2, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Mediocre Plastic Watch", description: "Kids", price: 43, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 3, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Small Aluminum Car", description: "Baby, Kids & Books", price: 94, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 4, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Ergonomic Plastic Car", description: "Outdoors", price: 39, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 04:43:30", updated_at: "2019-06-01 04:43:30", user_id: 5, sale_id: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (74.36ms)
+Completed 200 OK in 125ms (Views: 103.0ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:18:47 +0000
+  
+ActionController::RoutingError (uninitialized constant AplicationController):
+  
+app/controllers/sessions_controller.rb:1:in `<main>'
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:21:59 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:24:16 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as */*
+  Parameters: {"user"=>{"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `valid_password?' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:5:in `create'
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:25:03 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]", "session"=>{"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tyra@beahandooley.info"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 201 Created in 168ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddAuthenticationTokenToUsers (20190601053324)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "authentication_token" varchar(30)[0m
+  ↳ db/migrate/20190601053324_add_authentication_token_to_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190601053324_add_authentication_token_to_users.rb:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  ↳ db/migrate/20190601053324_add_authentication_token_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601053324"]]
+  ↳ bin/rails:4
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? AND "users"."id" != ? LIMIT ?[0m  [["username", "stephen.langosh"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:38:25 +0000
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]", "session"=>{"email"=>"tyra@beahandooley.info", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "tyra@beahandooley.info"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 179ms (Views: 6.5ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE  INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts_products"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "carts_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_cart_id" ON "carts_products" ("cart_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_product_id" ON "carts_products" ("product_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "chats"[0m
+  ↳ db/schema.rb:31
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "sender_user_id" integer, "receiver_user_id" integer, "sender_id" integer, "receiver_id" integer)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_receiver_id" ON "chats" ("receiver_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_sender_id" ON "chats" ("sender_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "images"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "imageable_id" integer, "imageable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE  INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages"[0m
+  ↳ db/schema.rb:51
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "chat_id" integer)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:59
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" integer, "quantity" integer, "kind" varchar, "gender" varchar, "state" boolean, "new" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "sale_id" integer)[0m
+  ↳ db/schema.rb:59
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "products_tags"[0m
+  ↳ db/schema.rb:76
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "products_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:76
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_product_id" ON "products_tags" ("product_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_tag_id" ON "products_tags" ("tag_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ratings"[0m
+  ↳ db/schema.rb:85
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" varchar, "kind" varchar, "rating" integer, "rateable_id" integer, "rateable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  ↳ db/schema.rb:96
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reportable_id" integer, "reportable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:96
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE  INDEX "index_reports_on_reportable_id_and_reportable_type" ON "reports" ("reportable_id", "reportable_type")[0m
+  ↳ db/schema.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "sales"[0m
+  ↳ db/schema.rb:105
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "sales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" time, "confirm_seller" boolean, "confirm_buyer" varchar, "seller_user_id" integer, "buyer_user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seller_id" integer, "buyer_id" integer)[0m
+  ↳ db/schema.rb:105
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_buyer_id" ON "sales" ("buyer_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_seller_id" ON "sales" ("seller_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags"[0m
+  ↳ db/schema.rb:119
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:119
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:125
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "name" varchar, "description" varchar, "residence" varchar, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "authentication_token" varchar(30))[0m
+  ↳ db/schema.rb:125
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  ↳ db/schema.rb:125
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:125
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:125
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190601053324)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (11.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190515034643),
+(20190517035055),
+(20190514055810),
+(20190518005107),
+(20190516023433),
+(20190518033135),
+(20190517054134),
+(20190516231003),
+(20190517035226),
+(20190517060611),
+(20190526215946),
+(20190515034925),
+(20190526220849),
+(20190514063451),
+(20190518011103),
+(20190601035610),
+(20190514054854),
+(20190516231931),
+(20190514061337),
+(20190516023552),
+(20190517035251),
+(20190515035140),
+(20190528031724),
+(20190517034758),
+(20190528031131),
+(20190601035122),
+(20190515234931),
+(20190514060908),
+(20190601044001),
+(20190528031416),
+(20190517035200),
+(20190515034746),
+(20190518021054);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-01 05:39:26.591531"], ["updated_at", "2019-06-01 05:39:26.591531"]]
+  ↳ db/schema.rb:13
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE  INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts_products"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (15.5ms)[0m  [1m[35mCREATE TABLE "carts_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_cart_id" ON "carts_products" ("cart_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_product_id" ON "carts_products" ("product_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "chats"[0m
+  ↳ db/schema.rb:31
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "sender_user_id" integer, "receiver_user_id" integer, "sender_id" integer, "receiver_id" integer)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_receiver_id" ON "chats" ("receiver_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_sender_id" ON "chats" ("sender_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "images"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "imageable_id" integer, "imageable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE  INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages"[0m
+  ↳ db/schema.rb:51
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "chat_id" integer)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:59
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" integer, "quantity" integer, "kind" varchar, "gender" varchar, "state" boolean, "new" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "sale_id" integer)[0m
+  ↳ db/schema.rb:59
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products_tags"[0m
+  ↳ db/schema.rb:76
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "products_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:76
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_product_id" ON "products_tags" ("product_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_tag_id" ON "products_tags" ("tag_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ratings"[0m
+  ↳ db/schema.rb:85
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" varchar, "kind" varchar, "rating" integer, "rateable_id" integer, "rateable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  ↳ db/schema.rb:96
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reportable_id" integer, "reportable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:96
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE  INDEX "index_reports_on_reportable_id_and_reportable_type" ON "reports" ("reportable_id", "reportable_type")[0m
+  ↳ db/schema.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "sales"[0m
+  ↳ db/schema.rb:105
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "sales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" time, "confirm_seller" boolean, "confirm_buyer" varchar, "seller_user_id" integer, "buyer_user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seller_id" integer, "buyer_id" integer)[0m
+  ↳ db/schema.rb:105
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_buyer_id" ON "sales" ("buyer_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_seller_id" ON "sales" ("seller_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags"[0m
+  ↳ db/schema.rb:119
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:119
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:125
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "name" varchar, "description" varchar, "residence" varchar, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "authentication_token" varchar(30))[0m
+  ↳ db/schema.rb:125
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  ↳ db/schema.rb:125
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/schema.rb:125
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/schema.rb:125
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190601053324)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190515034643),
+(20190517035055),
+(20190514055810),
+(20190518005107),
+(20190516023433),
+(20190518033135),
+(20190517054134),
+(20190516231003),
+(20190517035226),
+(20190517060611),
+(20190526215946),
+(20190515034925),
+(20190526220849),
+(20190514063451),
+(20190518011103),
+(20190601035610),
+(20190514054854),
+(20190516231931),
+(20190514061337),
+(20190516023552),
+(20190517035251),
+(20190515035140),
+(20190528031724),
+(20190517034758),
+(20190528031131),
+(20190601035122),
+(20190515234931),
+(20190514060908),
+(20190601044001),
+(20190528031416),
+(20190517035200),
+(20190515034746),
+(20190518021054);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-01 05:39:27.085845"], ["updated_at", "2019-06-01 05:39:27.085845"]]
+  ↳ db/schema.rb:13
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-06-01 05:39:27.098127"], ["key", "environment"]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "roman_schiller"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "-xsoWzk4dzD7XBnSn5b5"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "roman_schiller"], ["name", "Efren"], ["description", "Try to index the SSL capacitor, maybe it will compress the bluetooth driver!"], ["residence", "New Kelvin"], ["role", "natural"], ["created_at", "2019-06-01 05:39:27.382027"], ["updated_at", "2019-06-01 05:39:27.382027"], ["email", "jarrett@watersconsidine.net"], ["encrypted_password", "$2a$11$xDbcfs/36C55zW6onsZ3hOzMvTi4vGi2Ca853g5LQEoXybaXwWu1G"], ["authentication_token", "-xsoWzk4dzD7XBnSn5b5"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "emelinemertz@gusikowski.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "austinaustin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "_joUBqpycGz8y7Gz7Jod"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "austinaustin"], ["name", "Eartha"], ["description", "Overriding the port won't do anything, we need to calculate the bluetooth ib capacitor!"], ["residence", "Rempelbury"], ["role", "natural"], ["created_at", "2019-06-01 05:39:27.533267"], ["updated_at", "2019-06-01 05:39:27.533267"], ["email", "emelinemertz@gusikowski.net"], ["encrypted_password", "$2a$11$nZs94zz4viu55XrsBawkTe1VgUquQSEpBm8TkmcCMceBmxhvvL3zO"], ["authentication_token", "_joUBqpycGz8y7Gz7Jod"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "francisweber@jaskolskiarmstrong.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "fredia_hermiston"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "C_6TPv44Yree4ScsxpG1"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "fredia_hermiston"], ["name", "Raylene"], ["description", "Overriding the feed won't do anything, we need to index the digital sdd card!"], ["residence", "Faheyview"], ["role", "natural"], ["created_at", "2019-06-01 05:39:27.684071"], ["updated_at", "2019-06-01 05:39:27.684071"], ["email", "francisweber@jaskolskiarmstrong.biz"], ["encrypted_password", "$2a$11$ffb6ZDxiQawAGCeyPdvZ.e4O0eXSPaTac3Rs9yKi.asv6QcSslURi"], ["authentication_token", "C_6TPv44Yree4ScsxpG1"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "katinaconn@breitenberg.io"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shameka"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "JuKc9S3bMAAx4jRDGwQR"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "shameka"], ["name", "Carmelo"], ["description", "If we reboot the microchip, we can get to the SDD system through the redundant SMS application!"], ["residence", "South Todchester"], ["role", "natural"], ["created_at", "2019-06-01 05:39:27.838501"], ["updated_at", "2019-06-01 05:39:27.838501"], ["email", "katinaconn@breitenberg.io"], ["encrypted_password", "$2a$11$jJXcLSTj4HZQjtkYhzqyyOoKF6ihEKfzvCUPLKVbDYz.ePc7ZpmPm"], ["authentication_token", "JuKc9S3bMAAx4jRDGwQR"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "willettafriesen@jonechowalter.net"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shaunna"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "oj_EqEpZdzPgZe7rmfMM"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "shaunna"], ["name", "Stephan"], ["description", "You can't override the firewall without calculating the primary IB interface!"], ["residence", "Dareburgh"], ["role", "natural"], ["created_at", "2019-06-01 05:39:27.989843"], ["updated_at", "2019-06-01 05:39:27.989843"], ["email", "willettafriesen@jonechowalter.net"], ["encrypted_password", "$2a$11$9kvDDjF/s8hXT10lyI0NMOgmWs1sTky2BHCeXEqDClz8PVKrONU2i"], ["authentication_token", "oj_EqEpZdzPgZe7rmfMM"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Incredible Wooden Plate"], ["description", "Beauty"], ["price", 58], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.030330"], ["updated_at", "2019-06-01 05:39:28.030330"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Intelligent Paper Bottle"], ["description", "Industrial, Outdoors & Electronics"], ["price", 5], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.044985"], ["updated_at", "2019-06-01 05:39:28.044985"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Granite Shoes"], ["description", "Music, Health & Books"], ["price", 0], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.061111"], ["updated_at", "2019-06-01 05:39:28.061111"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mediocre Marble Plate"], ["description", "Computers & Industrial"], ["price", 55], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.075656"], ["updated_at", "2019-06-01 05:39:28.075656"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Wooden Table"], ["description", "Games & Jewelry"], ["price", 70], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.088510"], ["updated_at", "2019-06-01 05:39:28.088510"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Enormous Paper Chair"], ["description", "Computers"], ["price", 11], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.103911"], ["updated_at", "2019-06-01 05:39:28.103911"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Small Paper Pants"], ["description", "Electronics"], ["price", 46], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.120629"], ["updated_at", "2019-06-01 05:39:28.120629"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ergonomic Copper Bench"], ["description", "Home & Electronics"], ["price", 5], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.136943"], ["updated_at", "2019-06-01 05:39:28.136943"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Leather Shoes"], ["description", "Beauty"], ["price", 78], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.153391"], ["updated_at", "2019-06-01 05:39:28.153391"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mediocre Linen Knife"], ["description", "Music, Health & Home"], ["price", 0], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.169029"], ["updated_at", "2019-06-01 05:39:28.169029"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rustic Bronze Plate"], ["description", "Industrial"], ["price", 65], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.185458"], ["updated_at", "2019-06-01 05:39:28.185458"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Cotton Gloves"], ["description", "Automotive"], ["price", 14], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.208557"], ["updated_at", "2019-06-01 05:39:28.208557"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lightweight Iron Hat"], ["description", "Baby, Movies & Computers"], ["price", 31], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.226462"], ["updated_at", "2019-06-01 05:39:28.226462"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Bronze Shirt"], ["description", "Books, Shoes & Garden"], ["price", 24], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.245578"], ["updated_at", "2019-06-01 05:39:28.245578"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mediocre Aluminum Table"], ["description", "Home"], ["price", 1], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.261071"], ["updated_at", "2019-06-01 05:39:28.261071"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sleek Concrete Table"], ["description", "Clothing"], ["price", 54], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.280820"], ["updated_at", "2019-06-01 05:39:28.280820"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sleek Marble Lamp"], ["description", "Garden"], ["price", 14], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.298024"], ["updated_at", "2019-06-01 05:39:28.298024"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.9ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mediocre Cotton Coat"], ["description", "Home, Garden & Games"], ["price", 30], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.314009"], ["updated_at", "2019-06-01 05:39:28.314009"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rustic Granite Coat"], ["description", "Clothing, Jewelry & Garden"], ["price", 12], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.332694"], ["updated_at", "2019-06-01 05:39:28.332694"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Marble Shirt"], ["description", "Shoes"], ["price", 54], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.348828"], ["updated_at", "2019-06-01 05:39:28.348828"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gorgeous Plastic Bench"], ["description", "Baby"], ["price", 66], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.364660"], ["updated_at", "2019-06-01 05:39:28.364660"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aerodynamic Granite Table"], ["description", "Clothing"], ["price", 83], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.381065"], ["updated_at", "2019-06-01 05:39:28.381065"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Marble Watch"], ["description", "Baby, Beauty & Home"], ["price", 71], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.396517"], ["updated_at", "2019-06-01 05:39:28.396517"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Incredible Plastic Bench"], ["description", "Electronics, Outdoors & Sports"], ["price", 42], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.413586"], ["updated_at", "2019-06-01 05:39:28.413586"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Small Concrete Car"], ["description", "Health & Jewelry"], ["price", 55], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 05:39:28.428402"], ["updated_at", "2019-06-01 05:39:28.428402"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nidorina"], ["created_at", "2019-06-01 05:39:28.452888"], ["updated_at", "2019-06-01 05:39:28.452888"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "I'll reboot the solid state JBOD pixel, that should interface the PNG pixel!"], ["rating", 0], ["created_at", "2019-06-01 05:39:28.480680"], ["updated_at", "2019-06-01 05:39:28.480680"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Omanyte.mp3"], ["created_at", "2019-06-01 05:39:28.505769"], ["updated_at", "2019-06-01 05:39:28.505769"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "Mind yourself."], ["created_at", "2019-06-01 05:39:28.528362"], ["updated_at", "2019-06-01 05:39:28.528362"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "The SAS card is down, hack the cross-platform firewall so we can connect the RAM hard drive!"], ["created_at", "2019-06-01 05:39:28.554174"], ["updated_at", "2019-06-01 05:39:28.554174"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gastly"], ["created_at", "2019-06-01 05:39:28.568128"], ["updated_at", "2019-06-01 05:39:28.568128"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "If we compress the sensor, we can get to the COM feed through the digital EXE bus!"], ["rating", 3], ["created_at", "2019-06-01 05:39:28.584999"], ["updated_at", "2019-06-01 05:39:28.584999"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Charizard.jpg"], ["created_at", "2019-06-01 05:39:28.598898"], ["updated_at", "2019-06-01 05:39:28.598898"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "We will have justice!"], ["created_at", "2019-06-01 05:39:28.612665"], ["updated_at", "2019-06-01 05:39:28.612665"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "Try to parse the PCI sensor, maybe it will quantify the cross-platform sensor!"], ["created_at", "2019-06-01 05:39:28.628549"], ["updated_at", "2019-06-01 05:39:28.628549"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Machoke"], ["created_at", "2019-06-01 05:39:28.643757"], ["updated_at", "2019-06-01 05:39:28.643757"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.5ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "We need to input the auxiliary ADP application!"], ["rating", 2], ["created_at", "2019-06-01 05:39:28.658295"], ["updated_at", "2019-06-01 05:39:28.658295"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.5ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cloyster.numbers"], ["created_at", "2019-06-01 05:39:28.673670"], ["updated_at", "2019-06-01 05:39:28.673670"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "I had little patience to begin with."], ["created_at", "2019-06-01 05:39:28.685584"], ["updated_at", "2019-06-01 05:39:28.685584"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "Try to synthesize the RAM capacitor, maybe it will generate the wireless capacitor!"], ["created_at", "2019-06-01 05:39:28.700881"], ["updated_at", "2019-06-01 05:39:28.700881"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Venomoth"], ["created_at", "2019-06-01 05:39:28.717112"], ["updated_at", "2019-06-01 05:39:28.717112"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (37.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.5ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Try to override the JBOD hard drive, maybe it will compress the online driver!"], ["rating", 3], ["created_at", "2019-06-01 05:39:28.767413"], ["updated_at", "2019-06-01 05:39:28.767413"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Electabuzz.bmp"], ["created_at", "2019-06-01 05:39:28.784219"], ["updated_at", "2019-06-01 05:39:28.784219"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "Bal'a dash, malanore."], ["created_at", "2019-06-01 05:39:28.800678"], ["updated_at", "2019-06-01 05:39:28.800678"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "The IB feed is down, hack the bluetooth protocol so we can synthesize the USB alarm!"], ["created_at", "2019-06-01 05:39:28.818126"], ["updated_at", "2019-06-01 05:39:28.818126"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Victreebel"], ["created_at", "2019-06-01 05:39:28.831953"], ["updated_at", "2019-06-01 05:39:28.831953"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Try to input the SAS port, maybe it will reboot the optical card!"], ["rating", 2], ["created_at", "2019-06-01 05:39:28.846186"], ["updated_at", "2019-06-01 05:39:28.846186"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mew.avi"], ["created_at", "2019-06-01 05:39:28.857296"], ["updated_at", "2019-06-01 05:39:28.857296"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "Anu'belore Dela'na."], ["created_at", "2019-06-01 05:39:28.871956"], ["updated_at", "2019-06-01 05:39:28.871956"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "Try to synthesize the TCP pixel, maybe it will connect the cross-platform application!"], ["created_at", "2019-06-01 05:39:28.885045"], ["updated_at", "2019-06-01 05:39:28.885045"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 1], ["created_at", "2019-06-01 05:39:28.913199"], ["updated_at", "2019-06-01 05:39:28.913199"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["product_id", 2], ["created_at", "2019-06-01 05:39:28.929861"], ["updated_at", "2019-06-01 05:39:28.929861"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 3], ["created_at", "2019-06-01 05:39:28.943303"], ["updated_at", "2019-06-01 05:39:28.943303"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.3ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 4], ["created_at", "2019-06-01 05:39:28.957628"], ["updated_at", "2019-06-01 05:39:28.957628"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 5], ["created_at", "2019-06-01 05:39:28.974000"], ["updated_at", "2019-06-01 05:39:28.974000"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 6], ["created_at", "2019-06-01 05:39:28.989181"], ["updated_at", "2019-06-01 05:39:28.989181"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 7], ["created_at", "2019-06-01 05:39:29.005544"], ["updated_at", "2019-06-01 05:39:29.005544"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 8], ["created_at", "2019-06-01 05:39:29.023315"], ["updated_at", "2019-06-01 05:39:29.023315"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 9], ["created_at", "2019-06-01 05:39:29.038634"], ["updated_at", "2019-06-01 05:39:29.038634"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 10], ["created_at", "2019-06-01 05:39:29.053398"], ["updated_at", "2019-06-01 05:39:29.053398"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 11], ["created_at", "2019-06-01 05:39:29.070159"], ["updated_at", "2019-06-01 05:39:29.070159"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 12], ["created_at", "2019-06-01 05:39:29.086838"], ["updated_at", "2019-06-01 05:39:29.086838"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 13], ["created_at", "2019-06-01 05:39:29.103700"], ["updated_at", "2019-06-01 05:39:29.103700"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 14], ["created_at", "2019-06-01 05:39:29.119441"], ["updated_at", "2019-06-01 05:39:29.119441"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 15], ["created_at", "2019-06-01 05:39:29.138344"], ["updated_at", "2019-06-01 05:39:29.138344"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["product_id", 16], ["created_at", "2019-06-01 05:39:29.153978"], ["updated_at", "2019-06-01 05:39:29.153978"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 17], ["created_at", "2019-06-01 05:39:29.169456"], ["updated_at", "2019-06-01 05:39:29.169456"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 18], ["created_at", "2019-06-01 05:39:29.186707"], ["updated_at", "2019-06-01 05:39:29.186707"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 19], ["created_at", "2019-06-01 05:39:29.201769"], ["updated_at", "2019-06-01 05:39:29.201769"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 20], ["created_at", "2019-06-01 05:39:29.218503"], ["updated_at", "2019-06-01 05:39:29.218503"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["product_id", 21], ["created_at", "2019-06-01 05:39:29.234566"], ["updated_at", "2019-06-01 05:39:29.234566"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 22], ["created_at", "2019-06-01 05:39:29.249072"], ["updated_at", "2019-06-01 05:39:29.249072"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 23], ["created_at", "2019-06-01 05:39:29.265426"], ["updated_at", "2019-06-01 05:39:29.265426"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 24], ["created_at", "2019-06-01 05:39:29.282603"], ["updated_at", "2019-06-01 05:39:29.282603"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["product_id", 25], ["created_at", "2019-06-01 05:39:29.298548"], ["updated_at", "2019-06-01 05:39:29.298548"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+Started GET "/users" for 186.28.66.240 at 2019-06-01 05:39:52 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:7
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (78.08ms)
+Completed 200 OK in 130ms (Views: 107.9ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:40:06 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]", "session"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 201 Created in 142ms (Views: 6.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1" for 186.28.66.240 at 2019-06-01 05:42:26 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1?authentication_token:=%20-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:42:52 +0000
+Processing by UsersController#show as */*
+  Parameters: {"authentication_token:"=>" -xsoWzk4dzD7XBnSn5b5", "id"=>"1"}
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1?authentication_token:=%20-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:45:37 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as */*
+  Parameters: {"authentication_token:"=>" -xsoWzk4dzD7XBnSn5b5", "id"=>"1"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/1?authentication_token:=%20-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:45:55 +0000
+Processing by UsersController#show as */*
+  Parameters: {"authentication_token:"=>" -xsoWzk4dzD7XBnSn5b5", "id"=>"1"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 05:46:36 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]", "session"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 201 Created in 162ms (Views: 6.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1?email:=jarrett@watersconsidine.net&authentication_token:=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:47:50 +0000
+Processing by UsersController#show as */*
+  Parameters: {"email:"=>"jarrett@watersconsidine.net", "authentication_token:"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"1"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users?email:=jarrett@watersconsidine.net&authentication_token:=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:48:23 +0000
+Processing by UsersController#index as */*
+  Parameters: {"email:"=>"jarrett@watersconsidine.net", "authentication_token:"=>"-xsoWzk4dzD7XBnSn5b5"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users?email:=jarrett@watersconsidine.net&user_token:=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:52:31 +0000
+Processing by UsersController#index as */*
+  Parameters: {"email:"=>"jarrett@watersconsidine.net", "user_token:"=>"-xsoWzk4dzD7XBnSn5b5"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users?email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:57:06 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:57:42 +0000
+Processing by UsersController#index as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 1.6ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:58:18 +0000
+Processing by UsersController#show as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for 186.28.66.240 at 2019-06-01 05:59:05 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (101.19ms)
+Completed 200 OK in 161ms (Views: 135.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/users/1" for 186.28.66.240 at 2019-06-01 05:59:10 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.48ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:59:31 +0000
+Processing by UsersController#index as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (103.12ms)
+Completed 200 OK in 106ms (Views: 104.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 05:59:50 +0000
+Processing by UsersController#index as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.6ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/user_token" for 186.28.66.240 at 2019-06-01 06:09:37 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"kelvin@boyle.io", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"kelvin@boyle.io", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kelvin@boyle.io"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 27ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 186.28.66.240 at 2019-06-01 06:10:34 +0000
+  
+ActionController::RoutingError (undefined method `current_user' for class `ApplicationController'):
+  
+app/controllers/application_controller.rb:3:in `undef_method'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/" for 186.28.66.240 at 2019-06-01 06:11:37 +0000
+Processing by Rails::WelcomeController#index as */*
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.6ms)
+Completed 200 OK in 26ms (Views: 16.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 186.28.66.240 at 2019-06-01 06:11:41 +0000
+  
+ActionController::RoutingError (undefined method `current_user' for class `ApplicationController'):
+  
+app/controllers/application_controller.rb:3:in `undef_method'
+app/controllers/application_controller.rb:3:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+app/controllers/users_controller.rb:1:in `<main>'
+Started GET "/users" for 186.28.66.240 at 2019-06-01 06:15:22 +0000
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8
+[active_model_serializers]   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:8
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 1, name: "Incredible Wooden Plate", description: "Beauty", price: 58, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 1, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 11, name: "Rustic Bronze Plate", description: "Industrial", price: 65, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 3, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 16, name: "Sleek Concrete Table", description: "Clothing", price: 54, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 4, sale_id: nil>
+[active_model_serializers] No serializer found for resource: #<Product id: 21, name: "Gorgeous Plastic Bench", description: "Baby", price: 66, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 5, sale_id: nil>
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (85.3ms)
+Completed 200 OK in 131ms (Views: 115.4ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/user_token" for 186.28.66.240 at 2019-06-01 06:15:38 +0000
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 135ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/user_token" for 186.28.66.240 at 2019-06-01 06:15:54 +0000
+Processing by UserTokenController#create as */*
+  Parameters: {"auth"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 163ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/1" for 186.28.66.240 at 2019-06-01 06:17:46 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"1"}
+Filter chain halted as :authenticate_user_from_token! rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 06:17:53 +0000
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]", "session"=>{"email"=>"jarrett@watersconsidine.net", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 166ms (Views: 6.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 06:18:21 +0000
+Processing by UsersController#index as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/1?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 06:18:29 +0000
+Processing by UsersController#show as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/2?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 06:20:23 +0000
+Processing by UsersController#show as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/2?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 18:52:43 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.6ms)
+
+
+  
+RuntimeError (Could not find a valid mapping for #<User id: 1, username: "roman_schiller", name: "Efren", description: "Try to index the SSL capacitor, maybe it will comp...", residence: "New Kelvin", role: "natural", created_at: "2019-06-01 05:39:27", updated_at: "2019-06-01 05:39:27", email: "jarrett@watersconsidine.net", authentication_token: "-xsoWzk4dzD7XBnSn5b5">):
+  
+devise (4.6.2) lib/devise/mapping.rb:46:in `find_scope!'
+devise (4.6.2) lib/devise/controllers/sign_in_out.rb:35:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/sign_in_handler.rb:10:in `sign_in'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:61:in `perform_sign_in!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:42:in `authenticate_entity_from_token!'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:143:in `block (3 levels) in define_token_authentication_helpers_for'
+simple_token_authentication (1.15.1) lib/simple_token_authentication/token_authentication_handler.rb:145:in `block (2 levels) in define_token_authentication_helpers_for'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'

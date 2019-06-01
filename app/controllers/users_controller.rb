@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, only: [:show, :current]
-  before_action :set_user, only: [:show, :update, :destroy]
+  acts_as_token_authentication_handler_for User #kinda works
+  #before_action :authenticate_user, only: [:show, :current]
+  #before_action :set_user, only: [:show, :update, :destroy]
   #GET all
   def index
     @users = User.all
