@@ -16,7 +16,7 @@ class Report < ApplicationRecord
 
 
   validates :body,
-  length: { maximum: 200},
+  length: { maximum: 300},
   presence: true
   
 end

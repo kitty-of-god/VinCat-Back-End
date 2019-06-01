@@ -1,4 +1,10 @@
 class ProductsController < ApplicationController
+  #GET /products/getKind?kind=KIND "get products by kind"
+  def getKind
+    @products = Product.where("kind = ?", params[:kind])
+    render json: @products
+  end
+  
   #GET all
   def index
     @products = Product.all

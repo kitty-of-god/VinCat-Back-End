@@ -2,19 +2,24 @@
 #
 # Table name: users
 #
-#  id          :integer          not null, primary key
-#  username    :string
-#  name        :string
-#  description :string
-#  password    :string
-#  residence   :string
-#  role        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id              :integer          not null, primary key
+#  username        :string
+#  name            :string
+#  description     :string
+#  password_digest :string
+#  residence       :string
+#  role            :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  email           :string
 #
 
 class User < ApplicationRecord
-  has_secure_password
+  acts_as_token_authenticatable
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :products, dependent: :destroy
   has_many :sales, dependent: :destroy
   has_many :reports, as: :reportable
@@ -23,7 +28,16 @@ class User < ApplicationRecord
   has_many :messages, through: :chats
   has_one :cart, dependent: :destroy
   has_one :image, as: :imageable, dependent: :destroy
+  
+=begin
 
+  alias_method :authenticate, :valid_password?
+
+  def self.from_token_payload(payload)
+    self.find payload["sub"]
+  end
+  
+=end
 
   validates :username,
   format: { with: /\A[\S]+\z/, message: "only allows letters and spaces" },
