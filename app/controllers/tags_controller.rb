@@ -9,6 +9,11 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     render json: @tag
   end
+  
+  def getByTag
+    @tag = Tag.where("name = ?", params[:name])
+    render json: @tag
+  end
 
   def new
     @tag = Tag.new

@@ -18,6 +18,7 @@
 #
 
 class Product < ApplicationRecord
+  #relations
   belongs_to :user, optional: true
   belongs_to :sale, optional: true
   belongs_to :cart, optional: true
@@ -26,6 +27,12 @@ class Product < ApplicationRecord
   has_many :images, as: :imageable, dependent: :destroy
   has_and_belongs_to_many :tags
   has_and_belongs_to_many :carts
+  
+  #scopes
+  scope :available, -> { where("quantity > 0")}
+  scope :PriceOrder, ->{ order(name: :asc, price: :asc)}
+  
+  #validations
   validates :name,
   format: { with: /\A[\w\s]+\z/, message: "only allows numbers, letters and spaces" },
   length: { in: 2..50},

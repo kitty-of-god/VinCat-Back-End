@@ -27,6 +27,7 @@
 #                           PATCH  /messages/:id(.:format)                                                                  messages#update
 #                           PUT    /messages/:id(.:format)                                                                  messages#update
 #                           DELETE /messages/:id(.:format)                                                                  messages#destroy
+#          getKind_products GET    /products/getKind(.:format)                                                              products#getKind
 #                  products GET    /products(.:format)                                                                      products#index
 #                           POST   /products(.:format)                                                                      products#create
 #                   product GET    /products/:id(.:format)                                                                  products#show
@@ -63,6 +64,8 @@
 #                           PATCH  /users/:id(.:format)                                                                     users#update
 #                           PUT    /users/:id(.:format)                                                                     users#update
 #                           DELETE /users/:id(.:format)                                                                     users#destroy
+#                  sessions POST   /sessions(.:format)                                                                      sessions#create
+#                   session DELETE /sessions/:id(.:format)                                                                  sessions#destroy
 #        rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
 # rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
 #        rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
@@ -87,7 +90,11 @@ Rails.application.routes.draw do
   resources :ratings
   resources :reports
   resources :sales
-  resources :tags
+  resources :tags do
+    collection do 
+      get :getByTag
+    end
+  end
   resources :users
   resources :sessions, only: [:create, :destroy]
 end
