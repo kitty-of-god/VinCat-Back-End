@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-=begin
+
 5.times do
 
   User.create!([{
@@ -13,8 +13,8 @@
                     name: Faker::Name.first_name,
                     email: Faker::Internet.email,
                     description: Faker::Hacker.say_something_smart,
-                    password: "1234",
-                    password_confirmation: "1234",
+                    password: "123456",
+                    password_confirmation: "123456",
                     residence: Faker::Address.city,
                     role: "natural"
                 }])
@@ -67,4 +67,3 @@ for i in 1..25 do
   productos = Product.find_by(id: i)
   productos.tags << Tag.find_by(id: Faker::Number.between(1, 5))
 end
-=end
