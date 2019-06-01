@@ -20889,3 +20889,57 @@ NoMethodError (undefined method `products' for #<Tag::ActiveRecord_Relation:0x00
 app/controllers/tags_controller.rb:15:in `getByTag'
   [1m[36mCACHE Tag Load (0.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE (name = 'Abra') LIMIT ?[0m  [["LIMIT", 11]]
   ↳ /usr/local/rvm/rubies/ruby-2.4.6/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+Started POST "/sessions" for 186.83.122.183 at 2019-06-01 22:17:06 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as HTML
+  Parameters: {"email"=>"test@test.com", "password"=>"[FILTERED]", "session"=>{"email"=>"test@test.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.13ms)
+Completed 201 Created in 164ms (Views: 9.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/tags/getByKind?kind=Pant&page=1" for 186.28.66.240 at 2019-06-01 22:17:44 +0000
+Processing by TagsController#show as */*
+  Parameters: {"kind"=>"Pant", "page"=>"1", "id"=>"getByKind"}
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:9
+Completed 404 Not Found in 9ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Tag with 'id'=getByKind):
+  
+app/controllers/tags_controller.rb:9:in `show'
+Started GET "/products/getByKind?kind=Pant&page=1" for 186.28.66.240 at 2019-06-01 22:17:57 +0000
+Processing by ProductsController#show as */*
+  Parameters: {"kind"=>"Pant", "page"=>"1", "id"=>"getByKind"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:15
+Completed 404 Not Found in 18ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Product with 'id'=getByKind):
+  
+app/controllers/products_controller.rb:15:in `show'
+Started GET "/products/getKind?kind=Pant&page=1" for 186.28.66.240 at 2019-06-01 22:18:16 +0000
+Processing by ProductsController#getKind as */*
+  Parameters: {"kind"=>"Pant", "page"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.51ms)
+Completed 200 OK in 68ms (Views: 65.7ms | ActiveRecord: 1.6ms)
+
+

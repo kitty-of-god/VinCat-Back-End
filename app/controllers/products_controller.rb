@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   #GET /products/getKind?kind=KIND "get products by kind"
   def getKind
-    @products = Product.where("kind = ?", params[:kind]).available.PriceOrder
+    @products = Product.where("kind = ?", params[:kind]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
     render json: @products
   end
   
