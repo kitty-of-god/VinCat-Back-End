@@ -12699,3 +12699,353 @@ Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.7ms)
   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ? LIMIT ?[0m  [["product_id", 4], ["LIMIT", 11]]
   [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
   [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" INNER JOIN "products_tags" ON "products"."id" = "products_tags"."product_id" WHERE "products_tags"."tag_id" = ? LIMIT ?[0m  [["tag_id", 4], ["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (23.6ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE  INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts_products"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "carts_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_cart_id" ON "carts_products" ("cart_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_product_id" ON "carts_products" ("product_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "chats"[0m
+  ↳ db/schema.rb:31
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "sender_user_id" integer, "receiver_user_id" integer, "sender_id" integer, "receiver_id" integer)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_receiver_id" ON "chats" ("receiver_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_sender_id" ON "chats" ("sender_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "images"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "imageable_id" integer, "imageable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE  INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages"[0m
+  ↳ db/schema.rb:51
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "chat_id" integer)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:59
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" integer, "quantity" integer, "kind" varchar, "gender" varchar, "state" boolean, "new" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "sale_id" integer)[0m
+  ↳ db/schema.rb:59
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products_tags"[0m
+  ↳ db/schema.rb:76
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "products_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:76
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_product_id" ON "products_tags" ("product_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_tag_id" ON "products_tags" ("tag_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "ratings"[0m
+  ↳ db/schema.rb:85
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" varchar, "kind" varchar, "rating" integer, "rateable_id" integer, "rateable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  ↳ db/schema.rb:96
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reportable_id" integer, "reportable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:96
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE  INDEX "index_reports_on_reportable_id_and_reportable_type" ON "reports" ("reportable_id", "reportable_type")[0m
+  ↳ db/schema.rb:96
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "sales"[0m
+  ↳ db/schema.rb:105
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "sales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" time, "confirm_seller" boolean, "confirm_buyer" varchar, "seller_user_id" integer, "buyer_user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seller_id" integer, "buyer_id" integer)[0m
+  ↳ db/schema.rb:105
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_buyer_id" ON "sales" ("buyer_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_seller_id" ON "sales" ("seller_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags"[0m
+  ↳ db/schema.rb:119
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:119
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:125
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "name" varchar, "description" varchar, "password_digest" varchar, "residence" varchar, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar)[0m
+  ↳ db/schema.rb:125
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190528031724)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190515034643),
+(20190517035055),
+(20190514055810),
+(20190518005107),
+(20190516023433),
+(20190518033135),
+(20190517054134),
+(20190516231003),
+(20190517035226),
+(20190517060611),
+(20190526215946),
+(20190515034925),
+(20190526220849),
+(20190514063451),
+(20190518011103),
+(20190514054854),
+(20190516231931),
+(20190514061337),
+(20190516023552),
+(20190517035251),
+(20190515035140),
+(20190517034758),
+(20190528031131),
+(20190515234931),
+(20190514060908),
+(20190528031416),
+(20190517035200),
+(20190515034746),
+(20190518021054);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-01 03:50:39.128135"], ["updated_at", "2019-06-01 03:50:39.128135"]]
+  ↳ db/schema.rb:13
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE  INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "carts_products"[0m
+  ↳ db/schema.rb:22
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "carts_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_cart_id" ON "carts_products" ("cart_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_product_id" ON "carts_products" ("product_id")[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "chats"[0m
+  ↳ db/schema.rb:31
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "sender_user_id" integer, "receiver_user_id" integer, "sender_id" integer, "receiver_id" integer)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_receiver_id" ON "chats" ("receiver_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_sender_id" ON "chats" ("sender_id")[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "images"[0m
+  ↳ db/schema.rb:42
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "imageable_id" integer, "imageable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:42
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE  INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  ↳ db/schema.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "messages"[0m
+  ↳ db/schema.rb:51
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "chat_id" integer)[0m
+  ↳ db/schema.rb:51
+  [1m[35m (12.3ms)[0m  [1m[35mCREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  ↳ db/schema.rb:59
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" integer, "quantity" integer, "kind" varchar, "gender" varchar, "state" boolean, "new" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer, "sale_id" integer)[0m
+  ↳ db/schema.rb:59
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/schema.rb:59
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products_tags"[0m
+  ↳ db/schema.rb:76
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "products_tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:76
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_product_id" ON "products_tags" ("product_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_tag_id" ON "products_tags" ("tag_id")[0m
+  ↳ db/schema.rb:76
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ratings"[0m
+  ↳ db/schema.rb:85
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" varchar, "kind" varchar, "rating" integer, "rateable_id" integer, "rateable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:85
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/schema.rb:85
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "reports"[0m
+  ↳ db/schema.rb:96
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reportable_id" integer, "reportable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:96
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE  INDEX "index_reports_on_reportable_id_and_reportable_type" ON "reports" ("reportable_id", "reportable_type")[0m
+  ↳ db/schema.rb:96
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "sales"[0m
+  ↳ db/schema.rb:105
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "sales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" time, "confirm_seller" boolean, "confirm_buyer" varchar, "seller_user_id" integer, "buyer_user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "seller_id" integer, "buyer_id" integer)[0m
+  ↳ db/schema.rb:105
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_buyer_id" ON "sales" ("buyer_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_seller_id" ON "sales" ("seller_id")[0m
+  ↳ db/schema.rb:105
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tags"[0m
+  ↳ db/schema.rb:119
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:119
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  ↳ db/schema.rb:125
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "name" varchar, "description" varchar, "password_digest" varchar, "residence" varchar, "role" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar)[0m
+  ↳ db/schema.rb:125
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190528031724)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190515034643),
+(20190517035055),
+(20190514055810),
+(20190518005107),
+(20190516023433),
+(20190518033135),
+(20190517054134),
+(20190516231003),
+(20190517035226),
+(20190517060611),
+(20190526215946),
+(20190515034925),
+(20190526220849),
+(20190514063451),
+(20190518011103),
+(20190514054854),
+(20190516231931),
+(20190514061337),
+(20190516023552),
+(20190517035251),
+(20190515035140),
+(20190517034758),
+(20190528031131),
+(20190515234931),
+(20190514060908),
+(20190528031416),
+(20190517035200),
+(20190515034746),
+(20190518021054);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-01 03:50:39.505519"], ["updated_at", "2019-06-01 03:50:39.505519"]]
+  ↳ db/schema.rb:13
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2019-06-01 03:50:39.517839"], ["key", "environment"]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to RemoveEmailFromUsers (20190601035122)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","password_digest","residence","role","created_at","updated_at","email")
+                     SELECT "id","username","name","description","password_digest","residence","role","created_at","updated_at","email" FROM "users"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","password_digest","residence","role","created_at","updated_at")
+                     SELECT "id","username","name","description","password_digest","residence","role","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601035122"]]
+  ↳ bin/rails:4
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddDeviseToUsers (20190601035610)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:40
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601035610"]]
+  ↳ bin/rails:4
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4

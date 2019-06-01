@@ -29,6 +29,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'knock'
 gem 'rack-cors'
 gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
