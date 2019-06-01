@@ -17170,3 +17170,33 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/2?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 186.28.66.240 at 2019-06-01 18:56:04 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as */*
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (94.64ms)
+Completed 200 OK in 138ms (Views: 108.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/2?user_email=jarrett@watersconsidine.net&user_token=-xsoWzk4dzD7XBnSn5b5" for 35.229.59.108 at 2019-06-01 18:58:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"user_email"=>"jarrett@watersconsidine.net", "user_token"=>"-xsoWzk4dzD7XBnSn5b5", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jarrett@watersconsidine.net"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16
+[active_model_serializers] No serializer found for resource: #<Product id: 6, name: "Enormous Paper Chair", description: "Computers", price: 11, quantity: 1, kind: "Pant", gender: "Men", state: true, new: false, created_at: "2019-06-01 05:39:28", updated_at: "2019-06-01 05:39:28", user_id: 2, sale_id: nil>
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.01ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
