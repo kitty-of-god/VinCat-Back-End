@@ -57,7 +57,12 @@ end
                   }])
 
   Report.create!([{
-                  body: Faker::Movies::VForVendetta.quote
+                  body: Faker::Hacker.say_something_smart
                 }])
 
+end
+
+for i in 1..25 do
+  productos = Product.find_by(id: i)
+  productos.tags << Tag.find_by(id: Faker::Number.between(1, 5))
 end

@@ -77,7 +77,11 @@ Rails.application.routes.draw do
   resources :chats
   resources :images
   resources :messages
-  resources :products
+  resources :products do 
+    collection do
+      get :getKind
+    end
+  end
   resources :ratings
   resources :reports
   resources :sales
