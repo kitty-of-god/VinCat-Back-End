@@ -1,4 +1,7 @@
 class SalesController < ApplicationController
+  
+  acts_as_token_authentication_handler_for User #autentication
+  
   #GET all
   def index
     @sales = Sale.all

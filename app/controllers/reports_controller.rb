@@ -1,4 +1,7 @@
 class ReportsController < ApplicationController
+  
+  acts_as_token_authentication_handler_for User #authentication
+  
   #GET all
   def index
     @reports = Report.all

@@ -1,4 +1,7 @@
 class CartsController < ApplicationController
+  
+  acts_as_token_authentication_handler_for User#authentication
+  
   #GET all
   def index
     @carts = Cart.all

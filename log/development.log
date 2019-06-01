@@ -17200,3 +17200,1307 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 186.28.66.240 at 2019-06-01 19:49:13 +0000
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20190514054854)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "name" varchar, "description" varchar, "password" varchar, "residence" varchar, "type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190514054854_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190514054854"]]
+  ↳ bin/rails:4
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateProducts (20190514055810)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "price" integer, "quantity" integer, "class" varchar, "gender" varchar, "state" boolean, "new" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190514055810_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190514055810"]]
+  ↳ bin/rails:4
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateSales (20190514060908)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "sales" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" time, "confirm_seller" boolean, "confirm_buyer" varchar, "seller_user_id" integer, "buyer_user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190514060908_create_sales.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190514060908"]]
+  ↳ bin/rails:4
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateReports (20190514061337)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "reports" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "reportable_id" integer, "reportable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190514061337_create_reports.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_reports_on_reportable_id_and_reportable_type" ON "reports" ("reportable_id", "reportable_type")[0m
+  ↳ db/migrate/20190514061337_create_reports.rb:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190514061337"]]
+  ↳ bin/rails:4
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateCarts (20190514063451)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "carts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190514063451_create_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190514063451"]]
+  ↳ bin/rails:4
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateChats (20190515034643)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "chats" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190515034643_create_chats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515034643"]]
+  ↳ bin/rails:4
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateMessages (20190515034746)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "messages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190515034746_create_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515034746"]]
+  ↳ bin/rails:4
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateImages (20190515034925)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "images" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "imageable_id" integer, "imageable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190515034925_create_images.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_images_on_imageable_id_and_imageable_type" ON "images" ("imageable_id", "imageable_type")[0m
+  ↳ db/migrate/20190515034925_create_images.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515034925"]]
+  ↳ bin/rails:4
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateRatings (20190515035140)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "comment" varchar, "type" varchar, "rating" integer, "rateable_id" integer, "rateable_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190515035140_create_ratings.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/migrate/20190515035140_create_ratings.rb:12
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515035140"]]
+  ↳ bin/rails:4
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateTags (20190515234931)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "tags" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190515234931_create_tags.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190515234931"]]
+  ↳ bin/rails:4
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddSenderUserIdToMessages (20190516023433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "chats" ADD "sender_user_id" integer[0m
+  ↳ db/migrate/20190516023433_add_sender_user_id_to_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190516023433"]]
+  ↳ bin/rails:4
+  [1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddReceiverUserIdToMessages (20190516023552)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "chats" ADD "receiver_user_id" integer[0m
+  ↳ db/migrate/20190516023552_add_receiver_user_id_to_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190516023552"]]
+  ↳ bin/rails:4
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddSellerAndBuyerToSales (20190516231003)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "sales" ADD "seller_id" integer[0m
+  ↳ db/migrate/20190516231003_add_seller_and_buyer_to_sales.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_seller_id" ON "sales" ("seller_id")[0m
+  ↳ db/migrate/20190516231003_add_seller_and_buyer_to_sales.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "sales" ADD "buyer_id" integer[0m
+  ↳ db/migrate/20190516231003_add_seller_and_buyer_to_sales.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_sales_on_buyer_id" ON "sales" ("buyer_id")[0m
+  ↳ db/migrate/20190516231003_add_seller_and_buyer_to_sales.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190516231003"]]
+  ↳ bin/rails:4
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddSenderAndReceiverToChats (20190516231931)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "chats" ADD "sender_id" integer[0m
+  ↳ db/migrate/20190516231931_add_sender_and_receiver_to_chats.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_sender_id" ON "chats" ("sender_id")[0m
+  ↳ db/migrate/20190516231931_add_sender_and_receiver_to_chats.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "chats" ADD "receiver_id" integer[0m
+  ↳ db/migrate/20190516231931_add_sender_and_receiver_to_chats.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_chats_on_receiver_id" ON "chats" ("receiver_id")[0m
+  ↳ db/migrate/20190516231931_add_sender_and_receiver_to_chats.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190516231931"]]
+  ↳ bin/rails:4
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddUserToCarts (20190517034758)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "carts" ADD "user_id" integer[0m
+  ↳ db/migrate/20190517034758_add_user_to_carts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_carts_on_user_id" ON "carts" ("user_id")[0m
+  ↳ db/migrate/20190517034758_add_user_to_carts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517034758"]]
+  ↳ bin/rails:4
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddChatToMessages (20190517035055)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "messages" ADD "chat_id" integer[0m
+  ↳ db/migrate/20190517035055_add_chat_to_messages.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_messages_on_chat_id" ON "messages" ("chat_id")[0m
+  ↳ db/migrate/20190517035055_add_chat_to_messages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517035055"]]
+  ↳ bin/rails:4
+  [1m[35m (9.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddUserToProducts (20190517035200)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "user_id" integer[0m
+  ↳ db/migrate/20190517035200_add_user_to_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/migrate/20190517035200_add_user_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517035200"]]
+  ↳ bin/rails:4
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddSaleToProducts (20190517035226)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "sale_id" integer[0m
+  ↳ db/migrate/20190517035226_add_sale_to_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/migrate/20190517035226_add_sale_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517035226"]]
+  ↳ bin/rails:4
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddCartToProducts (20190517035251)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "products" ADD "cart_id" integer[0m
+  ↳ db/migrate/20190517035251_add_cart_to_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_cart_id" ON "products" ("cart_id")[0m
+  ↳ db/migrate/20190517035251_add_cart_to_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517035251"]]
+  ↳ bin/rails:4
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to ChangeColumnName (20190517054134)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190517054134_change_column_name.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","password","residence","role","created_at","updated_at")
+                     SELECT "id","username","name","description","password","residence","type","created_at","updated_at" FROM "users"[0m
+  ↳ db/migrate/20190517054134_change_column_name.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190517054134_change_column_name.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190517054134_change_column_name.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","password","residence","role","created_at","updated_at")
+                     SELECT "id","username","name","description","password","residence","role","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20190517054134_change_column_name.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190517054134_change_column_name.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517054134"]]
+  ↳ bin/rails:4
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to ChangeColumnNameProduct (20190517060611)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "quantity" integer DEFAULT NULL, "kind" varchar DEFAULT NULL, "gender" varchar DEFAULT NULL, "state" boolean DEFAULT NULL, "new" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL, "sale_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_cart_id" ON "aproducts" ("cart_id")[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_sale_id" ON "aproducts" ("sale_id")[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_user_id" ON "aproducts" ("user_id")[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id","cart_id")
+                     SELECT "id","name","description","price","quantity","class","gender","state","new","created_at","updated_at","user_id","sale_id","cart_id" FROM "products"[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "quantity" integer DEFAULT NULL, "kind" varchar DEFAULT NULL, "gender" varchar DEFAULT NULL, "state" boolean DEFAULT NULL, "new" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL, "sale_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_cart_id" ON "products" ("cart_id")[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id","cart_id")
+                     SELECT "id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id","cart_id" FROM "aproducts"[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20190517060611_change_column_name_product.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190517060611"]]
+  ↳ bin/rails:4
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateTagProducts (20190518005107)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "tag_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_1d9147ab8d"
+FOREIGN KEY ("tag_id")
+  REFERENCES "tags" ("id")
+, CONSTRAINT "fk_rails_bd844f76c5"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20190518005107_create_tag_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_tag_products_on_tag_id" ON "tag_products" ("tag_id")[0m
+  ↳ db/migrate/20190518005107_create_tag_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_tag_products_on_product_id" ON "tag_products" ("product_id")[0m
+  ↳ db/migrate/20190518005107_create_tag_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190518005107"]]
+  ↳ bin/rails:4
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateCartProducts (20190518011103)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "cart_products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cart_id" integer, "product_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a4f3e327f3"
+FOREIGN KEY ("cart_id")
+  REFERENCES "carts" ("id")
+, CONSTRAINT "fk_rails_b6ff2a078a"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20190518011103_create_cart_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_cart_products_on_cart_id" ON "cart_products" ("cart_id")[0m
+  ↳ db/migrate/20190518011103_create_cart_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_cart_products_on_product_id" ON "cart_products" ("product_id")[0m
+  ↳ db/migrate/20190518011103_create_cart_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190518011103"]]
+  ↳ bin/rails:4
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to RemoveCartIdFromProducts (20190518021054)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "quantity" integer DEFAULT NULL, "kind" varchar DEFAULT NULL, "gender" varchar DEFAULT NULL, "state" boolean DEFAULT NULL, "new" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL, "sale_id" integer DEFAULT NULL, "cart_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_cart_id" ON "aproducts" ("cart_id")[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_sale_id" ON "aproducts" ("sale_id")[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_user_id" ON "aproducts" ("user_id")[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id","cart_id")
+                     SELECT "id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id","cart_id" FROM "products"[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "quantity" integer DEFAULT NULL, "kind" varchar DEFAULT NULL, "gender" varchar DEFAULT NULL, "state" boolean DEFAULT NULL, "new" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL, "sale_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id")
+                     SELECT "id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id" FROM "aproducts"[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20190518021054_remove_cart_id_from_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190518021054"]]
+  ↳ bin/rails:4
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to RenameColumnTypeInRatingstoKind (20190518033135)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aratings" ("id" integer NOT NULL PRIMARY KEY, "comment" varchar DEFAULT NULL, "kind" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "rateable_id" integer DEFAULT NULL, "rateable_type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aratings_on_rateable_id_and_rateable_type" ON "aratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aratings" ("id","comment","kind","rating","rateable_id","rateable_type","created_at","updated_at")
+                     SELECT "id","comment","type","rating","rateable_id","rateable_type","created_at","updated_at" FROM "ratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "ratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ratings" ("id" integer NOT NULL PRIMARY KEY, "comment" varchar DEFAULT NULL, "kind" varchar DEFAULT NULL, "rating" integer DEFAULT NULL, "rateable_id" integer DEFAULT NULL, "rateable_type" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_ratings_on_rateable_id_and_rateable_type" ON "ratings" ("rateable_id", "rateable_type")[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ratings" ("id","comment","kind","rating","rateable_id","rateable_type","created_at","updated_at")
+                     SELECT "id","comment","kind","rating","rateable_id","rateable_type","created_at","updated_at" FROM "aratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aratings"[0m
+  ↳ db/migrate/20190518033135_rename_column_type_in_ratingsto_kind.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190518033135"]]
+  ↳ bin/rails:4
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to RenameColumnPassword (20190526215946)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190526215946_rename_column_password.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","password_digest","residence","role","created_at","updated_at")
+                     SELECT "id","username","name","description","password","residence","role","created_at","updated_at" FROM "users"[0m
+  ↳ db/migrate/20190526215946_rename_column_password.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190526215946_rename_column_password.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190526215946_rename_column_password.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","password_digest","residence","role","created_at","updated_at")
+                     SELECT "id","username","name","description","password_digest","residence","role","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20190526215946_rename_column_password.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190526215946_rename_column_password.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190526215946"]]
+  ↳ bin/rails:4
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddEmailToUsers (20190526220849)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar[0m
+  ↳ db/migrate/20190526220849_add_email_to_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190526220849"]]
+  ↳ bin/rails:4
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to ChangeCartProductsToCartsProducts (20190528031131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cart_products" RENAME TO "carts_products"[0m
+  ↳ db/migrate/20190528031131_change_cart_products_to_carts_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_product_id" ON "carts_products" ("product_id")[0m
+  ↳ db/migrate/20190528031131_change_cart_products_to_carts_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX "index_cart_products_on_product_id"[0m
+  ↳ db/migrate/20190528031131_change_cart_products_to_carts_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_carts_products_on_cart_id" ON "carts_products" ("cart_id")[0m
+  ↳ db/migrate/20190528031131_change_cart_products_to_carts_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX "index_cart_products_on_cart_id"[0m
+  ↳ db/migrate/20190528031131_change_cart_products_to_carts_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528031131"]]
+  ↳ bin/rails:4
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to ChangeTagProductsToTagsProducts (20190528031416)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "tag_products" RENAME TO "tags_products"[0m
+  ↳ db/migrate/20190528031416_change_tag_products_to_tags_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_tags_products_on_product_id" ON "tags_products" ("product_id")[0m
+  ↳ db/migrate/20190528031416_change_tag_products_to_tags_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX "index_tag_products_on_product_id"[0m
+  ↳ db/migrate/20190528031416_change_tag_products_to_tags_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_tags_products_on_tag_id" ON "tags_products" ("tag_id")[0m
+  ↳ db/migrate/20190528031416_change_tag_products_to_tags_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX "index_tag_products_on_tag_id"[0m
+  ↳ db/migrate/20190528031416_change_tag_products_to_tags_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528031416"]]
+  ↳ bin/rails:4
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to ChangeTagsProductsToTagsProducts (20190528031724)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "tags_products" RENAME TO "products_tags"[0m
+  ↳ db/migrate/20190528031724_change_tags_products_to_tags_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_tag_id" ON "products_tags" ("tag_id")[0m
+  ↳ db/migrate/20190528031724_change_tags_products_to_tags_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX "index_tags_products_on_tag_id"[0m
+  ↳ db/migrate/20190528031724_change_tags_products_to_tags_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_tags_on_product_id" ON "products_tags" ("product_id")[0m
+  ↳ db/migrate/20190528031724_change_tags_products_to_tags_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX "index_tags_products_on_product_id"[0m
+  ↳ db/migrate/20190528031724_change_tags_products_to_tags_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190528031724"]]
+  ↳ bin/rails:4
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to RemoveEmailFromUsers (20190601035122)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT NULL)[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","password_digest","residence","role","created_at","updated_at","email")
+                     SELECT "id","username","name","description","password_digest","residence","role","created_at","updated_at","email" FROM "users"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (3.5ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","password_digest","residence","role","created_at","updated_at")
+                     SELECT "id","username","name","description","password_digest","residence","role","created_at","updated_at" FROM "ausers"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190601035122_remove_email_from_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601035122"]]
+  ↳ bin/rails:4
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddDeviseToUsers (20190601035610)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:40
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190601035610_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601035610"]]
+  ↳ bin/rails:4
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to RemovePwdDigest (20190601044001)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL)[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","password_digest","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at")
+                     SELECT "id","username","name","description","password_digest","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at" FROM "users"[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL)[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at")
+                     SELECT "id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at" FROM "ausers"[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190601044001_remove_pwd_digest.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601044001"]]
+  ↳ bin/rails:4
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to AddAuthenticationTokenToUsers (20190601053324)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "authentication_token" varchar(30)[0m
+  ↳ db/migrate/20190601053324_add_authentication_token_to_users.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  ↳ db/migrate/20190601053324_add_authentication_token_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601053324"]]
+  ↳ bin/rails:4
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-01 19:49:30.116129"], ["updated_at", "2019-06-01 19:49:30.116129"]]
+  ↳ bin/rails:4
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/" for 186.28.66.240 at 2019-06-01 19:49:37 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 186.28.66.240 at 2019-06-01 19:49:42 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 186.28.66.240 at 2019-06-01 19:49:43 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (9.4ms)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 186.28.66.240 at 2019-06-01 19:50:03 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 186.28.66.240 at 2019-06-01 19:50:03 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favicon.ico" for 186.28.66.240 at 2019-06-01 19:50:04 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/products" for 186.28.66.240 at 2019-06-01 19:50:08 +0000
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 33ms (Views: 12.5ms | ActiveRecord: 1.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "kennykozey@strosinheidenreich.org"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "buffy_kris"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "DVkrNxRjzP23arK1vsYZ"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "buffy_kris"], ["name", "Samuel"], ["description", "We need to reboot the bluetooth IB monitor!"], ["residence", "Tracybury"], ["role", "natural"], ["created_at", "2019-06-01 19:50:29.087024"], ["updated_at", "2019-06-01 19:50:29.087024"], ["email", "kennykozey@strosinheidenreich.org"], ["encrypted_password", "$2a$11$VWyThe1CMumtmnHUZRug0OJMOPSHDoZ44Oivgqb/IFUQ/J6e0F47K"], ["authentication_token", "DVkrNxRjzP23arK1vsYZ"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (21.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "bonitastoltenberg@hane.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "cherlyn.kirlin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "piLxYcTW4FLc8p6sQPKQ"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "cherlyn.kirlin"], ["name", "Jane"], ["description", "Use the 1080p TCP monitor, then you can compress the back-end sensor!"], ["residence", "Boyerside"], ["role", "natural"], ["created_at", "2019-06-01 19:50:29.252247"], ["updated_at", "2019-06-01 19:50:29.252247"], ["email", "bonitastoltenberg@hane.co"], ["encrypted_password", "$2a$11$JItZmfA1wJrsh51BEyLys.//ITCKhHSRB0BHqETQXzgzxvv8zpWzi"], ["authentication_token", "piLxYcTW4FLc8p6sQPKQ"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "julianna@sanford.biz"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "damion.rowe"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "ePXMG9EQGna3cvLz7HQM"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "damion.rowe"], ["name", "Catheryn"], ["description", "If we bypass the array, we can get to the XSS feed through the neural COM sensor!"], ["residence", "Port Tomton"], ["role", "natural"], ["created_at", "2019-06-01 19:50:29.410229"], ["updated_at", "2019-06-01 19:50:29.410229"], ["email", "julianna@sanford.biz"], ["encrypted_password", "$2a$11$xm2vR1vtXOel5O6VWUZ1wO7/.BZwJKHrMPRWfPvlMqada9RlUYT8a"], ["authentication_token", "ePXMG9EQGna3cvLz7HQM"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ronibeer@rowelockman.co"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "shalonda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "vcVc3dgNiNUJvwNvWJy2"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "shalonda"], ["name", "Dorris"], ["description", "Use the auxiliary USB panel, then you can navigate the neural transmitter!"], ["residence", "Littelside"], ["role", "natural"], ["created_at", "2019-06-01 19:50:29.561627"], ["updated_at", "2019-06-01 19:50:29.561627"], ["email", "ronibeer@rowelockman.co"], ["encrypted_password", "$2a$11$7Tvd4McuZY500C.KegddAOmsxawoxhPc9AlNp0TffBGBayTkk4Fh6"], ["authentication_token", "vcVc3dgNiNUJvwNvWJy2"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "waldobaumbach@jaskolski.info"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "maryam.purdy"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "Co_1HqqYdRV-oP35tCzD"]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "description", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "maryam.purdy"], ["name", "Pamila"], ["description", "If we transmit the circuit, we can get to the THX feed through the wireless AGP sensor!"], ["residence", "Deltaburgh"], ["role", "natural"], ["created_at", "2019-06-01 19:50:29.720786"], ["updated_at", "2019-06-01 19:50:29.720786"], ["email", "waldobaumbach@jaskolski.info"], ["encrypted_password", "$2a$11$eBtKkZ9z8h7a8zENvnx3ceKOeaTuZh/3SetdxvvyHm0iCGhyKWoKq"], ["authentication_token", "Co_1HqqYdRV-oP35tCzD"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Cotton Car"], ["description", "Kids, Tools & Toys"], ["price", 33], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.766237"], ["updated_at", "2019-06-01 19:50:29.766237"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lightweight Granite Wallet"], ["description", "Health"], ["price", 4], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.781468"], ["updated_at", "2019-06-01 19:50:29.781468"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Enormous Silk Bench"], ["description", "Movies"], ["price", 47], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.793914"], ["updated_at", "2019-06-01 19:50:29.793914"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Ergonomic Bronze Hat"], ["description", "Movies & Garden"], ["price", 97], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.808130"], ["updated_at", "2019-06-01 19:50:29.808130"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Durable Silk Clock"], ["description", "Beauty & Movies"], ["price", 32], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.820429"], ["updated_at", "2019-06-01 19:50:29.820429"], ["user_id", 1]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Granite Lamp"], ["description", "Baby"], ["price", 78], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.836203"], ["updated_at", "2019-06-01 19:50:29.836203"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Durable Steel Computer"], ["description", "Garden & Jewelry"], ["price", 3], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.851703"], ["updated_at", "2019-06-01 19:50:29.851703"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Gorgeous Marble Chair"], ["description", "Music"], ["price", 57], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.869225"], ["updated_at", "2019-06-01 19:50:29.869225"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Leather Keyboard"], ["description", "Movies"], ["price", 40], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.884218"], ["updated_at", "2019-06-01 19:50:29.884218"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lightweight Rubber Shoes"], ["description", "Health & Outdoors"], ["price", 67], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.900435"], ["updated_at", "2019-06-01 19:50:29.900435"], ["user_id", 2]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Synergistic Linen Coat"], ["description", "Health"], ["price", 94], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.914677"], ["updated_at", "2019-06-01 19:50:29.914677"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lightweight Aluminum Car"], ["description", "Games & Home"], ["price", 4], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.927286"], ["updated_at", "2019-06-01 19:50:29.927286"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Heavy Duty Silk Gloves"], ["description", "Movies, Health & Games"], ["price", 8], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.941657"], ["updated_at", "2019-06-01 19:50:29.941657"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Sleek Granite Plate"], ["description", "Automotive"], ["price", 68], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.953004"], ["updated_at", "2019-06-01 19:50:29.953004"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aerodynamic Silk Hat"], ["description", "Health & Automotive"], ["price", 96], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.965405"], ["updated_at", "2019-06-01 19:50:29.965405"], ["user_id", 3]]
+  ↳ db/seeds.rb:26
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Iron Computer"], ["description", "Books, Clothing & Toys"], ["price", 89], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.979666"], ["updated_at", "2019-06-01 19:50:29.979666"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Intelligent Wool Shirt"], ["description", "Clothing"], ["price", 41], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:29.992507"], ["updated_at", "2019-06-01 19:50:29.992507"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Intelligent Copper Bottle"], ["description", "Garden, Electronics & Grocery"], ["price", 12], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.008005"], ["updated_at", "2019-06-01 19:50:30.008005"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Aerodynamic Iron Bench"], ["description", "Computers, Health & Baby"], ["price", 64], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.024075"], ["updated_at", "2019-06-01 19:50:30.024075"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Mediocre Aluminum Computer"], ["description", "Baby"], ["price", 87], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.040046"], ["updated_at", "2019-06-01 19:50:30.040046"], ["user_id", 4]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fantastic Paper Lamp"], ["description", "Grocery, Computers & Tools"], ["price", 23], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.056490"], ["updated_at", "2019-06-01 19:50:30.056490"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Small Cotton Bag"], ["description", "Books"], ["price", 33], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.072968"], ["updated_at", "2019-06-01 19:50:30.072968"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Fantastic Paper Chair"], ["description", "Clothing, Automotive & Toys"], ["price", 46], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.089174"], ["updated_at", "2019-06-01 19:50:30.089174"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Enormous Leather Knife"], ["description", "Baby, Industrial & Outdoors"], ["price", 61], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.108717"], ["updated_at", "2019-06-01 19:50:30.108717"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "state", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Awesome Marble Coat"], ["description", "Kids & Automotive"], ["price", 59], ["quantity", 1], ["kind", "Pant"], ["gender", "Men"], ["state", 1], ["new", 0], ["created_at", "2019-06-01 19:50:30.124711"], ["updated_at", "2019-06-01 19:50:30.124711"], ["user_id", 5]]
+  ↳ db/seeds.rb:26
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.3ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Abra"], ["created_at", "2019-06-01 19:50:30.148376"], ["updated_at", "2019-06-01 19:50:30.148376"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "If we copy the circuit, we can get to the PNG panel through the online SDD system!"], ["rating", 1], ["created_at", "2019-06-01 19:50:30.173347"], ["updated_at", "2019-06-01 19:50:30.173347"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Kabuto.bmp"], ["created_at", "2019-06-01 19:50:30.194644"], ["updated_at", "2019-06-01 19:50:30.194644"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "I had little patience to begin with."], ["created_at", "2019-06-01 19:50:30.218210"], ["updated_at", "2019-06-01 19:50:30.218210"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.4ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "Try to program the RAM firewall, maybe it will parse the neural port!"], ["created_at", "2019-06-01 19:50:30.241252"], ["updated_at", "2019-06-01 19:50:30.241252"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Abra"], ["created_at", "2019-06-01 19:50:30.253524"], ["updated_at", "2019-06-01 19:50:30.253524"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "We need to index the bluetooth HTTP system!"], ["rating", 3], ["created_at", "2019-06-01 19:50:30.267971"], ["updated_at", "2019-06-01 19:50:30.267971"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nidorina.flac"], ["created_at", "2019-06-01 19:50:30.280685"], ["updated_at", "2019-06-01 19:50:30.280685"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "An'u belore delen'na."], ["created_at", "2019-06-01 19:50:30.293588"], ["updated_at", "2019-06-01 19:50:30.293588"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "If we navigate the application, we can get to the PCI hard drive through the bluetooth SMTP transmitter!"], ["created_at", "2019-06-01 19:50:30.309077"], ["updated_at", "2019-06-01 19:50:30.309077"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Victreebel"], ["created_at", "2019-06-01 19:50:30.324652"], ["updated_at", "2019-06-01 19:50:30.324652"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Use the virtual SAS card, then you can program the auxiliary protocol!"], ["rating", 1], ["created_at", "2019-06-01 19:50:30.339640"], ["updated_at", "2019-06-01 19:50:30.339640"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Victreebel.css"], ["created_at", "2019-06-01 19:50:30.355721"], ["updated_at", "2019-06-01 19:50:30.355721"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "What do you seek?"], ["created_at", "2019-06-01 19:50:30.372217"], ["updated_at", "2019-06-01 19:50:30.372217"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "You can't navigate the port without parsing the bluetooth HDD transmitter!"], ["created_at", "2019-06-01 19:50:30.389373"], ["updated_at", "2019-06-01 19:50:30.389373"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.4ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Drowzee"], ["created_at", "2019-06-01 19:50:30.403824"], ["updated_at", "2019-06-01 19:50:30.403824"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "Try to back up the SAS pixel, maybe it will index the cross-platform circuit!"], ["rating", 1], ["created_at", "2019-06-01 19:50:30.418682"], ["updated_at", "2019-06-01 19:50:30.418682"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.4ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tentacruel.pptx"], ["created_at", "2019-06-01 19:50:30.433091"], ["updated_at", "2019-06-01 19:50:30.433091"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "Not very intelligent, are you?"], ["created_at", "2019-06-01 19:50:30.448614"], ["updated_at", "2019-06-01 19:50:30.448614"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "If we compress the program, we can get to the SCSI alarm through the haptic FTP system!"], ["created_at", "2019-06-01 19:50:30.464517"], ["updated_at", "2019-06-01 19:50:30.464517"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Weezing"], ["created_at", "2019-06-01 19:50:30.481572"], ["updated_at", "2019-06-01 19:50:30.481572"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mRating Create (0.4ms)[0m  [1m[32mINSERT INTO "ratings" ("comment", "rating", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["comment", "I'll parse the virtual SQL matrix, that should alarm the PCI interface!"], ["rating", 2], ["created_at", "2019-06-01 19:50:30.497141"], ["updated_at", "2019-06-01 19:50:30.497141"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mImage Create (0.5ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Poliwag.pdf"], ["created_at", "2019-06-01 19:50:30.512276"], ["updated_at", "2019-06-01 19:50:30.512276"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mMessage Create (0.5ms)[0m  [1m[32mINSERT INTO "messages" ("text", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["text", "The Eternal Sun guides us."], ["created_at", "2019-06-01 19:50:30.528579"], ["updated_at", "2019-06-01 19:50:30.528579"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mReport Create (0.5ms)[0m  [1m[32mINSERT INTO "reports" ("body", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["body", "I'll parse the multi-byte SQL interface, that should bandwidth the RAM driver!"], ["created_at", "2019-06-01 19:50:30.545986"], ["updated_at", "2019-06-01 19:50:30.545986"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 1], ["created_at", "2019-06-01 19:50:30.592573"], ["updated_at", "2019-06-01 19:50:30.592573"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 2], ["created_at", "2019-06-01 19:50:30.612128"], ["updated_at", "2019-06-01 19:50:30.612128"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 3], ["created_at", "2019-06-01 19:50:30.630858"], ["updated_at", "2019-06-01 19:50:30.630858"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 4], ["created_at", "2019-06-01 19:50:30.648162"], ["updated_at", "2019-06-01 19:50:30.648162"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 5], ["created_at", "2019-06-01 19:50:30.668464"], ["updated_at", "2019-06-01 19:50:30.668464"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 6], ["created_at", "2019-06-01 19:50:30.688050"], ["updated_at", "2019-06-01 19:50:30.688050"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 7], ["created_at", "2019-06-01 19:50:30.706761"], ["updated_at", "2019-06-01 19:50:30.706761"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 8], ["created_at", "2019-06-01 19:50:30.724092"], ["updated_at", "2019-06-01 19:50:30.724092"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 9], ["created_at", "2019-06-01 19:50:30.743073"], ["updated_at", "2019-06-01 19:50:30.743073"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["product_id", 10], ["created_at", "2019-06-01 19:50:30.763684"], ["updated_at", "2019-06-01 19:50:30.763684"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 11], ["created_at", "2019-06-01 19:50:30.783253"], ["updated_at", "2019-06-01 19:50:30.783253"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 12], ["created_at", "2019-06-01 19:50:30.800942"], ["updated_at", "2019-06-01 19:50:30.800942"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 13], ["created_at", "2019-06-01 19:50:30.818780"], ["updated_at", "2019-06-01 19:50:30.818780"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 14], ["created_at", "2019-06-01 19:50:30.834024"], ["updated_at", "2019-06-01 19:50:30.834024"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 15], ["created_at", "2019-06-01 19:50:30.850164"], ["updated_at", "2019-06-01 19:50:30.850164"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 16], ["created_at", "2019-06-01 19:50:30.865785"], ["updated_at", "2019-06-01 19:50:30.865785"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 17], ["created_at", "2019-06-01 19:50:30.879072"], ["updated_at", "2019-06-01 19:50:30.879072"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["product_id", 18], ["created_at", "2019-06-01 19:50:30.895847"], ["updated_at", "2019-06-01 19:50:30.895847"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 19], ["created_at", "2019-06-01 19:50:30.914570"], ["updated_at", "2019-06-01 19:50:30.914570"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 20], ["created_at", "2019-06-01 19:50:30.931895"], ["updated_at", "2019-06-01 19:50:30.931895"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.5ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 21], ["created_at", "2019-06-01 19:50:30.955086"], ["updated_at", "2019-06-01 19:50:30.955086"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["product_id", 22], ["created_at", "2019-06-01 19:50:30.971664"], ["updated_at", "2019-06-01 19:50:30.971664"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 4], ["product_id", 23], ["created_at", "2019-06-01 19:50:30.990112"], ["updated_at", "2019-06-01 19:50:30.990112"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 2], ["product_id", 24], ["created_at", "2019-06-01 19:50:31.006527"], ["updated_at", "2019-06-01 19:50:31.006527"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (11.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:67
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:68
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:68
+  [1m[36mProduct::HABTM_Tags Create (0.4ms)[0m  [1m[32mINSERT INTO "products_tags" ("tag_id", "product_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 5], ["product_id", 25], ["created_at", "2019-06-01 19:50:31.023568"], ["updated_at", "2019-06-01 19:50:31.023568"]]
+  ↳ db/seeds.rb:68
+  [1m[35m (13.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:68
+Started GET "/products" for 186.28.66.240 at 2019-06-01 19:51:12 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:11
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (3.61ms)
+Completed 200 OK in 48ms (Views: 33.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 186.28.66.240 at 2019-06-01 19:51:59 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 186.28.66.240 at 2019-06-01 19:52:00 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (10.6ms)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/sessions" for 186.28.66.240 at 2019-06-01 19:53:26 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as */*
+  Parameters: {"email"=>"kennykozey@strosinheidenreich.org", "password"=>"[FILTERED]", "session"=>{"email"=>"kennykozey@strosinheidenreich.org", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kennykozey@strosinheidenreich.org"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 201 Created in 170ms (Views: 15.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/2?user_email=kennykozey@strosinheidenreich.org&user_token=DVkrNxRjzP23arK1vsYZ" for 186.28.66.240 at 2019-06-01 19:54:36 +0000
+Processing by UsersController#show as */*
+  Parameters: {"user_email"=>"kennykozey@strosinheidenreich.org", "user_token"=>"DVkrNxRjzP23arK1vsYZ", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kennykozey@strosinheidenreich.org"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:16
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (51.18ms)
+Completed 200 OK in 89ms (Views: 77.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/current?user_email=kennykozey@strosinheidenreich.org&user_token=DVkrNxRjzP23arK1vsYZ" for 186.28.66.240 at 2019-06-01 19:54:44 +0000
+Processing by UsersController#current as */*
+  Parameters: {"user_email"=>"kennykozey@strosinheidenreich.org", "user_token"=>"DVkrNxRjzP23arK1vsYZ"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "kennykozey@strosinheidenreich.org"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.09ms)
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
