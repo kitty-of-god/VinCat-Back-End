@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :create]  #kinda works
+  acts_as_token_authentication_handler_for User, except: [ :create,:index, :shoe]  #kinda works
   #before_action :authenticate_user, only: [:show, :current]
   #before_action :set_user, only: [:show, :update, :destroy]
 

@@ -85,6 +85,7 @@ Rails.application.routes.draw do
   resources :products do
     collection do
       get :getKind
+      get :getByName
     end
   end
   resources :ratings
