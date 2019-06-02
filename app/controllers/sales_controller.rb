@@ -1,7 +1,13 @@
 class SalesController < ApplicationController
-  
+
   acts_as_token_authentication_handler_for User #autentication
-  
+
+  #GET /sales/getDate?date=DATE "get sales by date"
+  def getDate
+    @sales = Sale.where("date = ?", params[:date])
+    render json: @sales
+  end
+
   #GET all
   def index
     @sales = Sale.all
