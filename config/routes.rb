@@ -28,6 +28,7 @@
 #                           PUT    /messages/:id(.:format)                                                                  messages#update
 #                           DELETE /messages/:id(.:format)                                                                  messages#destroy
 #          getKind_products GET    /products/getKind(.:format)                                                              products#getKind
+#        getByName_products GET    /products/getByName(.:format)                                                            products#getByName
 #                  products GET    /products(.:format)                                                                      products#index
 #                           POST   /products(.:format)                                                                      products#create
 #                   product GET    /products/:id(.:format)                                                                  products#show
@@ -40,24 +41,28 @@
 #                           PATCH  /ratings/:id(.:format)                                                                   ratings#update
 #                           PUT    /ratings/:id(.:format)                                                                   ratings#update
 #                           DELETE /ratings/:id(.:format)                                                                   ratings#destroy
+# getReportableType_reports GET    /reports/getReportableType(.:format)                                                     reports#getReportableType
 #                   reports GET    /reports(.:format)                                                                       reports#index
 #                           POST   /reports(.:format)                                                                       reports#create
 #                    report GET    /reports/:id(.:format)                                                                   reports#show
 #                           PATCH  /reports/:id(.:format)                                                                   reports#update
 #                           PUT    /reports/:id(.:format)                                                                   reports#update
 #                           DELETE /reports/:id(.:format)                                                                   reports#destroy
+#             getDate_sales GET    /sales/getDate(.:format)                                                                 sales#getDate
 #                     sales GET    /sales(.:format)                                                                         sales#index
 #                           POST   /sales(.:format)                                                                         sales#create
 #                      sale GET    /sales/:id(.:format)                                                                     sales#show
 #                           PATCH  /sales/:id(.:format)                                                                     sales#update
 #                           PUT    /sales/:id(.:format)                                                                     sales#update
 #                           DELETE /sales/:id(.:format)                                                                     sales#destroy
+#             getByTag_tags GET    /tags/getByTag(.:format)                                                                 tags#getByTag
 #                      tags GET    /tags(.:format)                                                                          tags#index
 #                           POST   /tags(.:format)                                                                          tags#create
 #                       tag GET    /tags/:id(.:format)                                                                      tags#show
 #                           PATCH  /tags/:id(.:format)                                                                      tags#update
 #                           PUT    /tags/:id(.:format)                                                                      tags#update
 #                           DELETE /tags/:id(.:format)                                                                      tags#destroy
+#             getRole_users GET    /users/getRole(.:format)                                                                 users#getRole
 #                     users GET    /users(.:format)                                                                         users#index
 #                           POST   /users(.:format)                                                                         users#create
 #                      user GET    /users/:id(.:format)                                                                     users#show

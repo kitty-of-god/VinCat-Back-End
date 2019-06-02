@@ -9,7 +9,7 @@
 #  quantity    :integer
 #  kind        :string
 #  gender      :string
-#  state       :boolean
+#  state       :boolean          default(TRUE)
 #  new         :boolean
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null

@@ -5,8 +5,8 @@
 #  id                     :integer          not null, primary key
 #  username               :string
 #  name                   :string
-#  description            :string
-#  residence              :string
+#  description            :string           default("")
+#  residence              :string           default("")
 #  role                   :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null

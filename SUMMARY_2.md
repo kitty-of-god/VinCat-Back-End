@@ -20,4 +20,7 @@ Members:
 |**CORS configuration:** |Nicolás Casas|
 
 ## Things to be developed next iteration:
-  - 
+  - Implementacion en heroku
+  - Más seguridad a la autenticación y eliminación del token cuando se cierra sesión
+  - Más endpoints para fornt 
+  - Más scopes 
