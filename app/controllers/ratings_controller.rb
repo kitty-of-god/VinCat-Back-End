@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+  acts_as_token_authentication_handler_for User, except: [ :index, :show]  #kinda works
   #GET all
   def index
     @ratings = Rating.all
@@ -15,7 +16,7 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:ratings).permit(:comment, :type, :rating, :rateable_id, :rateable_type)
+    params.require(:ratings).permit(:comment, :kind, :rating, :rateable_id, :rateable_type)
   end
   #POST
   def create
@@ -32,7 +33,7 @@ class RatingsController < ApplicationController
   end
 
   def rating_param
-    params.require(:rating).permit(:comment, :type, :rating, :rateable_id, :rateable_type)
+    params.require(:rating).permit(:comment, :kind, :rating, :rateable_id, :rateable_type)
   end
   #PATCH/PUT /rating/1
   def update

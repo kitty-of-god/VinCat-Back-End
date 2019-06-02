@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_18_033135) do
-
-  create_table "cart_products", force: :cascade do |t|
-    t.integer "cart_id"
-    t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_cart_products_on_cart_id"
-    t.index ["product_id"], name: "index_cart_products_on_product_id"
-  end
+ActiveRecord::Schema.define(version: 2019_06_02_013812) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_carts_on_user_id"
+  end
+
+  create_table "carts_products", force: :cascade do |t|
+    t.integer "cart_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_carts_products_on_cart_id"
+    t.index ["product_id"], name: "index_carts_products_on_product_id"
   end
 
   create_table "chats", force: :cascade do |t|
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_05_18_033135) do
     t.integer "quantity"
     t.string "kind"
     t.string "gender"
-    t.boolean "state"
+    t.boolean "state", default: true
     t.boolean "new"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -71,6 +71,15 @@ ActiveRecord::Schema.define(version: 2019_05_18_033135) do
     t.integer "sale_id"
     t.index ["sale_id"], name: "index_products_on_sale_id"
     t.index ["user_id"], name: "index_products_on_user_id"
+  end
+
+  create_table "products_tags", force: :cascade do |t|
+    t.integer "tag_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_products_tags_on_product_id"
+    t.index ["tag_id"], name: "index_products_tags_on_tag_id"
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -107,15 +116,6 @@ ActiveRecord::Schema.define(version: 2019_05_18_033135) do
     t.index ["seller_id"], name: "index_sales_on_seller_id"
   end
 
-  create_table "tag_products", force: :cascade do |t|
-    t.integer "tag_id"
-    t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_tag_products_on_product_id"
-    t.index ["tag_id"], name: "index_tag_products_on_tag_id"
-  end
-
   create_table "tags", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -125,12 +125,20 @@ ActiveRecord::Schema.define(version: 2019_05_18_033135) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "name"
-    t.string "description"
-    t.string "password"
-    t.string "residence"
+    t.string "description", default: ""
+    t.string "residence", default: ""
     t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "authentication_token", limit: 30
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

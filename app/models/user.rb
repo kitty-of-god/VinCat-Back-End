@@ -1,4 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :integer          not null, primary key
+#  username               :string
+#  name                   :string
+#  description            :string           default("")
+#  residence              :string           default("")
+#  role                   :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  authentication_token   :string(30)
+#
+
 class User < ApplicationRecord
+  acts_as_token_authenticatable
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   has_many :products, dependent: :destroy
   has_many :sales, dependent: :destroy
   has_many :reports, as: :reportable
@@ -7,7 +32,19 @@ class User < ApplicationRecord
   has_many :messages, through: :chats
   has_one :cart, dependent: :destroy
   has_one :image, as: :imageable, dependent: :destroy
+  
+  #scopes
+  scope :NameOrder, -> { order(name: :asc)}
+  
+=begin
 
+  alias_method :authenticate, :valid_password?
+
+  def self.from_token_payload(payload)
+    self.find payload["sub"]
+  end
+  
+=end
 
   validates :username,
   format: { with: /\A[\S]+\z/, message: "only allows letters and spaces" },
@@ -21,25 +58,16 @@ class User < ApplicationRecord
   presence: true
 
   validates :description,
-  length: { maximum: 200},
-  presence: true
+  length: { maximum: 200}
 
   validates :password,
   format: { with: /\A[\S]+\z/, message: "Incorrect format"},
   length: { minimum: 3},
   presence: true
 
-  validates :residence,
-  format: { with: /\A[a-zA-Z\s]+\z/, message: "Incorrect format"},
-  length: {minimum: 1},
-  presence: true
-
   validates :role,
   inclusion: { in: %w(admin tienda natural), message: "%{value} no es un valor permitido" },
   presence: true
-
-
-
 end
 
 =begin

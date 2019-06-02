@@ -1,8 +1,21 @@
 class UsersController < ApplicationController
+  acts_as_token_authentication_handler_for User, except: [ :create,:index, :show]  #kinda works
+  #before_action :authenticate_user, only: [:show, :current]
+  #before_action :set_user, only: [:show, :update, :destroy]
+
+  #GET /users/getRole?role=ROLE "get users by role"
+  def getRole
+    @users = User.where("role = ?", params[:role]).NameOrder
+    render json: @users
+  end
+
   #GET all
   def index
-    @users = User.all
+    @users = User.all.NameOrder
     render json: @users
+  end
+  def current
+    render json: current_user
   end
   #GET /user/:id
   def show
@@ -15,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:users).permit(:username, :name, :description, :password, :residence, :role)
+    params.require(:users).permit(:username, :name, :email, :password, :password_confirmation, :role)
   end
   #POST
   def create
@@ -32,7 +45,7 @@ class UsersController < ApplicationController
   end
 
   def user_param
-    params.require(:user).permit(:username, :name, :description, :password, :residence, :role)
+    params.require(:user).permit(:username, :name, :email, :description, :password, :password_confirmation, :residence, :role)
   end
   #PATCH/PUT /user/1
   def update

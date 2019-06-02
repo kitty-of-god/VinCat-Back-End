@@ -6,7 +6,7 @@ ruby '2.4.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -25,18 +25,35 @@ gem 'puma', '~> 3.11'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'will_paginate', '~> 3.1.0'
+gem 'knock'
+gem 'rack-cors'
+gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
 group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
+  gem 'annotate'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg', '~> 0.18'
+
 end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# serializer
+gem 'active_model_serializers', '~> 0.10.0'

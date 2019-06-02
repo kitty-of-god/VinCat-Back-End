@@ -1,4 +1,16 @@
 class ProductsController < ApplicationController
+  acts_as_token_authentication_handler_for User, except: [ :show, :index, :getKind, :getByName]
+  #GET /products/getKind?kind=KIND "get products by kind"
+  def getKind
+    @products = Product.where("kind = ?", params[:kind]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
+    render json: @products
+  end
+  
+  def getByName
+    @products = Product.where("instr(name, ?) > 0", params[:name]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
+    render json: @products
+  end
+  
   #GET all
   def index
     @products = Product.all
@@ -15,7 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:products).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender)
+    params.require(:products).permit(:name, :description, :price, :kind, :quantity, :new, :gender, :user_id)
   end
   #POST
   def create
@@ -32,7 +44,7 @@ class ProductsController < ApplicationController
   end
 
   def product_param
-    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender)
+    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
   end
   #PATCH/PUT /product/1
   def update
