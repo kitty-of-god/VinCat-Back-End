@@ -62,11 +62,6 @@ class User < ApplicationRecord
   length: { minimum: 3},
   presence: true
 
-  validates :residence,
-  format: { with: /\A[a-zA-Z\s]+\z/, message: "Incorrect format"},
-  length: {minimum: 1},
-  presence: true
-
   validates :role,
   inclusion: { in: %w(admin tienda natural), message: "%{value} no es un valor permitido" },
   presence: true
