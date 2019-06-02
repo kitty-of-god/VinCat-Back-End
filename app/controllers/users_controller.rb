@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   acts_as_token_authentication_handler_for User, except: [ :create]  #kinda works
   #before_action :authenticate_user, only: [:show, :current]
   #before_action :set_user, only: [:show, :update, :destroy]
+
+  #GET /users/getRole?role=ROLE "get users by role"
+  def getRole
+    @users = User.where("role = ?", params[:role])
+    render json: @users
+  end
+
   #GET all
   def index
     @users = User.all

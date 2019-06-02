@@ -1,7 +1,13 @@
 class ReportsController < ApplicationController
-  
+
   acts_as_token_authentication_handler_for User #authentication
-  
+
+  #GET /reports/getReportableType?reportable_type=REPORTABLE_TYPE "get reports by reportable_type"
+  def getReportableType
+    @reports = Report.where("reportable_type = ?", params[:reportable_type])
+    render json: @reports
+  end
+
   #GET all
   def index
     @reports = Report.all

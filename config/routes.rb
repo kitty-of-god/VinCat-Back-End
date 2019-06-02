@@ -82,19 +82,31 @@ Rails.application.routes.draw do
   resources :chats
   resources :images
   resources :messages
-  resources :products do 
+  resources :products do
     collection do
       get :getKind
     end
   end
   resources :ratings
-  resources :reports
-  resources :sales
+  resources :reports do
+    collection do
+      get :getReportableType
+    end
+  end
+  resources :sales do
+    collection do
+      get :getDate
+    end
+  end
   resources :tags do
-    collection do 
+    collection do
       get :getByTag
     end
   end
-  resources :users
+  resources :users do
+    collection do
+      get :getRole
+    end
+  end
   resources :sessions, only: [:create, :destroy]
 end
