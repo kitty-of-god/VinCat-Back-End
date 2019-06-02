@@ -22207,3 +22207,198 @@ Processing by UsersController#create as HTML
 Completed 201 Created in 160ms (Views: 3.0ms | ActiveRecord: 14.0ms)
 
 
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:49:54 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"danielangulos@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"123", "role"=>"natural", "name"=>"123"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "danielangulos@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.17ms)
+Completed 422 Unprocessable Entity in 265ms (Views: 10.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:50:53 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"qweqw@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|12|1|21", "role"=>"natural", "name"=>"|12|12"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "qweqw@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|12|1|21"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.13ms)
+Completed 422 Unprocessable Entity in 143ms (Views: 3.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:51:49 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"ncasasramos@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"asdasd123", "role"=>"natural", "name"=>"asdasdasdsa"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ncasasramos@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "asdasd123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 169ms (Views: 29.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:54:42 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"1@1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|1", "role"=>"natural", "name"=>"11"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.13ms)
+Completed 422 Unprocessable Entity in 141ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:55:05 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"1@1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|1", "role"=>"natural", "name"=>"111"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.13ms)
+Completed 422 Unprocessable Entity in 141ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:55:08 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"1@1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|1", "role"=>"natural", "name"=>"1111"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.11ms)
+Completed 422 Unprocessable Entity in 141ms (Views: 0.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:55:46 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"1@1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|12|1|21", "role"=>"natural", "name"=>"1111"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|12|1|21"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.11ms)
+Completed 422 Unprocessable Entity in 186ms (Views: 1.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:56:00 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"1@1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|12|1|21", "role"=>"natural", "name"=>"1111"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|12|1|21"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.11ms)
+Completed 422 Unprocessable Entity in 141ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:56:07 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"1@1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"|12|1|21", "role"=>"natural", "name"=>"1111"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "|12|1|21"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.1ms)
+Completed 422 Unprocessable Entity in 140ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddDefaultToStateInProducts (20190602013812)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aproducts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "quantity" integer DEFAULT NULL, "kind" varchar DEFAULT NULL, "gender" varchar DEFAULT NULL, "state" boolean DEFAULT NULL, "new" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL, "sale_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_user_id" ON "aproducts" ("user_id")[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aproducts_on_sale_id" ON "aproducts" ("sale_id")[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "aproducts" ("id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id")
+                     SELECT "id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id" FROM "products"[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "products"[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "quantity" integer DEFAULT NULL, "kind" varchar DEFAULT NULL, "gender" varchar DEFAULT NULL, "state" boolean DEFAULT 1, "new" boolean DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "user_id" integer DEFAULT NULL, "sale_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_sale_id" ON "products" ("sale_id")[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_products_on_user_id" ON "products" ("user_id")[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "products" ("id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id")
+                     SELECT "id","name","description","price","quantity","kind","gender","state","new","created_at","updated_at","user_id","sale_id" FROM "aproducts"[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "aproducts"[0m
+  ↳ db/migrate/20190602013812_add_default_to_state_in_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190602013812"]]
+  ↳ bin/rails:4
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started POST "/products" for 186.28.66.240 at 2019-06-02 01:43:24 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#create as */*
+  Parameters: {"products"=>{"name"=>"GOT shirt", "description"=>"Really cute GOT shirt", "price"=>"100", "kind"=>"Shirt", "quantity"=>"5", "new"=>"true", "gender"=>"male", "user_id"=>"3"}, "product"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:29
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "description", "price", "quantity", "kind", "gender", "new", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "GOT shirt"], ["description", "Really cute GOT shirt"], ["price", 100], ["quantity", 5], ["kind", "Shirt"], ["gender", "male"], ["new", 1], ["created_at", "2019-06-02 01:43:25.003140"], ["updated_at", "2019-06-02 01:43:25.003140"], ["user_id", 3]]
+  ↳ app/controllers/products_controller.rb:29
+  [1m[35m (14.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:29
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 26]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:30
+[active_model_serializers] Rendered ProductSerializer with ActiveModelSerializers::Adapter::Attributes (24.95ms)
+Completed 201 Created in 77ms (Views: 42.6ms | ActiveRecord: 17.3ms)
+
+

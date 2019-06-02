@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_002729) do
+ActiveRecord::Schema.define(version: 2019_06_02_013812) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_002729) do
     t.integer "quantity"
     t.string "kind"
     t.string "gender"
-    t.boolean "state"
+    t.boolean "state", default: true
     t.boolean "new"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

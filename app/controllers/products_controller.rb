@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:products).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
+    params.require(:products).permit(:name, :description, :price, :kind, :quantity, :new, :gender, :user_id)
   end
   #POST
   def create
