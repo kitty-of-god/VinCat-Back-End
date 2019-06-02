@@ -1,7 +1,7 @@
 class TagsController < ApplicationController
   #GET all
   def index
-    @tags = Tag.all
+    @tags = Tag.all.NameOrder
     render json: @tags
   end
   #GET /tag/:id

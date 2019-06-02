@@ -5,13 +5,13 @@ class UsersController < ApplicationController
 
   #GET /users/getRole?role=ROLE "get users by role"
   def getRole
-    @users = User.where("role = ?", params[:role])
+    @users = User.where("role = ?", params[:role]).NameOrder
     render json: @users
   end
 
   #GET all
   def index
-    @users = User.all
+    @users = User.all.NameOrder
     render json: @users
   end
   def current

@@ -30,7 +30,8 @@ class Product < ApplicationRecord
   
   #scopes
   scope :available, -> { where("quantity > 0")}
-  scope :PriceOrder, ->{ order(name: :asc, price: :asc)}
+  scope :PriceOrder, -> { order(name: :asc, price: :asc)}
+  scope :avByState, ->{where("state = true")}
   
   #validations
   validates :name,

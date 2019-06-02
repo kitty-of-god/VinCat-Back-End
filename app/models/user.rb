@@ -33,6 +33,9 @@ class User < ApplicationRecord
   has_one :cart, dependent: :destroy
   has_one :image, as: :imageable, dependent: :destroy
   
+  #scopes
+  scope :NameOrder, -> { order(name: :asc)}
+  
 =begin
 
   alias_method :authenticate, :valid_password?
