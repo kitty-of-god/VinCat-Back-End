@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: sales
+#
+#  id             :integer          not null, primary key
+#  date           :time
+#  confirm_seller :boolean
+#  confirm_buyer  :string
+#  seller_user_id :integer
+#  buyer_user_id  :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#  seller_id      :integer
+#  buyer_id       :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  date: 2019-05-14 01:09:08
+  confirm_seller: false
+  confirm_buyer: MyString
+
+two:
+  id: 1
+  date: 2019-05-14 01:09:08
+  confirm_seller: false
+  confirm_buyer: MyString
