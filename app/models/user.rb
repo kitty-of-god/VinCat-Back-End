@@ -55,8 +55,7 @@ class User < ApplicationRecord
   presence: true
 
   validates :description,
-  length: { maximum: 200},
-  presence: true
+  length: { maximum: 200}
 
   validates :password,
   format: { with: /\A[\S]+\z/, message: "Incorrect format"},
