@@ -21526,3 +21526,684 @@ Processing by UsersController#current as HTML
 Completed 200 OK in 130ms (Views: 101.2ms | ActiveRecord: 4.6ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddDefaultToDescriptionInUsers (20190601235746)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT NULL, "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "authentication_token" varchar(30) DEFAULT NULL)[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_authentication_token" ON "ausers" ("authentication_token")[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token")
+                     SELECT "id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token" FROM "users"[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT '', "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "authentication_token" varchar(30) DEFAULT NULL)[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token")
+                     SELECT "id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token" FROM "ausers"[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190601235746_add_default_to_description_in_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190601235746"]]
+  ↳ bin/rails:4
+  [1m[35m (18.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/users/current?user_email=test@test.com&user_token=3yQ8Qan8wWPARWNLYVtd" for 181.61.209.209 at 2019-06-02 00:00:56 +0000
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#current as HTML
+  Parameters: {"user_email"=>"test@test.com", "user_token"=>"3yQ8Qan8wWPARWNLYVtd"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers]   [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (126.01ms)
+Completed 200 OK in 185ms (Views: 153.1ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=1" for 181.61.209.209 at 2019-06-02 00:01:04 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.18ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/favicon.ico" for 190.25.110.201 at 2019-06-02 00:02:03 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for 35.196.167.40 at 2019-06-02 00:02:52 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 35.196.167.40 at 2019-06-02 00:02:52 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=1" for 181.61.209.209 at 2019-06-02 00:03:02 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"1"}
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.8ms)
+Completed 200 OK in 22ms (Views: 18.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 186.28.66.240 at 2019-06-02 00:04:09 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:07:33 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started GET "/users" for 181.61.209.209 at 2019-06-02 00:09:09 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 181.61.209.209 at 2019-06-02 00:09:09 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:10:14 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:12:01 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:12:12 +0000
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"dangulos", "name"=>"angulito", "email"=>"dangulos@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "residence"=>"bogota", "role"=>"natural"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:12:36 +0000
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"dangulos", "name"=>"angulito", "email"=>"dangulos@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "residence"=>"bogota", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dangulos@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dangulos"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.16ms)
+Completed 422 Unprocessable Entity in 341ms (Views: 9.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:13:24 +0000
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"dangulos", "name"=>"angulito", "email"=>"dangulos@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "residence"=>"bogota", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "dangulos@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dangulos"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "xFqic5dGjHCccWLtZs6q"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "residence", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "dangulos"], ["name", "angulito"], ["residence", "bogota"], ["role", "natural"], ["created_at", "2019-06-02 00:13:24.254292"], ["updated_at", "2019-06-02 00:13:24.254292"], ["email", "dangulos@unal.edu.co"], ["encrypted_password", "$2a$11$jpXl/K.EkTGxJ2Rqjek2Au93xE68Wd.FKIbACwDgDN2I6vUf/lt26"], ["authentication_token", "xFqic5dGjHCccWLtZs6q"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 6]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:30
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (17.18ms)
+Completed 201 Created in 185ms (Views: 19.0ms | ActiveRecord: 14.3ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:15:32 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{}, "user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:19:37 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{}, "user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:21:17 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{}, "user"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  
+app/controllers/users_controller.rb:24:in `user_params'
+app/controllers/users_controller.rb:28:in `create'
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:24:16 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"ncasasramos@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"dangulos"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ncasasramos@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dangulos"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.19ms)
+Completed 422 Unprocessable Entity in 274ms (Views: 11.3ms | ActiveRecord: 1.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddDefaultToResidenceInUsers (20190602002729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT '', "residence" varchar DEFAULT NULL, "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "authentication_token" varchar(30) DEFAULT NULL)[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_reset_password_token" ON "ausers" ("reset_password_token")[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_email" ON "ausers" ("email")[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_ausers_on_authentication_token" ON "ausers" ("authentication_token")[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token")
+                     SELECT "id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token" FROM "users"[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "username" varchar DEFAULT NULL, "name" varchar DEFAULT NULL, "description" varchar DEFAULT '', "residence" varchar DEFAULT '', "role" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime DEFAULT NULL, "remember_created_at" datetime DEFAULT NULL, "authentication_token" varchar(30) DEFAULT NULL)[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_authentication_token" ON "users" ("authentication_token")[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token")
+                     SELECT "id","username","name","description","residence","role","created_at","updated_at","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","authentication_token" FROM "ausers"[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  ↳ db/migrate/20190602002729_add_default_to_residence_in_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190602002729"]]
+  ↳ bin/rails:4
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:29:15 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"abroth", "name"=>"ungito", "email"=>"ungito@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ungito@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "abroth"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.21ms)
+Completed 422 Unprocessable Entity in 278ms (Views: 11.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:29:46 +0000
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"abroth", "name"=>"ungito", "email"=>"ungito@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ungito@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "abroth"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.17ms)
+Completed 422 Unprocessable Entity in 165ms (Views: 6.7ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:30:41 +0000
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"abroth", "name"=>"ungito", "email"=>"ungito@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ungito@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "abroth"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.19ms)
+Completed 422 Unprocessable Entity in 265ms (Views: 16.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:31:42 +0000
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"abroth", "name"=>"ungito", "email"=>"ungito@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ungito@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "abroth"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "zYan-91R-RJyms5s65sH"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "abroth"], ["name", "ungito"], ["role", "natural"], ["created_at", "2019-06-02 00:31:42.360983"], ["updated_at", "2019-06-02 00:31:42.360983"], ["email", "ungito@unal.edu.co"], ["encrypted_password", "$2a$11$rR2qVwlfaKj.7CwM4Dm/Be1BPgk38oEFCT9V5TRBrv7Iobp2EZodC"], ["authentication_token", "zYan-91R-RJyms5s65sH"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (12.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:30
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (30.85ms)
+Completed 201 Created in 216ms (Views: 46.3ms | ActiveRecord: 16.2ms)
+
+
+Started GET "/users/current?user_email=test@test.com&user_token=3yQ8Qan8wWPARWNLYVtd" for 181.61.209.209 at 2019-06-02 00:33:28 +0000
+Processing by UsersController#current as HTML
+  Parameters: {"user_email"=>"test@test.com", "user_token"=>"3yQ8Qan8wWPARWNLYVtd"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /usr/local/rvm/gems/ruby-2.4.6/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:11
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (22.37ms)
+Completed 200 OK in 37ms (Views: 22.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:33:57 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"danielangulos@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"dangulos", "role"=>"User"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "danielangulos@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "dangulos"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.16ms)
+Completed 422 Unprocessable Entity in 153ms (Views: 7.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:34:21 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"sdgfsgdf@yahoo.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"agdfgfds", "role"=>"User"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sdgfsgdf@yahoo.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "agdfgfds"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.14ms)
+Completed 422 Unprocessable Entity in 140ms (Views: 1.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:35:53 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"ncasasramos@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Casa123", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ncasasramos@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Casa123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 142ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=1" for 186.83.122.183 at 2019-06-02 00:36:00 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"1"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.79ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=5" for 186.83.122.183 at 2019-06-02 00:36:09 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 2]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.19ms)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=7" for 186.83.122.183 at 2019-06-02 00:36:13 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"7"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 30]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.09ms)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=4" for 186.83.122.183 at 2019-06-02 00:36:20 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"4"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 15]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 7]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 8]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 13]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 21]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 10]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.71ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=6" for 186.83.122.183 at 2019-06-02 00:36:34 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"6"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 25]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/products/getKind?kind=Pant&page=5" for 186.83.122.183 at 2019-06-02 00:36:38 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant", "page"=>"5"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 20]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 24]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 6]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 12]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 3]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 2]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.34ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/products/getKind?kind=Pant" for 186.83.122.183 at 2019-06-02 00:36:48 +0000
+Processing by ProductsController#getKind as HTML
+  Parameters: {"kind"=>"Pant"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE (kind = 'Pant') AND (quantity > 0) ORDER BY "products"."name" ASC, "products"."price" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 1]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 5]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 20]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 17]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers]   [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "products_tags" ON "tags"."id" = "products_tags"."tag_id" WHERE "products_tags"."product_id" = ?[0m  [["product_id", 18]]
+[active_model_serializers]   ↳ app/controllers/products_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (12.01ms)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:37:09 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"ncasasramos@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"Casa123", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ncasasramos@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "Casa123"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 140ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:38:40 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"plouyu@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"rtyuio", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "plouyu@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "rtyuio"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.1ms)
+Completed 422 Unprocessable Entity in 141ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/" for 181.61.209.209 at 2019-06-02 00:39:06 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 181.61.209.209 at 2019-06-02 00:39:07 +0000
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/rvm/gems/ruby-2.4.6/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:42:26 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"ghyt@hty.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ert12", "role"=>"natural", "name"=>"Taller Clas"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ghyt@hty.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ert12"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.17ms)
+Completed 422 Unprocessable Entity in 142ms (Views: 1.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:45:41 +0000
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"aaaa", "name"=>"asd", "email"=>"asdasd@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asdasd@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "aaaa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.18ms)
+Completed 422 Unprocessable Entity in 142ms (Views: 1.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 186.28.66.240 at 2019-06-02 00:45:48 +0000
+Processing by UsersController#create as */*
+  Parameters: {"users"=>{"username"=>"aaaaaa", "name"=>"asd", "email"=>"asdasd@unal.edu.co", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"natural"}, "user"=>{}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asdasd@unal.edu.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "aaaaaa"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "mwVwhz-eFqxzUtPF6usJ"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "aaaaaa"], ["name", "asd"], ["role", "natural"], ["created_at", "2019-06-02 00:45:48.460972"], ["updated_at", "2019-06-02 00:45:48.460972"], ["email", "asdasd@unal.edu.co"], ["encrypted_password", "$2a$11$DMIFSq3giWe9fe357urrfe6CRLipDCQfWdbbWtqD8zTklYFOC28Cu"], ["authentication_token", "mwVwhz-eFqxzUtPF6usJ"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers]   [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:30
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (2.02ms)
+Completed 201 Created in 161ms (Views: 3.1ms | ActiveRecord: 14.2ms)
+
+
+Started POST "/users" for 181.61.209.209 at 2019-06-02 00:46:02 +0000
+Processing by UsersController#create as HTML
+  Parameters: {"users"=>{"email"=>"ghyt@hty.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "username"=>"ert12gggggg", "role"=>"natural", "name"=>"Taller Clas"}, "user"=>{}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ghyt@hty.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ert12gggggg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" WHERE "users"."authentication_token" = ?[0m  [["authentication_token", "t-h6y7ooss6GEdwkv4y4"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "name", "role", "created_at", "updated_at", "email", "encrypted_password", "authentication_token") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["username", "ert12gggggg"], ["name", "Taller Clas"], ["role", "natural"], ["created_at", "2019-06-02 00:46:02.960456"], ["updated_at", "2019-06-02 00:46:02.960456"], ["email", "ghyt@hty.com"], ["encrypted_password", "$2a$11$0FvMPf18euvFECTLdUjD2eF1X9KlWS16MvRyiJFHZYsC8sa/LeWgC"], ["authentication_token", "t-h6y7ooss6GEdwkv4y4"]]
+  ↳ app/controllers/users_controller.rb:29
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:29
+[active_model_serializers]   [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."user_id" = ?[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:30
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.97ms)
+Completed 201 Created in 160ms (Views: 3.0ms | ActiveRecord: 14.0ms)
+
+
