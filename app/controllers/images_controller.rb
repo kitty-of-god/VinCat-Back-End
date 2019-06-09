@@ -15,7 +15,7 @@ class ImagesController < ApplicationController
   end
 
   def image_params
-    params.require(:images).permit(:name, :imageable_id, :imageable_type)
+    params.require(:images).permit(:name, :imageable_id, :imageable_type, :photo)
   end
   #POST
   def create
@@ -32,7 +32,7 @@ class ImagesController < ApplicationController
   end
 
   def image_param
-    params.require(:image).permit(:name, :imageable_id, :imageable_type)
+    params.require(:image).permit(:name, :imageable_id, :imageable_type, :photo)
   end
   #PATCH/PUT /image/1
   def update
