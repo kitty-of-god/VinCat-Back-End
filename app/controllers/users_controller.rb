@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :create,:index, :show]  #kinda works
+  acts_as_token_authentication_handler_for User, except: [ :create,:index, :show, :show_pdf]  #kinda works
   #before_action :authenticate_user, only: [:show, :current]
   #before_action :set_user, only: [:show, :update, :destroy]
 
@@ -14,6 +14,20 @@ class UsersController < ApplicationController
     @users = User.all.NameOrder
     render json: @users
   end
+  
+  #GET users
+  def show_pdf
+    @users = User.all
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf do
+        #render template:'users/reporte.pdf.erb', pdf: 'Reporte'
+        render pdf: 'file'
+      end
+    end
+  end
+  
   def current
     render json: current_user
   end

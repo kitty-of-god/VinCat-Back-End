@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_013812) do
+ActiveRecord::Schema.define(version: 2019_06_16_072127) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_06_02_013812) do
     t.string "imageable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.index ["imageable_id", "imageable_type"], name: "index_images_on_imageable_id_and_imageable_type"
   end
 
@@ -136,6 +137,8 @@ ActiveRecord::Schema.define(version: 2019_06_02_013812) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "authentication_token", limit: 30
+    t.string "provider"
+    t.string "uid"
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
