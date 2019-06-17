@@ -1,8 +1,0 @@
-modify config/initializers/carrierwave.rb to reflect the actual storage keys once i can edit them in credentials
-check https://codediode.io/lessons/8223-upload-files-to-google-cloud-storage-with-carrierwave and https://www.engineyard.com/blog/rails-encrypted-credentials-on-rails-5.2 MUCH more closely
-interoperable storage access keys were already generated
-uploader is already mounted to model
-image_uploader already has fog instead of file
-gemfile has already been modified (added mini_magick and fog)
-https://phase2online.com/blog/2018/10/03/easily-upload-files-with-active-storage-in-rails-5-2/ explains how to edit credentials for aws
-https://codediode.io/lessons/8223-upload-files-to-google-cloud-storage-with-carrierwave tutorial for rails 4.1
