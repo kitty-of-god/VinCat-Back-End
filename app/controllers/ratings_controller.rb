@@ -1,5 +1,5 @@
 class RatingsController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :index, :show]  #kinda works
+  acts_as_token_authentication_handler_for User, except: [ :index, :show, :create]  #kinda works
   #GET all
   def index
     @ratings = Rating.all
