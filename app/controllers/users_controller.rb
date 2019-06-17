@@ -22,8 +22,8 @@ class UsersController < ApplicationController
       format.html
       format.json
       format.pdf do
-        #render template:'users/reporte.pdf.erb', pdf: 'Reporte'
-        render pdf: 'file'
+        render template:'users/reporte.pdf.erb', pdf: 'Reporte'
+      #  render pdf: 'file'
       end
     end
   end
@@ -46,7 +46,17 @@ class UsersController < ApplicationController
   end
   #POST
   def create
-    @user = User.new(user_params)
+    if (params[:facebook] == true)
+      response = HTTParty.get("https://graph.facebook.com/oauth/access_token_info?access_token=#{params[:userToken]}")
+      if response.error.code == 190
+        return
+      end
+        @user = User.new(username: params[:email],name: params[:email], email: params[:email],
+                        password: Divise.friendly_token(length = 6), password_confirmation: Divise.friendly_token(length = 6), role: 'natural')
+    else
+      @user = User.new(user_params)
+    end
+
     if @user.save
       UserMailer.welcome_email(@user).deliver_now
       render json: @user, status: :created, location: @user
