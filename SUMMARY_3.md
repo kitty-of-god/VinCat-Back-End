@@ -25,4 +25,4 @@ Members:
   - Implement purchases within the app
   - Implement messaging between users
 ## Heroku link
-https://vincat.herokuapp.com/
+https://vnct01.herokuapp.com
