@@ -48,6 +48,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.welcome_email(@user).deliver_now
       render json: @user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -59,18 +60,22 @@ class UsersController < ApplicationController
   end
 
   def user_param
-    params.require(:user).permit(:username, :name, :email, :description, :password, :password_confirmation, :residence, :role)
+    params.require(:user).permit(:username, :name, :email, :description, :residence, :role)
   end
+  
   #PATCH/PUT /user/1
   def update
     @user = User.find(params[:id])
 
-    if @user.update_attributes(user_param)
+    if @user.update_attributes(username: params[:username], 
+                                name: params[:name], email: params[:email], description: params[:description],
+                                residence: params[:residence], role: params[:role])
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+  
   #DELETE /user/1
   def destroy
     User.find(params[:id]).destroy

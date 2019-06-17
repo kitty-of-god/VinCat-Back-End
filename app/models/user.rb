@@ -16,6 +16,8 @@
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  authentication_token   :string(30)
+#  provider               :string
+#  uid                    :string
 #
 
 class User < ApplicationRecord
@@ -60,11 +62,6 @@ class User < ApplicationRecord
 
   validates :description,
   length: { maximum: 200}
-
-  validates :password,
-  format: { with: /\A[\S]+\z/, message: "Incorrect format"},
-  length: { minimum: 3},
-  presence: true
 
   validates :role,
   inclusion: { in: %w(admin tienda natural), message: "%{value} no es un valor permitido" },
