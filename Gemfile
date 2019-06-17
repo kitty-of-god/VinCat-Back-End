@@ -6,7 +6,7 @@ ruby '2.4.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-
+#gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -22,6 +22,8 @@ gem 'puma', '~> 3.11'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker', '~> 1.6', '>= 1.6.6'
@@ -31,9 +33,17 @@ gem 'rack-cors'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
-
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'omniauth-facebook'
+gem 'httparty'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
+# File uploading
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
 
@@ -48,7 +58,6 @@ end
 
 group :production do
   gem 'pg', '~> 0.18'
-
 end
 
 

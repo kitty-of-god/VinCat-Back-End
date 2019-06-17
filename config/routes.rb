@@ -78,9 +78,10 @@
 #      rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
-  #devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   post 'user_token' => 'user_token#create'
   get 'users/current' => 'users#current'
+  get 'users/show_pdf' => 'users#show_pdf'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, only: []
   resources :carts

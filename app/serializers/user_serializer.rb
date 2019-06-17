@@ -16,6 +16,8 @@
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  authentication_token   :string(30)
+#  provider               :string
+#  uid                    :string
 #
 
 class UserSerializer < ActiveModel::Serializer

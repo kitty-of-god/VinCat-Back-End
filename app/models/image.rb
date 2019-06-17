@@ -8,10 +8,12 @@
 #  imageable_type :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  photo          :string
 #
 
 class Image < ApplicationRecord
   belongs_to :imageable , polymorphic: true, optional: true
+  mount_uploader :photo, PhotoUploader
 
 
   validates :name,
