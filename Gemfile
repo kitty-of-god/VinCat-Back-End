@@ -22,6 +22,8 @@ gem 'puma', '~> 3.11'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faker', '~> 1.6', '>= 1.6.6'
@@ -37,6 +39,8 @@ gem 'simple_token_authentication', '~> 1.0' # see semver.org
 
 # File uploading
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
 
