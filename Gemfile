@@ -33,7 +33,10 @@ gem 'rack-cors'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0' # see semver.org
-
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+gem 'omniauth-facebook'
+gem 'httparty'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 

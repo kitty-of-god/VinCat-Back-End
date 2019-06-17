@@ -34,6 +34,8 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     if @product.save
       render json: @product, status: :created, location: @product
+      @user = User.find(@product.user_id)
+      ProductMailer.new_product(@user).deliver_now
     else
       render json: @product.errors, status: :unprocessable_entity
     end
