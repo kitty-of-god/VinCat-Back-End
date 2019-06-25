@@ -43,7 +43,7 @@ gem 'httparty'
 # File uploading
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
-gem 'fog'
+#gem 'fog'
 
 group :development, :test do
 
