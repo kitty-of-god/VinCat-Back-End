@@ -15,9 +15,6 @@ class ChatsController < ApplicationController
     @chat = Chat.new
   end
 
-  def chat_params
-    params.require(:chats).permit(:sender_user_id, :receiver_user_id, :sender_id, :receiver_id)
-  end
   #POST
   def create
     @chat = Chat.new(chat_params)
@@ -32,9 +29,7 @@ class ChatsController < ApplicationController
     @chat = Chat.find(params[:id])
   end
 
-  def chat_param
-    params.require(:chat).permit(:sender_user_id, :receiver_user_id, :sender_id, :receiver_id)
-  end
+
   #PATCH/PUT /chat/1
   def update
     @chat = Chat.find(params[:id])
@@ -50,3 +45,13 @@ class ChatsController < ApplicationController
     Chat.find(params[:id]).destroy
   end
 end
+
+private
+
+  def chat_params
+    params.require(:chats).permit(:sender_user_id, :receiver_user_id, :sender_id, :receiver_id)
+  end
+
+  def chat_param
+    params.require(:chat).permit(:sender_user_id, :receiver_user_id, :sender_id, :receiver_id)
+  end

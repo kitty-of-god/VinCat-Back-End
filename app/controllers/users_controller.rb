@@ -62,9 +62,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def user_params
-    params.require(:users).permit(:username, :name, :email, :password, :password_confirmation, :role)
-  end
   #POST
   def create
     if (params[:facebook] == true)
@@ -89,10 +86,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-
-  def user_param
-    params.require(:user).permit(:username, :name, :email, :description, :residence, :role)
-  end
   
   #PATCH/PUT /user/1
   def update
@@ -112,3 +105,13 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy
   end
 end
+
+private
+
+  def user_param
+    params.require(:user).permit(:username, :name, :email, :description, :residence, :role)
+  end
+
+  def user_params
+    params.require(:users).permit(:username, :name, :email, :password, :password_confirmation, :role)
+  end

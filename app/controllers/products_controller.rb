@@ -45,9 +45,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def product_params
-    params.require(:products).permit(:name, :description, :price, :kind, :quantity, :new, :gender, :user_id)
-  end
   #POST
   def create
     @product = Product.new(product_params)
@@ -64,9 +61,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def product_param
-    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
-  end
   #PATCH/PUT /product/1
   def update
     @product = Product.find(params[:id])
@@ -82,3 +76,11 @@ class ProductsController < ApplicationController
     Product.find(params[:id]).destroy
   end
 end
+
+  def product_params
+    params.require(:products).permit(:name, :description, :price, :kind, :quantity, :new, :gender, :user_id)
+  end
+  
+  def product_param
+    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
+  end
