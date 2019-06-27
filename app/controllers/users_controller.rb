@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :create,:index, :show, :show_pdf]  #kinda works
+  acts_as_token_authentication_handler_for User, except: [ :create,:index, :show, :show_pdf, :user_rating, :getRatings, :userRating]  #kinda works
   #before_action :authenticate_user, only: [:show, :current]
   #before_action :set_user, only: [:show, :update, :destroy]
 
@@ -15,6 +15,12 @@ class UsersController < ApplicationController
     render json: @users
   end
   
+  #GET users/getRatings
+  def getRatings
+    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "User").paginate(page: params[:page], per_page: 5)
+    render json: @ratings
+  end
+  
   #GET users
   def show_pdf
     @users = User.all
@@ -26,6 +32,21 @@ class UsersController < ApplicationController
       #  render pdf: 'file'
       end
     end
+  end
+
+## Rating.where(rateable_id: 1, rateable_type: "User")
+  
+  #GET users/userRating
+  def userRating
+    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "User")
+    n = 0.0
+    rating = 0.0
+    for i in @ratings do 
+      rating += i.rating
+      n+=1
+    end
+    rating = rating/n
+    render json: rating
   end
   
   def current

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :show, :index, :getKind, :getByName]
+  acts_as_token_authentication_handler_for User, except: [ :show, :index, :getKind, :getByName, :product_rating, :getRatings, :productRating]
   #GET /products/getKind?kind=KIND "get products by kind"
   def getKind
     @products = Product.where("kind = ?", params[:kind]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
@@ -9,6 +9,25 @@ class ProductsController < ApplicationController
   def getByName
     @products = Product.where("instr(name, ?) > 0", params[:name]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
     render json: @products
+  end
+  
+  #GET products/getRatings
+  def getRatings
+    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "Product").paginate(page: params[:page], per_page: 5)
+    render json: @ratings
+  end
+  
+  #GET products/productRating
+  def productRating
+    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "Product")
+    n = 0.0
+    rating = 0.0
+    for i in @ratings do 
+      rating += i.rating
+      n+=1
+    end
+    rating = rating/n
+    render json: rating
   end
   
   #GET all

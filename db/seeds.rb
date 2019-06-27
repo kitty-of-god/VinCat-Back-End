@@ -46,6 +46,22 @@ for i in 1..5 do
                        user_id: i
                    }])
   end
+  
+  5.times do 
+      Rating.create!([{
+                  comment: Faker::Hacker.say_something_smart,
+                  rating: Faker::Number.between(0, 5),
+                  rateable_id: i,
+                  rateable_type: "User"
+                }])   
+                
+      Rating.create!([{
+                  comment: Faker::Hacker.say_something_smart,
+                  rating: Faker::Number.between(0, 5),
+                  rateable_id: i,
+                  rateable_type: "Product"
+                }])   
+  end
 end
       
       
@@ -53,15 +69,6 @@ end
   Tag.create!([{
                 name: Faker::Games::Pokemon.name
               }])
-
-  Rating.create!([{
-                  comment: Faker::Hacker.say_something_smart,
-                  rating: Faker::Number.between(0, 5)
-                }])            
-
-  Image.create!([{
-                  name: "#{Faker::Games::Pokemon.name}.#{Faker::File.extension}"
-                }])
 
 
   Message.create!([{

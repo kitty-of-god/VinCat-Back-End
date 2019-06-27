@@ -90,8 +90,10 @@ Rails.application.routes.draw do
   resources :messages
   resources :products do
     collection do
+      get :productRating
       get :getKind
       get :getByName
+      get :getRatings
     end
   end
   resources :ratings
@@ -113,6 +115,8 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :getRole
+      get :userRating
+      get :getRatings
     end
   end
   resources :sessions, only: [:create, :destroy]
