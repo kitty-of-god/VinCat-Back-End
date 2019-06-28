@@ -43178,3 +43178,271 @@ Processing by UsersController#userRating as HTML
 Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddOmniauthToUsers (20190616072127)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  ↳ db/migrate/20190616072127_add_omniauth_to_users.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  ↳ db/migrate/20190616072127_add_omniauth_to_users.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190616072127"]]
+  ↳ bin/rails:4
+  [1m[35m (155.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateActiveStorageTables (20190627165905)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190627165905_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "byte_size" bigint NOT NULL, "checksum" varchar NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190627165905_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  ↳ db/migrate/20190627165905_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" integer NOT NULL, "blob_id" integer NOT NULL, "created_at" datetime NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20190627165905_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  ↳ db/migrate/20190627165905_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20190627165905_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190627165905"]]
+  ↳ bin/rails:4
+  [1m[35m (203.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Create (1.2ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "sothicc"], ["created_at", "2019-06-28 17:20:22.221410"], ["updated_at", "2019-06-28 17:20:22.221410"]]
+  [1m[35m (143.6ms)[0m  [1m[36mcommit transaction[0m
+Sending HTTP get https://www.googleapis.com/storage/v1/b/vincatbackstorage?
+403
+#<HTTP::Message:0x00000000077678a0 @http_header=#<HTTP::Message::Headers:0x0000000007767878 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x3bc63dc URI:https://www.googleapis.com/storage/v1/b/vincatbackstorage?>, @request_query=nil, @request_absolute_uri=nil, @status_code=403, @reason_phrase="Forbidden", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Upgfpu0_QhwC_XyUVYXVblfCcNToIgUrySMa3TJJ5Ha_Lc7dRoOhaeudDVaMneCEyRugH23GMSw3rWLAJVJOWybdofWyuMc5BlrFp3-8DVTvCxKIFM"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Fri, 28 Jun 2019 17:29:31 GMT"], ["Expires", "Fri, 28 Jun 2019 17:29:31 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "1006"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"46,44,43,39\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name:0x000000000774c5c8>, issuer=#<OpenSSL::X509::Name:0x000000000774c618>, serial=#<OpenSSL::BN:0x000000000774c640>, not_before=2019-06-11 12:22:17 UTC, not_after=2019-09-03 12:20:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000000007767800 @body="{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"usageLimits\",\n    \"reason\": \"accessNotConfigured\",\n    \"message\": \"Access Not Configured. Cloud Storage JSON API has not been used in project 130799166371 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\",\n    \"extendedHelp\": \"https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371\"\n   }\n  ],\n  \"code\": 403,\n  \"message\": \"Access Not Configured. Cloud Storage JSON API has not been used in project 130799166371 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\"\n }\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Caught error accessNotConfigured: Access Not Configured. Cloud Storage JSON API has not been used in project 130799166371 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Error - #<Google::Apis::ClientError: accessNotConfigured: Access Not Configured. Cloud Storage JSON API has not been used in project 130799166371 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry. status_code: 403 header: #<HTTP::Message::Headers:0x0000000007747488 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x3bc63dc URI:https://www.googleapis.com/storage/v1/b/vincatbackstorage?>, @request_query=nil, @request_absolute_uri=nil, @status_code=403, @reason_phrase="Forbidden", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2Upgfpu0_QhwC_XyUVYXVblfCcNToIgUrySMa3TJJ5Ha_Lc7dRoOhaeudDVaMneCEyRugH23GMSw3rWLAJVJOWybdofWyuMc5BlrFp3-8DVTvCxKIFM"], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Date", "Fri, 28 Jun 2019 17:29:31 GMT"], ["Expires", "Fri, 28 Jun 2019 17:29:31 GMT"], ["Cache-Control", "private, max-age=0"], ["Content-Length", "1006"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"46,44,43,39\""]], @dumped=false> body: "{\n \"error\": {\n  \"errors\": [\n   {\n    \"domain\": \"usageLimits\",\n    \"reason\": \"accessNotConfigured\",\n    \"message\": \"Access Not Configured. Cloud Storage JSON API has not been used in project 130799166371 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\",\n    \"extendedHelp\": \"https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371\"\n   }\n  ],\n  \"code\": 403,\n  \"message\": \"Access Not Configured. Cloud Storage JSON API has not been used in project 130799166371 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/storage-api.googleapis.com/overview?project=130799166371 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.\"\n }\n}\n">
+
+[36m  GCS Storage (2166.1ms) [0m[32mUploaded file to key: KobmWTaa6HfCsXxReXyzAdyw (checksum: Ys1AUteVgz6cbpxGJUv3+A==)[0m
+Sending HTTP get https://www.googleapis.com/storage/v1/b/vincatbackstorage?
+200
+#<HTTP::Message:0x0000000008ad5068 @http_header=#<HTTP::Message::Headers:0x0000000008ad5040 @http_version="1.1", @body_size=0, @chunked=false, @request_method="GET", @request_uri=#<Addressable::URI:0x456b4c8 URI:https://www.googleapis.com/storage/v1/b/vincatbackstorage?>, @request_query=nil, @request_absolute_uri=nil, @status_code=200, @reason_phrase="OK", @body_type=nil, @body_charset=nil, @body_date=nil, @body_encoding=#<Encoding:UTF-8>, @is_request=false, @header_item=[["X-GUploader-UploadID", "AEnB2UpqPB3Wp7FuqlXs-pMPz8bDCxNVa_GN_FjD83wCRwhnXRji2YVgQtJLkMGxj9d5Hk7Mq_89YVAQ4qBvtScN_ZJ80SaQIg"], ["ETag", "CAE="], ["Vary", "Origin"], ["Vary", "X-Origin"], ["Content-Type", "application/json; charset=UTF-8"], ["Expires", "Fri, 28 Jun 2019 17:32:03 GMT"], ["Date", "Fri, 28 Jun 2019 17:32:03 GMT"], ["Cache-Control", "private, max-age=0, must-revalidate, no-transform"], ["Content-Length", "540"], ["Server", "UploadServer"], ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"46,44,43,39\""]], @dumped=false>, @peer_cert=#<OpenSSL::X509::Certificate: subject=#<OpenSSL::X509::Name:0x0000000008abf560>, issuer=#<OpenSSL::X509::Name:0x0000000008abf588>, serial=#<OpenSSL::BN:0x0000000008abf5b0>, not_before=2019-06-11 12:22:17 UTC, not_after=2019-09-03 12:20:00 UTC>, @http_body=#<HTTP::Message::Body:0x0000000008ad4f78 @body="{\n \"kind\": \"storage#bucket\",\n \"id\": \"vincatbackstorage\",\n \"selfLink\": \"https://www.googleapis.com/storage/v1/b/vincatbackstorage\",\n \"projectNumber\": \"130799166371\",\n \"name\": \"vincatbackstorage\",\n \"timeCreated\": \"2019-06-16T20:52:49.806Z\",\n \"updated\": \"2019-06-16T20:52:49.806Z\",\n \"metageneration\": \"1\",\n \"iamConfiguration\": {\n  \"bucketPolicyOnly\": {\n   \"enabled\": false\n  },\n  \"uniformBucketLevelAccess\": {\n   \"enabled\": false\n  }\n },\n \"location\": \"US-EAST1\",\n \"defaultEventBasedHold\": false,\n \"storageClass\": \"REGIONAL\",\n \"etag\": \"CAE=\"\n}\n", @size=0, @positions=nil, @chunk_size=nil>, @previous=nil>
+Success - #<Google::Apis::StorageV1::Bucket:0x0000000008abe9d0
+ @default_event_based_hold=false,
+ @etag="CAE=",
+ @iam_configuration=
+  #<Google::Apis::StorageV1::Bucket::IamConfiguration:0x0000000008ab6c58
+   @bucket_policy_only=
+    #<Google::Apis::StorageV1::Bucket::IamConfiguration::BucketPolicyOnly:0x0000000008ab5920
+     @enabled=false>>,
+ @id="vincatbackstorage",
+ @kind="storage#bucket",
+ @location="US-EAST1",
+ @metageneration=1,
+ @name="vincatbackstorage",
+ @project_number=130799166371,
+ @self_link="https://www.googleapis.com/storage/v1/b/vincatbackstorage",
+ @storage_class="REGIONAL",
+ @time_created=Sun, 16 Jun 2019 20:52:49 +0000,
+ @updated=Sun, 16 Jun 2019 20:52:49 +0000>
+
+Sending upload start command to https://www.googleapis.com/upload/storage/v1/b/vincatbackstorage/o?name=Tkf82QsKT6YPdBfpaso9iMFi
+Upload status active
+Sending upload command to https://www.googleapis.com/upload/storage/v1/b/vincatbackstorage/o?name=Tkf82QsKT6YPdBfpaso9iMFi&upload_id=AEnB2UoTdhylTMfu-lYvrWPZdY6TykTw3rOpqBFyxyRQ9zHXz8U8K4uED73fI_HnoMotfqhN6IjATH82IDypaFKhBbu3zXfq0A&upload_protocol=resumable
+Upload status final
+Success - #<Google::Apis::StorageV1::Object:0x00000000089b5818
+ @bucket="vincatbackstorage",
+ @content_type="image/png",
+ @crc32c="j/wGpw==",
+ @etag="CMmLgsHajOMCEAE=",
+ @generation=1561743123842505,
+ @id="vincatbackstorage/Tkf82QsKT6YPdBfpaso9iMFi/1561743123842505",
+ @kind="storage#object",
+ @md5_hash="Ys1AUteVgz6cbpxGJUv3+A==",
+ @media_link=
+  "https://www.googleapis.com/download/storage/v1/b/vincatbackstorage/o/Tkf82QsKT6YPdBfpaso9iMFi?generation=1561743123842505&alt=media",
+ @metageneration=1,
+ @name="Tkf82QsKT6YPdBfpaso9iMFi",
+ @self_link=
+  "https://www.googleapis.com/storage/v1/b/vincatbackstorage/o/Tkf82QsKT6YPdBfpaso9iMFi",
+ @size=53698,
+ @storage_class="REGIONAL",
+ @time_created=Fri, 28 Jun 2019 17:32:03 +0000,
+ @time_storage_class_updated=Fri, 28 Jun 2019 17:32:03 +0000,
+ @updated=Fri, 28 Jun 2019 17:32:03 +0000>
+
+[36m  GCS Storage (953.2ms) [0m[32mUploaded file to key: Tkf82QsKT6YPdBfpaso9iMFi (checksum: Ys1AUteVgz6cbpxGJUv3+A==)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveStorage::Blob Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "Tkf82QsKT6YPdBfpaso9iMFi"], ["filename", "sothicc.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 53698], ["checksum", "Ys1AUteVgz6cbpxGJUv3+A=="], ["created_at", "2019-06-28 17:32:02.971060"]]
+  [1m[35m (172.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Create (1.0ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "sothicc"], ["created_at", "2019-06-28 17:34:29.294114"], ["updated_at", "2019-06-28 17:34:29.294114"]]
+  [1m[36mActiveStorage::Attachment Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "photo"], ["record_type", "Image"], ["record_id", 3], ["blob_id", 1], ["created_at", "2019-06-28 17:34:29.297106"]]
+  [1m[36mImage Update (0.2ms)[0m  [1m[33mUPDATE "images" SET "updated_at" = ? WHERE "images"."id" = ?[0m  [["updated_at", "2019-06-28 17:34:29.299101"], ["id", 3]]
+  [1m[35m (180.9ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: cfe277ad-4167-48fe-a3a8-5db74caa92fc) to Async(default) with arguments: #<GlobalID:0x0000000007527310 @uri=#<URI::GID gid://vin-cat-back-end/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc] Performing ActiveStorage::AnalyzeJob (Job ID: cfe277ad-4167-48fe-a3a8-5db74caa92fc) from Async(default) with arguments: #<GlobalID:0x00000000073583e0 @uri=#<URI::GID gid://vin-cat-back-end/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc] Success - [#<StringIO:0x000000000bc04b98>,
+ #<HTTP::Message:0x000000000bbfc880
+  @http_body=
+   #<HTTP::Message::Body:0x000000000bbfc7e0
+    @body=nil,
+    @chunk_size=nil,
+    @positions=nil,
+    @size=nil>,
+  @http_header=
+   #<HTTP::Message::Headers:0x000000000bbfc858
+    @body_charset=nil,
+    @body_date=nil,
+    @body_encoding=#<Encoding:ASCII-8BIT>,
+    @body_size=0,
+    @body_type=nil,
+    @chunked=false,
+    @dumped=false,
+    @header_item=
+     [["X-GUploader-UploadID",
+       "AEnB2UooBgA-Gu3Kjkyu9aQ3ZftC7u0Hq2DBujnwwtjjECVFPuS8ibw1K8VoLOhBExZr7gvipvM91sBZ0mUn_jfl2LfEVzKukQ"],
+      ["Content-Type", "image/png"],
+      ["Content-Disposition", "attachment"],
+      ["ETag", "CMmLgsHajOMCEAE="],
+      ["Vary", "Origin"],
+      ["Vary", "X-Origin"],
+      ["X-Goog-Generation", "1561743123842505"],
+      ["X-Goog-Hash", "crc32c=j/wGpw==,md5=Ys1AUteVgz6cbpxGJUv3+A=="],
+      ["X-Goog-Metageneration", "1"],
+      ["X-Goog-Storage-Class", "REGIONAL"],
+      ["Cache-Control", "no-cache, no-store, max-age=0, must-revalidate"],
+      ["Pragma", "no-cache"],
+      ["Expires", "Mon, 01 Jan 1990 00:00:00 GMT"],
+      ["Date", "Fri, 28 Jun 2019 17:34:32 GMT"],
+      ["Content-Length", "53698"],
+      ["Server", "UploadServer"],
+      ["Alt-Svc", "quic=\":443\"; ma=2592000; v=\"46,44,43,39\""]],
+    @http_version="1.1",
+    @is_request=false,
+    @reason_phrase="OK",
+    @request_absolute_uri=nil,
+    @request_method="GET",
+    @request_query={"alt"=>"media"},
+    @request_uri=
+     #<Addressable::URI:0x5dfe864 URI:https://www.googleapis.com/storage/v1/b/vincatbackstorage/o/Tkf82QsKT6YPdBfpaso9iMFi?alt=media>,
+    @status_code=200>,
+  @peer_cert=
+   #<OpenSSL::X509::Certificate
+    subject=#<OpenSSL::X509::Name CN=*.googleapis.com,O=Google LLC,L=Mountain View,ST=California,C=US>,
+    issuer=#<OpenSSL::X509::Name CN=Google Internet Authority G3,O=Google Trust Services,C=US>,
+    serial=#<OpenSSL::BN 31741944426485047546985465921479875271>,
+    not_before=2019-06-11 12:22:17 UTC,
+    not_after=2019-09-03 12:20:00 UTC>,
+  @previous=nil>]
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc] [36m  GCS Storage (453.4ms) [0m[34mDownloaded file from key: Tkf82QsKT6YPdBfpaso9iMFi[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc]   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc]   [1m[35m (181.2ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [cfe277ad-4167-48fe-a3a8-5db74caa92fc] Performed ActiveStorage::AnalyzeJob (Job ID: cfe277ad-4167-48fe-a3a8-5db74caa92fc) from Async(default) in 2046.99ms
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mImage Create (1.3ms)[0m  [1m[32mINSERT INTO "images" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "newimage"], ["created_at", "2019-06-28 17:39:21.230501"], ["updated_at", "2019-06-28 17:39:21.230501"]]
+  [1m[35m (125.8ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/" for ::1 at 2019-06-28 12:46:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/images" for ::1 at 2019-06-28 12:46:22 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"photo"=>#<ActionDispatch::Http::UploadedFile:0x00000000066f8988 @tempfile=#<Tempfile:C:/Users/USER/AppData/Local/Temp/RackMultipart20190628-12540-4hu7x2.png>, @original_filename="sothicc.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"photo\"; filename=\"sothicc.png\"\r\nContent-Type: image/png\r\n">}
+Completed 400 Bad Request in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: images):
+  
+app/controllers/images_controller.rb:18:in `image_params'
+app/controllers/images_controller.rb:22:in `create'
+Started POST "/image" for ::1 at 2019-06-28 12:48:19 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/image"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/images" for ::1 at 2019-06-28 12:48:22 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"photo"=>#<ActionDispatch::Http::UploadedFile:0x00000000076c8b38 @tempfile=#<Tempfile:C:/Users/USER/AppData/Local/Temp/RackMultipart20190628-12540-f0vjlg.png>, @original_filename="sothicc.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"photo\"; filename=\"sothicc.png\"\r\nContent-Type: image/png\r\n">}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: images):
+  
+app/controllers/images_controller.rb:18:in `image_params'
+app/controllers/images_controller.rb:22:in `create'
+Started POST "/images" for ::1 at 2019-06-28 12:50:11 -0500
+Processing by ImagesController#create as */*
+  Parameters: {"photo"=>#<ActionDispatch::Http::UploadedFile:0x00000000070f5558 @tempfile=#<Tempfile:C:/Users/USER/AppData/Local/Temp/RackMultipart20190628-12540-ohilj.png>, @original_filename="sothicc.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"photo\"; filename=\"sothicc.png\"\r\nContent-Type: image/png\r\n">, "images"=>"{ \"name\" = \"newfile\"}"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for "{ \"name\" = \"newfile\"}":String):
+  
+app/controllers/images_controller.rb:18:in `image_params'
+app/controllers/images_controller.rb:22:in `create'

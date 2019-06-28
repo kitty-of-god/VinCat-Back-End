@@ -41,8 +41,9 @@ gem 'httparty'
 # gem 'rack-cors'
 
 # File uploading
+gem "google-cloud-storage", "~> 1.8", require: false
 #gem 'carrierwave', '~> 1.0'
-#gem 'mini_magick'
+gem 'mini_magick'
 #gem 'fog'
 
 group :development, :test do

@@ -27,3 +27,6 @@
 /config/master.key
 
 \.idea/
+
+# Ignore location of gcs key
+/config/secrets/*

@@ -13,8 +13,7 @@
 
 class Image < ApplicationRecord
   belongs_to :imageable , polymorphic: true, optional: true
-  mount_uploader :photo, PhotoUploader
-
+  has_one_attached :photo
 
   validates :name,
   format: { with: /\A[\S]+[.][\S]+\z/, message: "only allows letters and spaces" },

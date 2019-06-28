@@ -20,6 +20,7 @@ class ImagesController < ApplicationController
   #POST
   def create
     @image = Image.new(image_params)
+    @image.photo.attach(params[:photo])
     if @image.save
       render json: @image, status: :created, location: @image
     else
@@ -46,6 +47,8 @@ class ImagesController < ApplicationController
   end
   #DELETE /image/1
   def destroy
-    Image.find(params[:id]).destroy
+    @image = Image.find(params[:id])
+    @image.photo.purge
+    @image.destroy
   end
 end
