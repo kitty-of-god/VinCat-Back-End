@@ -15,9 +15,30 @@ class UsersController < ApplicationController
     render json: @users
   end
   
+## Rating.where(rateable_id: 1, rateable_type: "User")
+  
+  #GET users/userRating
+  def userRating
+    @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'")
+    n = 0.0
+    rating = 0.0
+    for i in @ratings do 
+      rating += i.rating
+      n+=1
+    end
+    rating = rating/n
+    render json: rating
+  end
+  
   #GET users/getRatings
   def getRatings
-    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "User").paginate(page: params[:page], per_page: 5)
+    @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").paginate(page: params[:page], per_page: 5)
+    render json: @ratings
+  end
+  
+  #GET users/getReports
+  def getReports
+    @ratings = Report.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'")
     render json: @ratings
   end
   
@@ -32,21 +53,6 @@ class UsersController < ApplicationController
       #  render pdf: 'file'
       end
     end
-  end
-
-## Rating.where(rateable_id: 1, rateable_type: "User")
-  
-  #GET users/userRating
-  def userRating
-    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "User")
-    n = 0.0
-    rating = 0.0
-    for i in @ratings do 
-      rating += i.rating
-      n+=1
-    end
-    rating = rating/n
-    render json: rating
   end
   
   def current

@@ -13,13 +13,13 @@ class ProductsController < ApplicationController
   
   #GET products/getRatings
   def getRatings
-    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "Product").paginate(page: params[:page], per_page: 5)
+    @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'").paginate(page: params[:page], per_page: 5)
     render json: @ratings
   end
   
   #GET products/productRating
   def productRating
-    @ratings = Rating.where(rateable_id: params[:id], rateable_type: "Product")
+    @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'")
     n = 0.0
     rating = 0.0
     for i in @ratings do 
@@ -28,6 +28,12 @@ class ProductsController < ApplicationController
     end
     rating = rating/n
     render json: rating
+  end
+  
+    #GET products/getReports
+  def getReports
+    @ratings = Report.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'")
+    render json: @ratings
   end
   
   #GET all
