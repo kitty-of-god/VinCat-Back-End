@@ -34,7 +34,7 @@ class User < ApplicationRecord
   has_many :chats, dependent: :destroy
   has_many :messages, through: :chats
   has_one :cart, dependent: :destroy
-  has_one :image, as: :imageable, dependent: :destroy
+  has_many :images, as: :imageable, dependent: :destroy
   
   #scopes
   scope :NameOrder, -> { order(name: :asc)}
