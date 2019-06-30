@@ -26,7 +26,12 @@ class UsersController < ApplicationController
       rating += i.rating
       n+=1
     end
-    rating = rating/n
+    if n == 0
+      rating = nil
+    else
+      rating = rating/n
+      rating = (rating * 10).round / 10.0
+    end
     render json: rating
   end
   
@@ -36,10 +41,11 @@ class UsersController < ApplicationController
     render json: @ratings
   end
   
-  #GET users/getReports
-  def getReports
-    @ratings = Report.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'")
-    render json: @ratings
+  #GET users/ratingPages
+  def ratingPages
+    pages = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").count
+    pages = (pages/5).ceil
+    render json: pages
   end
   
   #GET users

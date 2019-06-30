@@ -95,6 +95,7 @@ Rails.application.routes.draw do
       get :getByName
       get :getRatings
       get :getReports
+      get :ratingPages
     end
   end
   resources :ratings
@@ -119,6 +120,7 @@ Rails.application.routes.draw do
       get :userRating
       get :getRatings
       get :getReports
+      get :ratingPages
     end
   end
   resources :sessions, only: [:create, :destroy]

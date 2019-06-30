@@ -17,6 +17,13 @@ class ProductsController < ApplicationController
     render json: @ratings
   end
   
+  #GET products/ratingPages
+  def ratingPages
+    pages = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'").count
+    pages = (pages/5).ceil
+    render json: pages
+  end
+  
   #GET products/productRating
   def productRating
     @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'")
@@ -26,15 +33,21 @@ class ProductsController < ApplicationController
       rating += i.rating
       n+=1
     end
-    rating = rating/n
+    if n == 0
+      rating = nil
+    else
+      rating = rating/n
+      rating = (rating * 10).round / 10.0
+    end
     render json: rating
   end
   
-    #GET products/getReports
+  #GET products/getReports
   def getReports
-    @ratings = Report.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'")
+    @ratings = Report.where("reportable_id = ? ",params[:id] ).where("reportable_type = 'Product'")
     render json: @ratings
   end
+
   
   #GET all
   def index
