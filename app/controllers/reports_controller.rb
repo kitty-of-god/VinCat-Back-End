@@ -23,9 +23,6 @@ class ReportsController < ApplicationController
     @report = Report.new
   end
 
-  def report_params
-    params.require(:reports).permit(:body, :reportable_id, :reportable_type)
-  end
   #POST
   def create
     @report = Report.new(report_params)
@@ -40,9 +37,6 @@ class ReportsController < ApplicationController
     @report = Report.find(params[:id])
   end
 
-  def report_param
-    params.require(:report).permit(:body, :reportable_id, :reportable_type)
-  end
   #PATCH/PUT /report/1
   def update
     @report = Report.find(params[:id])
@@ -58,3 +52,13 @@ class ReportsController < ApplicationController
     Report.find(params[:id]).destroy
   end
 end
+
+private
+
+  def report_params
+    params.require(:reports).permit(:body, :reportable_id, :reportable_type)
+  end
+
+  def report_param
+    params.require(:report).permit(:body, :reportable_id, :reportable_type)
+  end

@@ -20,4 +20,6 @@
 class ProductSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :price, :quantity, :kind, :gender, :state, :new, :user_id, :sale_id
   has_many :tags
+  has_many :ratings
+  has_many :images
 end

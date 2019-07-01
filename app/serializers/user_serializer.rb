@@ -23,4 +23,6 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id, :name, :email, :username, :description
   has_many :products
+  has_many :ratings
+  has_many :images
 end

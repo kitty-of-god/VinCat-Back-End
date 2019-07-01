@@ -23,9 +23,6 @@ class SalesController < ApplicationController
     @sale = Sale.new
   end
 
-  def sale_params
-    params.require(:sales).permit(:date, :confirm_seller, :confirm_buyer, :seller_id, :buyer_id)
-  end
   #POST
   def create
     @sale = Sale.new(sale_params)
@@ -40,9 +37,6 @@ class SalesController < ApplicationController
     @sale = Sale.find(params[:id])
   end
 
-  def sale_param
-    params.require(:sale).permit(:date, :confirm_seller, :confirm_buyer, :seller_id, :buyer_id)
-  end
   #PATCH/PUT /sale/1
   def update
     @sale = Sale.find(params[:id])
@@ -58,3 +52,12 @@ class SalesController < ApplicationController
     Sale.find(params[:id]).destroy
   end
 end
+
+private
+  def sale_params
+    params.require(:sales).permit(:date, :confirm_seller, :confirm_buyer, :seller_id, :buyer_id)
+  end
+  
+    def sale_param
+    params.require(:sale).permit(:date, :confirm_seller, :confirm_buyer, :seller_id, :buyer_id)
+  end

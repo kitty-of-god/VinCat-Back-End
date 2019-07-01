@@ -15,9 +15,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new
   end
 
-  def rating_params
-    params.require(:ratings).permit(:comment, :kind, :rating, :rateable_id, :rateable_type)
-  end
+
   #POST
   def create
     @rating = Rating.new(rating_params)
@@ -32,9 +30,7 @@ class RatingsController < ApplicationController
     @rating = Rating.find(params[:id])
   end
 
-  def rating_param
-    params.require(:rating).permit(:comment, :kind, :rating, :rateable_id, :rateable_type)
-  end
+
   #PATCH/PUT /rating/1
   def update
     @rating = Rating.find(params[:id])
@@ -50,3 +46,13 @@ class RatingsController < ApplicationController
     Rating.find(params[:id]).destroy
   end
 end
+
+private
+
+  def rating_params
+    params.require(:ratings).permit(:comment, :kind, :rating, :rateable_id, :rateable_type)
+  end
+  
+  def rating_param
+    params.require(:rating).permit(:comment, :kind, :rating, :rateable_id, :rateable_type)
+  end

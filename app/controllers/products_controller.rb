@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :show, :index, :getKind, :getByName]
+  acts_as_token_authentication_handler_for User, except: [ :show, :index, :getKind, :getByName, :product_rating, :getRatings, :productRating]
   #GET /products/getKind?kind=KIND "get products by kind"
   def getKind
     @products = Product.where("kind = ?", params[:kind]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
@@ -10,6 +10,44 @@ class ProductsController < ApplicationController
     @products = Product.where("instr(name, ?) > 0", params[:name]).available.PriceOrder.paginate(page: params[:page], per_page: 5)
     render json: @products
   end
+  
+  #GET products/getRatings
+  def getRatings
+    @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'").paginate(page: params[:page], per_page: 5)
+    render json: @ratings
+  end
+  
+  #GET products/ratingPages
+  def ratingPages
+    pages = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'").count
+    pages = (pages/5).ceil
+    render json: pages
+  end
+  
+  #GET products/productRating
+  def productRating
+    @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'Product'")
+    n = 0.0
+    rating = 0.0
+    for i in @ratings do 
+      rating += i.rating
+      n+=1
+    end
+    if n == 0
+      rating = nil
+    else
+      rating = rating/n
+      rating = (rating * 10).round / 10.0
+    end
+    render json: rating
+  end
+  
+  #GET products/getReports
+  def getReports
+    @ratings = Report.where("reportable_id = ? ",params[:id] ).where("reportable_type = 'Product'")
+    render json: @ratings
+  end
+
   
   #GET all
   def index
@@ -26,9 +64,6 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def product_params
-    params.require(:products).permit(:name, :description, :price, :kind, :quantity, :new, :gender, :user_id)
-  end
   #POST
   def create
     @product = Product.new(product_params)
@@ -45,9 +80,6 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def product_param
-    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
-  end
   #PATCH/PUT /product/1
   def update
     @product = Product.find(params[:id])
@@ -63,3 +95,13 @@ class ProductsController < ApplicationController
     Product.find(params[:id]).destroy
   end
 end
+
+private
+
+  def product_params
+    params.require(:products).permit(:name, :description, :price, :kind, :quantity, :new, :gender, :user_id)
+  end
+  
+  def product_param
+    params.require(:product).permit(:name, :description, :price, :kind, :state, :quantity, :new, :gender, :user_id, :sale_id)
+  end

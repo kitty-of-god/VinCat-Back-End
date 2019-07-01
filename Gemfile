@@ -26,8 +26,14 @@ gem 'puma', '~> 3.11'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+
+# Used to poblate the db via SEED
 gem 'faker', '~> 1.6', '>= 1.6.6'
+
+# Pagination
 gem 'will_paginate', '~> 3.1.0'
+
+#
 gem 'knock'
 gem 'rack-cors'
 gem 'bcrypt', '~> 3.1.7'
@@ -41,9 +47,9 @@ gem 'httparty'
 # gem 'rack-cors'
 
 # File uploading
-gem 'carrierwave', '~> 1.0'
-gem 'mini_magick'
-gem 'fog'
+#gem 'carrierwave', '~> 1.0'
+#gem 'mini_magick'
+#gem 'fog'
 
 group :development, :test do
 
