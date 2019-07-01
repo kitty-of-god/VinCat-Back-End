@@ -43427,3 +43427,47 @@ Completed 200 OK in 148ms (Views: 143.8ms | ActiveRecord: 2.4ms)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+Started GET "/users" for ::1 at 2019-06-30 19:20:15 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  Parameters: {"images"=>{"name"=>"newfile", "imageable_id"=>"3", "imageable_type"=>"product", "photo"=>"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABPUAAAI9CAYAAABSTE0XAAAgAElEQVR4Xuy9SXPjytKm6ZwnUbNyHs7Jc7/VV9bW1WXWi9q"}, "user"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  ↳ app/controllers/users_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (10.42ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2019-06-30 19:24:31 -0500
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"users"=>{"username"=>"testusername", "name"=>"testname", "email"=>"testemail@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"tienda"}, "registration"=>{"users"=>{"username"=>"testusername", "name"=>"testname", "email"=>"testemail@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"tienda"}}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 3301ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for ::1 at 2019-06-30 19:25:01 -0500
+Processing by UsersController#index as */*
+  Parameters: {"users"=>{"username"=>"testusername", "name"=>"testname", "email"=>"testemail@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"tienda"}, "user"=>{}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  ↳ app/controllers/users_controller.rb:15
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.05ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for ::1 at 2019-06-30 19:29:22 -0500
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"users"=>{"username"=>"testusername", "name"=>"testname", "email"=>"testemail@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"tienda"}, "registration"=>{"users"=>{"username"=>"testusername", "name"=>"testname", "email"=>"testemail@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "role"=>"tienda"}}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ D:/Utility/Ruby/rubyinstaller-2.4.6-1-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+

@@ -119,6 +119,8 @@ Rails.application.routes.draw do
       get :getRole
       get :userRating
       get :getRatings
+      get :getRatingsByNumber
+      get :getProductsPublished
       get :getReports
       get :ratingPages
     end

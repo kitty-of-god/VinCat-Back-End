@@ -33,7 +33,7 @@ gem 'faker', '~> 1.6', '>= 1.6.6'
 # Pagination
 gem 'will_paginate', '~> 3.1.0'
 
-# 
+#
 gem 'knock'
 gem 'rack-cors'
 gem 'bcrypt', '~> 3.1.7'
@@ -47,7 +47,7 @@ gem 'httparty'
 # gem 'rack-cors'
 
 # File uploading
-gem 'carrierwave', '~> 1.0'
+#gem 'carrierwave', '~> 1.0'
 #gem 'mini_magick'
 #gem 'fog'
 

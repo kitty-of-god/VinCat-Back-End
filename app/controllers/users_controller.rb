@@ -14,15 +14,15 @@ class UsersController < ApplicationController
     @users = User.all.NameOrder
     render json: @users
   end
-  
+
 ## Rating.where(rateable_id: 1, rateable_type: "User")
-  
+
   #GET users/userRating
   def userRating
     @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'")
     n = 0.0
     rating = 0.0
-    for i in @ratings do 
+    for i in @ratings do
       rating += i.rating
       n+=1
     end
@@ -34,20 +34,38 @@ class UsersController < ApplicationController
     end
     render json: rating
   end
-  
+
   #GET users/getRatings
   def getRatings
     @ratings = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").paginate(page: params[:page], per_page: 5)
     render json: @ratings
   end
-  
+
+  #GET users/getRatingsByNumber
+  def getRatingsByNumber
+    ratingszero = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").where("rating = 0").count
+    ratingsone = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").where("rating = 1").count
+    ratingstwo = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").where("rating = 2").count
+    ratingsthree = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").where("rating = 3").count
+    ratingsfour = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").where("rating = 4").count
+    ratingsfive = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").where("rating = 5").count
+    ratingstotal = [ratingszero, ratingsone, ratingstwo, ratingsthree, ratingsfour, ratingsfive]
+    render json: ratingstotal
+  end
+
+  #GET users/getProductsPublished
+  def getProductsPublished
+    prodspub = Product.where("user_id = ? ",params[:id] ).count
+    render json: prodspub
+  end
+
   #GET users/ratingPages
   def ratingPages
     pages = Rating.where("rateable_id = ? ",params[:id] ).where("rateable_type = 'User'").count
     pages = (pages/5).ceil
     render json: pages
   end
-  
+
   #GET users
   def show_pdf
     @users = User.all
@@ -60,7 +78,7 @@ class UsersController < ApplicationController
       end
     end
   end
-  
+
   def current
     render json: current_user
   end
@@ -98,12 +116,12 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-  
+
   #PATCH/PUT /user/1
   def update
     @user = User.find(params[:id])
 
-    if @user.update_attributes(username: params[:username], 
+    if @user.update_attributes(username: params[:username],
                                 name: params[:name], email: params[:email], description: params[:description],
                                 residence: params[:residence], role: params[:role])
       render json: @user
@@ -111,7 +129,7 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
-  
+
   #DELETE /user/1
   def destroy
     User.find(params[:id]).destroy
