@@ -107,6 +107,7 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.welcome_email(@user).deliver_now
+      ReminderEmailJob.set(wait: 5.minutes).perform_later(@user)
       render json: @user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
