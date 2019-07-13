@@ -125,5 +125,8 @@ Rails.application.routes.draw do
       get :ratingPages
     end
   end
+  resources :chats do
+    resources :messages
+  end
   resources :sessions, only: [:create, :destroy]
 end

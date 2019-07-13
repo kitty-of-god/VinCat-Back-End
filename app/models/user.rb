@@ -31,7 +31,7 @@ class User < ApplicationRecord
   has_many :sales, dependent: :destroy
   has_many :reports, as: :reportable
   has_many :ratings, as: :rateable, dependent: :destroy
-  has_many :chats, dependent: :destroy
+  has_many :chats,:foreign_key => :sender_id, dependent: :destroy
   has_many :messages, through: :chats
   has_one :cart, dependent: :destroy
   has_many :images, as: :imageable, dependent: :destroy

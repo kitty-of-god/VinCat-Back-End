@@ -1,54 +1,43 @@
 class MessagesController < ApplicationController
   
   acts_as_token_authentication_handler_for User #authentication
-  
-  #GET all
-  def index
-    @messages = Message.all
-    render json: @messages
+  before_action do
+    @chat = Chat.find(params[:chat_id])
   end
-  #GET /message/:id
-  def show
-    @message = Message.find(params[:id])
-    render json: @message
+
+  def index
+    @messages = @chat.messages
+    if @messages.length > 10
+      @over_ten = true
+      @messages = @messages[-10..-1]
+    end
+    if params[:m]
+      @over_ten = false
+      @messages = @chat.messages
+    end
+    if @messages.last
+      if @messages.last.user_id != current_user.id
+        @messages.last.read = true;
+      end
+    end
+
+    @message = @chat.messages.new
   end
 
   def new
-    @message = Message.new
+    @message = @chat.messages.new
   end
 
-  def message_params
-    params.require(:messages).permit(:text, :chat_id)
-  end
-  #POST
   def create
-    @message = Message.new(message_params)
+    @message = @chat.messages.new(message_params)
     if @message.save
-      render json: @message, status: :created, location: @message
-    else
-      render json: @message.errors, status: :unprocessable_entity
+      redirect_to chat_messages_path(@chat)
     end
   end
 
-  def edit
-    @message = Message.find(params[:id])
-  end
-
-  def message_param
-    params.require(:message).permit(:text, :chat_id)
-  end
-  #PATCH/PUT /message/1
-  def update
-    @message = Message.find(params[:id])
-
-    if @message.update_attributes(message_param)
-      render json: @message
-    else
-      render json: @message.errors, status: :unprocessable_entity
-    end
-  end
-  #DELETE /message/1
-  def destroy
-    Message.find(params[:id]).destroy
+  private
+  def message_params
+    params.require(:message).permit(:body, :user_id)
   end
 end
+

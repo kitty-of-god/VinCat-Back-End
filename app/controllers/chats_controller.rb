@@ -2,7 +2,9 @@ class ChatsController < ApplicationController
   acts_as_token_authentication_handler_for User#authentication
   #GET all
   def index
+
     @chats = Chat.all
+    @users = User.all
     render json: @chats
   end
   #GET /chat/:id
@@ -17,12 +19,12 @@ class ChatsController < ApplicationController
 
   #POST
   def create
-    @chat = Chat.new(chat_params)
-    if @chat.save
-      render json: @chat, status: :created, location: @chat
+    if Chat.between(params[:sender_id],params[:recipient_id]).present?
+      @chat = Chat.between(params[:sender_id], params[:recipient_id]).first
     else
-      render json: @chat.errors, status: :unprocessable_entity
+      @chat = Chat.create!(chat_params)
     end
+    redirect_to chat_messages_path(@chat)
   end
 
   def edit
@@ -34,7 +36,7 @@ class ChatsController < ApplicationController
   def update
     @chat = Chat.find(params[:id])
 
-    if @chat.update_attributes(chat_param)
+    if @chat.update_attributes(chat_params)
       render json: @chat
     else
       render json: @chat.errors, status: :unprocessable_entity
@@ -49,9 +51,6 @@ end
 private
 
   def chat_params
-    params.require(:chats).permit(:sender_user_id, :receiver_user_id, :sender_id, :receiver_id)
+    params.require(:chats).permit(:sender_id, :recipient_id)
   end
 
-  def chat_param
-    params.require(:chat).permit(:sender_user_id, :receiver_user_id, :sender_id, :receiver_id)
-  end

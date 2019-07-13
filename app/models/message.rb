@@ -11,9 +11,11 @@
 
 class Message < ApplicationRecord
 
-  belongs_to :chat, optional: true
-  
-  validates :text, 
-  length: { maximum: 200},
-  presence: true
+  belongs_to :chat
+  belongs_to :user
+  validates_presence_of :text, :chat_id, :user_id
+
+  def message_time
+    created_at.strftime("%m/%d/%y at %l:%M %p")
+  end
 end
