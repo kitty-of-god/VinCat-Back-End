@@ -79,6 +79,7 @@
 
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  #Rutas de gemas
   post 'user_token' => 'user_token#create'
   get 'users/current' => 'users#current'
   get 'users/show_pdf' => 'users#show_pdf'
@@ -86,16 +87,22 @@ Rails.application.routes.draw do
   devise_for :users, only: []
   resources :carts
   resources :chats
-  resources :images
+  resources :images do
+    collection do
+      get :productImages
+    end
+  end
   resources :messages
   resources :products do
     collection do
-      get :productRating
-      get :getKind
       get :getByName
       get :getRatings
       get :getReports
       get :ratingPages
+    end
+    member do
+      get :getKind
+      get :productRating
     end
   end
   resources :ratings
@@ -116,13 +123,15 @@ Rails.application.routes.draw do
   end
   resources :users do
     collection do
-      get :getRole
-      get :userRating
       get :getRatings
       get :getRatingsByNumber
       get :getProductsPublished
       get :getReports
       get :ratingPages
+    end
+    member do 
+      get :userRating
+      get :getRole
     end
   end
   resources :sessions, only: [:create, :destroy]
