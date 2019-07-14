@@ -87,7 +87,11 @@ Rails.application.routes.draw do
   devise_for :users, only: []
   resources :carts
   resources :chats
-  resources :images
+  resources :images do
+    collection do
+      get :productImages
+    end
+  end
   resources :messages
   resources :products do
     collection do

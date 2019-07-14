@@ -48,4 +48,9 @@ class ImagesController < ApplicationController
   def destroy
     Image.find(params[:id]).destroy
   end
+  
+  def productImages
+    @images = Image.where("imageable_type = 'Product'").order("created_at DESC")
+    render json: @images
+  end
 end
