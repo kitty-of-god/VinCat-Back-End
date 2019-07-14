@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  acts_as_token_authentication_handler_for User, except: [ :create,:index, :show, :show_pdf, :user_rating, :getRatings, :userRating]  #kinda works
+  acts_as_token_authentication_handler_for User, except: [ :create, :index, :show, :show_pdf, :user_rating, :getRatings, :userRating]  #kinda works
   #before_action :authenticate_user, only: [:show, :current]
   #before_action :set_user, only: [:show, :update, :destroy]
 
@@ -107,6 +107,7 @@ class UsersController < ApplicationController
 
     if @user.save
       UserMailer.welcome_email(@user).deliver_now
+      ReminderEmailJob.set(wait: 5.minutes).perform_later(@user)
       render json: @user, status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -139,9 +140,9 @@ end
 private
 
   def user_param
-    params.require(:user).permit(:username, :name, :email, :description, :residence, :role)
+    params.require(:user).permit(:username, :name, :email, :description, :residence, :role, :phone)
   end
 
   def user_params
-    params.require(:users).permit(:username, :name, :email, :password, :password_confirmation, :role)
+    params.require(:users).permit(:username, :name, :email, :password, :password_confirmation, :role, :phone)
   end
