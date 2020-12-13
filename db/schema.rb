@@ -12,27 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_07_13_220033) do
 
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
-    t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
-  end
-
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -54,10 +33,6 @@ ActiveRecord::Schema.define(version: 2019_07_13_220033) do
     t.datetime "updated_at", null: false
     t.integer "sender_user_id"
     t.integer "receiver_user_id"
-    t.integer "sender_id"
-    t.integer "receiver_id"
-    t.index ["receiver_id"], name: "index_chats_on_receiver_id"
-    t.index ["sender_id"], name: "index_chats_on_sender_id"
   end
 
   create_table "images", force: :cascade do |t|
@@ -132,10 +107,6 @@ ActiveRecord::Schema.define(version: 2019_07_13_220033) do
     t.integer "buyer_user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "seller_id"
-    t.integer "buyer_id"
-    t.index ["buyer_id"], name: "index_sales_on_buyer_id"
-    t.index ["seller_id"], name: "index_sales_on_seller_id"
   end
 
   create_table "tags", force: :cascade do |t|
